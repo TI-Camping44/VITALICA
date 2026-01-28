@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VITALICA | Distribución de Suplementos Deportivos</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="VITALICA LOGO.png">
+  <!-- GOOGLE FONT (más premium) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+:root{
+  --primary:#ff8a1f;
+  --dark:#0b0d12;
+  --dark-soft:#141824;
+  --text:#f1f5f9;
+  --muted:#9ca3af;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  background:var(--dark);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* GRAIN SUTIL */
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity:.04;
+  z-index:0;
+}
+
+a{text-decoration:none;color:inherit}
+
+/* LOADER */
+#loader{
+  position:fixed;
+  inset:0;
+  background:var(--dark);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  transition:opacity .8s ease, visibility .8s ease;
+}
+#loader.hidden{opacity:0;visibility:hidden}
+#loader img{width:120px;animation:pulse 1.5s infinite}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1);opacity:.6}
+  50%{transform:scale(1.05);opacity:1}
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  height:70px;
+  background:rgba(11,13,18,.85);
+  backdrop-filter:blur(8px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 8%;
+  z-index:1000;
+  transition:background .3s ease, box-shadow .3s ease;
+}
+nav.scrolled{
+  background:rgba(11,13,18,.97);
+  box-shadow:0 8px 30px rgba(0,0,0,.45);
+}
+nav img{height:34px}
+nav ul{list-style:none;display:flex;gap:32px;margin:0;padding:0}
+nav li{font-size:.95rem;color:#e5e7eb}
+.nav-cta{
+  background:var(--primary);
+  color:#000;
+  padding:10px 20px;
+  border-radius:30px;
+  font-weight:600;
+}
+
+/* SECCIONES */
+section{
+  padding:140px 8%;
+  position:relative;
+  z-index:1;
+}
+
+h1,h2,h3{margin:0 0 12px}
+h1{font-size:3rem;font-weight:800;letter-spacing:-0.6px}
+h2{font-size:2.1rem;font-weight:700;letter-spacing:-0.4px}
+h3{font-size:1.2rem}
+
+p{
+  color:var(--muted);
+  max-width:760px;
+  font-size:1.02rem;
+}
+
+/* HERO */
+header{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(rgba(11,13,18,.88),rgba(11,13,18,.95)),
+    url('https://images.unsplash.com/photo-1571019613576-2b22c76fd955');
+  background-size:cover;
+  background-position:center;
+  padding:0 8%;
+  position:relative;
+  z-index:1;
+}
+
+header::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top, rgba(255,138,31,.08), transparent 60%);
+  pointer-events:none;
+}
+
+.hero{max-width:760px}
+.hero span{color:var(--primary)}
+.hero-buttons{
+  margin-top:32px;
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+/* MICRO COPY CONFIANZA */
+.trust{
+  margin-top:24px;
+  display:flex;
+  gap:24px;
+  flex-wrap:wrap;
+  font-size:.9rem;
+  color:#d1d5db;
+}
+.trust span::before{
+  content:"✔ ";
+  color:var(--primary);
+}
+
+/* BOTONES */
+.btn{
+  padding:14px 28px;
+  border-radius:30px;
+  font-weight:600;
+  display:inline-block;
+  transition:transform .25s ease, box-shadow .25s ease;
+  letter-spacing:.2px;
+}
+.btn-primary{background:var(--primary);color:#000}
+.btn-secondary{border:1px solid var(--primary);color:var(--primary)}
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(255,138,31,.45);
+}
+
+/* GRID / CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:40px;
+  margin-top:60px;
+}
+.card{
+  background:linear-gradient(180deg,#141824,#10131c);
+  border:1px solid rgba(255,255,255,.04);
+  padding:36px;
+  border-radius:18px;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(0,0,0,.55);
+}
+.card h3{color:var(--primary)}
+
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:40px;
+  margin-top:60px;
+  text-align:center;
+}
+.stat-number{
+  font-size:3rem;
+  font-weight:700;
+  color:var(--primary);
+}
+
+/* PROCESS */
+.process{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+.step{
+  border-left:3px solid var(--primary);
+  padding-left:20px;
+}
+
+/* LOGOS */
+.brands{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+.brand{
+  background:var(--dark-soft);
+  padding:30px;
+  border-radius:14px;
+  text-align:center;
+  opacity:.7;
+}
+
+/* REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .9s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:none;
+}
+
+/* CTA */
+#contacto{
+  background:linear-gradient(180deg,#0b0d12,#141824);
+}
+
+/* FOOTER */
+footer{
+  background:#05060a;
+  padding:60px 8%;
+  text-align:center;
+  font-size:.85rem;
+  color:#9ca3af;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  position:relative;
+  z-index:1;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:60px;
+  height:60px;
+  background:var(--primary);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 12px 30px rgba(255,138,31,.55);
+  z-index:2000;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.whatsapp-float img{width:32px;height:32px}
+.whatsapp-float:hover{
+  transform:scale(1.12);
+  box-shadow:0 18px 40px rgba(255,138,31,.75);
+}
+
+/* MODALS */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  visibility:hidden;
+  transition:all .35s ease;
+  z-index:3000;
+}
+.modal.active{opacity:1;visibility:visible}
+.modal-box{
+  background:var(--dark-soft);
+  padding:40px;
+  border-radius:20px;
+  max-width:420px;
+  width:90%;
+  position:relative;
+  text-align:center;
+}
+.modal-close{
+  position:absolute;
+  top:14px;
+  right:18px;
+  font-size:26px;
+  cursor:pointer;
+  color:#fff;
+}
+.modal input,
+.modal select{
+  width:100%;
+  padding:12px;
+  margin-top:12px;
+  border-radius:10px;
+  border:none;
+  background:#0b0d12;
+  color:#fff;
+}
+
+/* HERO SLIDER ARROWS */
+.hero-arrows{
+  position:absolute;
+  top:50%;
+  left:0;
+  right:0;
+  transform:translateY(-50%);
+  display:flex;
+  justify-content:space-between;
+  padding:0 40px;
+  z-index:10;
+  pointer-events:none;
+}
+.hero-arrow{
+  pointer-events:auto;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:rgba(0,0,0,.45);
+  border:1px solid rgba(255,255,255,.35);
+  color:#fff;
+  font-size:26px;
+  cursor:pointer;
+  transition:all .25s ease;
+}
+.hero-arrow:hover{
+  background:rgba(255,255,255,.18);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  h1{font-size:2.2rem}
+  h2{font-size:1.7rem}
+  nav ul{display:none}
+}
+/* HERO BACKGROUND MEJORA VISUAL */
+header {
+  background-size: cover;
+  background-position: 70% center;
+transition: background-image 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+
+header::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11,13,18,0.88) 0%,
+      rgba(11,13,18,0.65) 35%,
+      rgba(11,13,18,0.25) 65%,
+      rgba(11,13,18,0.05) 100%
+    );
+  z-index:1;
+}
+
+.hero {
+  position:relative;
+  z-index:2;
+}
+
+#hero-title {
+  font-size: 2.4rem;
+  line-height: 1.15;
+}
+
+#hero-text {
+  margin-top: 14px;
+  color: #e5e7eb;
+}
+@media (max-width: 768px) {
+  header {
+    background-position: center center;
+  }
+
+  .hero-arrows {
+    padding: 0 16px;
+  }
+
+  .hero-arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+}
+
+header {
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from { background-size: 100%; }
+  to   { background-size: 108%; }
+}
+
+.hero h1,
+.hero h2,
+.hero p {
+  text-shadow: 0 6px 24px rgba(0,0,0,.45);
+}
+/* ===== BRAND SECTION (OLIMP) ===== */
+
+.brand-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brand-card {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  background: linear-gradient(135deg, #141824, #0f1422);
+  border-radius: 24px;
+  padding: 60px;
+  margin-top: 50px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.45);
+}
+
+.brand-card img {
+  height: 90px;
+  flex-shrink: 0;
+}
+
+.brand-text h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  letter-spacing: .5px;
+}
+
+.brand-text p {
+  margin-top: 10px;
+  color: #9ca3af;
+  max-width: 520px;
+}
+
+.brand-badge {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: rgba(255,138,31,.15);
+  color: var(--primary);
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .brand-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* Productos más livianos que la marca */
+#productos .card {
+  background: #0f1422;
+  box-shadow: none;
+}
+
+#productos h2 {
+  margin-bottom: 10px;
+}
+
+#productos p {
+  max-width: 640px;
+}
+section + section {
+  margin-top: 80px;
+}
+/* ===== BLOQUE MARCA OLIMP DESTACADO ===== */
+
+.brand-feature {
+  padding: 180px 8%;
+  text-align: center;
+}
+
+.brand-title {
+  margin-bottom: 60px;
+}
+
+.brand-feature-box {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #111827, #0b0d12);
+  border-radius: 24px;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: center;
+  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+}
+
+.brand-logo img {
+  max-width: 160px;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,.6));
+}
+
+.brand-info h3 {
+  margin-bottom: 14px;
+}
+
+.brand-info p {
+  font-size: 1.05rem;
+  color: #d1d5db;
+}
+
+.brand-badge {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 18px;
+  background: rgba(255,138,31,.15);
+  color: var(--primary);
+  border-radius: 20px;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .brand-feature-box{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+/* ===============================
+   PRODUCTOS – ESTILO PREMIUM
+================================ */
+
+/* Contenedor de la grilla */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+/* Card de producto */
+.product-card {
+  position: relative;
+  background: linear-gradient(180deg, #141824, #0f1320);
+  border-radius: 22px;
+  padding: 34px 32px 60px;
+  overflow: hidden;
+  transition: transform .35s ease, box-shadow .35s ease;
+  box-shadow: 0 10px 35px rgba(0,0,0,.45);
+}
+
+/* Hover general */
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 55px rgba(0,0,0,.65);
+}
+
+/* Glow sutil */
+.product-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255,138,31,.10),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+/* Tag OLIMP */
+.product-tag {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .6px;
+  color: var(--primary);
+  background: rgba(255,138,31,.14);
+  padding: 6px 12px;
+  border-radius: 16px;
+}
+
+/* Título */
+.product-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+/* Texto */
+.product-card p {
+  font-size: .95rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+/* ===============================
+   BOTÓN +
+================================ */
+
+.product-plus {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #ff8a1f, #ffb347);
+  color: #000;
+  border: none;
+
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 10px 25px rgba(255,138,31,.45);
+  transition: all .3s ease;
+}
+
+.product-plus:hover {
+  transform: scale(1.15) rotate(90deg);
+  box-shadow: 0 16px 40px rgba(255,138,31,.75);
+}
+
+/* Focus accesible */
+.product-plus:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,138,31,.4);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .product-card {
+    padding: 28px 24px 56px;
+  }
+
+  .product-plus {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <img src="VITALICA LOGO.png" alt="Cargando VITALICA">
+</div>
+
+<nav>
+  <img src="VITALICA LOGO.png" alt="VITALICA" />
+  <ul>
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#que-hacemos">Empresa</a></li>
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header id="inicio" class="reveal">
+
+  <!-- HERO SLIDER DATA (NO VISIBLE) -->
+  <!-- Acá solo definís textos e imágenes -->
+  <div class="hero-slides" style="display:none">
+
+    <!-- SLIDE 1 - CARA PRINCIPAL -->
+    <div 
+      data-bg="assets/img/img1.jpg"
+      data-title="Distribución oficial OLIMP"
+      data-text="En VITALICA somos distribuidores oficiales de Olimp Sport Nutrition, marca internacional líder en nutrición deportiva, con respaldo de laboratorio europeo y estándares de calidad certificados.">
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div 
+      data-bg="assets/img/img2.jpg"
+      data-title="Calidad que podés confiar"
+      data-text="Distribuimos suplementos deportivos con estándares internacionales, respaldados por laboratorios certificados y procesos de calidad europeos.">
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div 
+      data-bg="assets/img/img3.jpg"
+      data-title="Marca internacional"
+      data-text="OLIMP Sport Nutrition cuenta con más de 35 años de experiencia y presencia en más de 100 mercados a nivel mundial.">
+    </div>
+
+  </div>
+
+  <!-- CONTENIDO HERO -->
+  <div class="hero">
+    <h1>VITALICA</h1>
+
+    <!-- ESTE H2 SE ACTUALIZA CON EL SLIDER -->
+    <h2 id="hero-title">
+      Distribución oficial OLIMP
+    </h2>
+
+    <p style="margin-top:10px;font-weight:600;color:#e5e7eb">
+      Distribuidores oficiales de <span style="color:#ff8a1f">Olimp Sport Nutrition</span> en Paraguay
+    </p>
+
+    <!-- TEXTO DINÁMICO -->
+    <p id="hero-text" style="font-size:1.1rem;color:#d1d5db;max-width:620px">
+      En VITALICA somos distribuidores oficiales de Olimp Sport Nutrition.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="javascript:void(0)" class="btn btn-primary" onclick="openCatalogo()">
+        Solicitar catálogo
+      </a>
+      <a href="javascript:void(0)" class="btn btn-secondary" onclick="openContacto()">
+        Contactar área comercial
+      </a>
+    </div>
+
+    <div class="trust">
+      <span>Atención personalizada</span>
+      <span>Respuesta en el día</span>
+      <span>Stock permanente</span>
+    </div>
+  </div>
+
+  <!-- FLECHAS HERO -->
+  <div class="hero-arrows">
+    <button class="hero-arrow hero-prev">&#10094;</button>
+    <button class="hero-arrow hero-next">&#10095;</button>
+  </div>
+
+</header>
+
+
+
+
+
+
+<section class="reveal">
+  <h2>Distribución oficial OLIMP</h2>
+  <p>
+    En VITALICA somos distribuidores oficiales de <strong>Olimp Sport Nutrition</strong>,
+    marca internacional líder en nutrición deportiva, con respaldo de laboratorio europeo
+    y estándares de calidad certificados.
+  </p>
+  <!-- IMAGEN INSTITUCIONAL OLIMP -->
+    <!-- Ejemplos:
+        - laboratorio OLIMP
+        - packshot elegante
+        - imagen corporativa -->
+    <!-- <img src="olimp-institucional.jpg" alt="OLIMP Sport Nutrition" style="margin-top:40px;max-width:420px"> -->
+
+
+  <div class="grid" style="margin-top:40px">
+    <div class="card">
+      <h3>Productos originales</h3>
+      <p>Suplementos certificados, seguros y de calidad internacional.</p>
+    </div>
+    <div class="card">
+      <h3>Respaldo de marca</h3>
+      <p>Trabajamos con una de las marcas más reconocidas del mercado global.</p>
+    </div>
+    <div class="card">
+      <h3>Stock y distribución</h3>
+      <p>Disponibilidad permanente y cobertura a nivel nacional.</p>
+    </div>
+  </div>
+</section>
+
+<section id="que-hacemos" class="reveal">
+  <h2>Por qué elegir VITALICA</h2>
+  <!-- Esta sección es confianza humana.
+     No agregar imágenes grandes acá.
+     Mantener simple. -->
+
+  <div class="grid">
+    <div class="card"><h3>Calidad seleccionada</h3><p>Trabajamos con productos elegidos bajo estándares de calidad y respaldo.</p></div>
+    <div class="card"><h3>Stock permanente</h3><p>Garantizamos continuidad operativa para nuestros clientes.</p></div>
+    <div class="card"><h3>Atención directa</h3><p>Asesoramiento real, comercial y deportivo.</p></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Cómo trabajamos</h2>
+  <div class="process">
+    <!-- OPCIONAL:
+     Iconos lineales simples por paso
+     (contacto, asesoramiento, propuesta, entrega) -->
+
+    <div class="step"><h3>Contacto</h3><p>Escuchamos la necesidad del cliente.</p></div>
+    <div class="step"><h3>Asesoramiento</h3><p>Recomendamos la mejor opción.</p></div>
+    <div class="step"><h3>Propuesta</h3><p>Enviamos catálogo y condiciones.</p></div>
+    <div class="step"><h3>Entrega</h3><p>Despacho rápido y seguro.</p></div>
+  </div>
+</section>
+
+<section id="productos" class="reveal">
+
+  <h2>Nuestros productos</h2>
+
+  <p>
+    Distribuimos productos <strong>OLIMP Sport Nutrition</strong> seleccionados para rendimiento,
+    recuperación y bienestar, tanto para atletas como para gimnasios y comercios.
+  </p>
+
+  <div class="grid">
+
+    <!-- PROTEÍNAS -->
+    <div class="card product-card">
+      <span class="product-tag">OLIMP</span>
+
+      <h3>Proteínas</h3>
+      <p>
+        Whey, Isolate y proteínas vegetales orientadas a ganancia muscular
+        y recuperación.
+      </p>
+
+      <!-- BOTÓN DETALLE -->
+<button class="product-plus" data-product="proteinas">+</button>
+
+    </div>
+
+    <!-- CREATINAS -->
+    <div class="card product-card">
+      <span class="product-tag">OLIMP</span>
+
+      <h3>Creatinas</h3>
+      <p>
+        Creatina monohidratada y micronizada para fuerza,
+        potencia y rendimiento.
+      </p>
+
+      <!-- BOTÓN DETALLE -->
+<button class="product-plus" data-product="creatinas">+</button>
+
+    </div>
+
+    <!-- PRE ENTRENOS -->
+    <div class="card product-card">
+      <span class="product-tag">OLIMP</span>
+
+      <h3>Pre entrenos</h3>
+      <p>
+        Fórmulas energéticas para enfoque,
+        resistencia y entrenamientos intensos.
+      </p>
+
+      <!-- BOTÓN DETALLE -->
+<button class="product-plus" data-product="pre">+</button>
+
+    </div>
+
+    <!-- VITAMINAS -->
+    <div class="card product-card">
+      <span class="product-tag">OLIMP</span>
+
+      <h3>Vitaminas & Salud</h3>
+      <p>
+        Soporte nutricional diario para salud,
+        recuperación y bienestar general.
+      </p>
+
+      <!-- BOTÓN DETALLE -->
+     <button class="product-plus" data-product="vitaminas">+</button>
+
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<section id="impacto" class="reveal">
+  <h2>Nuestro impacto</h2>
+  <div class="stats">
+    <div><div class="stat-number" data-target="120">0</div><p>Clientes activos</p></div>
+    <div><div class="stat-number" data-target="45">0</div><p>Gimnasios aliados</p></div>
+    <div><div class="stat-number" data-target="300">0</div><p>Productos / mes</p></div>
+  </div>
+</section>
+<section class="reveal brand-feature">
+
+
+  <div class="brand-feature-box">
+    <div class="brand-logo">
+      <img src="assets/logos/OLIMP LOGO COLOR.png" alt="OLIMP Sport Nutrition">
+    </div>
+
+    <div class="brand-info">
+      <h3>OLIMP SPORT NUTRITION</h3>
+      <p>
+        Marca internacional líder en nutrición deportiva, con respaldo de laboratorio europeo
+        y estándares de calidad certificados.
+      </p>
+
+      <span class="brand-badge">Distribuidor oficial en Paraguay</span>
+    </div>
+  </div>
+</section>
+<section id="contacto" class="reveal">
+  <!-- OPCIONAL:
+     Fondo con degradado o imagen muy sutil
+     (no distraer del botón) -->
+
+  <h2>Solicitá el catálogo OLIMP</h2>
+  <p>
+  Contactanos para recibir el catálogo oficial OLIMP, lista de precios y condiciones comerciales para gimnasios y comercios.
+  </p>
+  <p><strong>Horario de atención:</strong> Lunes a viernes – 08:00 a 17:15 hs.</p>
+  <p><strong>Cobertura:</strong> Distribución a nivel nacional</p>
+  <div class="hero-buttons">
+    <a href="https://wa.me/595999999999?text=Hola%2C%20quiero%20solicitar%20el%20cat%C3%A1logo%20de%20VITALICA%20y%20conocer%20las%20condiciones%20comerciales." class="btn btn-primary">
+      Hablar con un asesor comercial
+    </a>
+  </div>
+</section>
+
+<section id="faq" class="reveal">
+  <h2>Preguntas frecuentes</h2>
+  <div class="grid">
+    <div class="card"><h3>¿Venden al por mayor?</h3><p>Sí, contamos con planes mayoristas para gimnasios y comercios.</p></div>
+    <div class="card"><h3>¿Cómo solicito precios?</h3><p>Podés solicitar nuestro catálogo y lista de precios vía WhatsApp.</p></div>
+    <div class="card"><h3>¿Hacen envíos?</h3><p>Realizamos envíos a todo el país mediante operadores logísticos.</p></div>
+    <div class="card"><h3>¿Trabajan con marcas reconocidas?</h3><p>Seleccionamos marcas bajo criterios de calidad y respaldo comercial.</p></div>
+  </div>
+</section>
+
+<footer>
+  <img src="VITALICA LOGO.png" alt="VITALICA" style="height:40px;margin-bottom:10px" />
+  <p>Distribución de suplementos deportivos</p>
+  <p>Contacto comercial vía WhatsApp</p>
+  <p>© 2026 VITALICA – Todos los derechos reservados</p>
+</footer>
+
+<a href="https://wa.me/595999999999?text=Hola%2C%20quiero%20solicitar%20el%20cat%C3%A1logo%20de%20VITALICA%20y%20conocer%20las%20condiciones%20comerciales." class="whatsapp-float">
+  <img src="WhatsApp.png" alt="WhatsApp">
+</a>
+<!-- MODAL CATÁLOGO -->
+<div class="modal" id="modalCatalogo">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeModals()">×</div>
+    <h3>Catálogo VITALICA</h3>
+    <p>Descargá el catálogo oficial de OLIMP Sport Nutrition.</p>
+
+    <a href="CATALOGO_VITALICA.pdf" class="btn btn-primary" style="margin-top:10px">
+      Descargar catálogo
+    </a>
+
+    <p style="margin-top:16px;font-size:.9rem">
+      ¿Preferís atención directa?
+    </p>
+
+    <a href="https://wa.me/595999999999" class="btn btn-secondary">
+      Hablar por WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- MODAL CONTACTO -->
+<div class="modal" id="modalContacto">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeModals()">×</div>
+    <h3>Contacto comercial</h3>
+
+    <input placeholder="Nombre y apellido">
+    <input placeholder="Empresa">
+    <input placeholder="Email">
+    <select>
+      <option>Tipo de cliente</option>
+      <option>Gimnasio</option>
+      <option>Comercio</option>
+      <option>Cliente final</option>
+    </select>
+
+    <a href="https://wa.me/595999999999" class="btn btn-primary">
+      Enviar consulta
+    </a>
+  </div>
+</div>
+<script>
+/* ================= GENERAL ================= */
+
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  if (loader) loader.classList.add('hidden');
+});
+
+/* NAV SCROLL */
+const nav = document.querySelector('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+}
+
+/* REVEAL */
+const reveals = document.querySelectorAll('.reveal');
+function revealOnScroll(){
+  reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight - 100){
+      el.classList.add('active');
+    }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+
+/* CONTADORES */
+const counters = document.querySelectorAll('.stat-number');
+let started = false;
+
+function runCounters(){
+  counters.forEach(counter=>{
+    const target = +counter.dataset.target;
+    let current = 0;
+    const increment = target / 60;
+    const update = () => {
+      current += increment;
+      if(current < target){
+        counter.textContent = Math.floor(current);
+        requestAnimationFrame(update);
+      } else {
+        counter.textContent = target;
+      }
+    };
+    update();
+  });
+}
+
+window.addEventListener('scroll',()=>{
+  const impact = document.getElementById('impacto');
+  if(impact && !started && impact.getBoundingClientRect().top < window.innerHeight){
+    runCounters();
+    started = true;
+  }
+});
+
+/* MODALES */
+function openCatalogo(){
+  document.getElementById('modalCatalogo')?.classList.add('active');
+}
+function openContacto(){
+  document.getElementById('modalContacto')?.classList.add('active');
+}
+function closeModals(){
+  document.querySelectorAll('.modal').forEach(m=>m.classList.remove('active'));
+}
+
+/* ================= HERO SLIDER (ÚNICO Y FINAL) ================= */
+
+const hero = document.getElementById('inicio');
+const heroTitle = document.getElementById('hero-title');
+const heroText = document.getElementById('hero-text');
+const heroSlides = document.querySelectorAll('.hero-slides div');
+const nextBtn = document.querySelector('.hero-next');
+const prevBtn = document.querySelector('.hero-prev');
+
+let heroIndex = 0;
+
+function showHeroSlide(index){
+  if (!heroSlides[index]) return;
+
+  const slide = heroSlides[index];
+
+  hero.style.backgroundImage = `
+    linear-gradient(rgba(11,13,18,.88),rgba(11,13,18,.95)),
+    url('${slide.dataset.bg}')
+  `;
+  heroTitle.innerHTML = slide.dataset.title;
+  heroText.textContent = slide.dataset.text;
+}
+
+/* Inicial */
+if (heroSlides.length) {
+  showHeroSlide(heroIndex);
+}
+
+/* Flechas */
+nextBtn?.addEventListener('click',()=>{
+  heroIndex = (heroIndex + 1) % heroSlides.length;
+  showHeroSlide(heroIndex);
+});
+
+prevBtn?.addEventListener('click',()=>{
+  heroIndex = (heroIndex - 1 + heroSlides.length) % heroSlides.length;
+  showHeroSlide(heroIndex);
+});
+
+
+const productData = {
+  proteinas: {
+    title: "Proteínas OLIMP",
+    items: [
+      "Whey Protein Complex – proteína para ganancia muscular",
+      "Pure Whey Isolate – absorción rápida",
+      "Vegan Protein – proteína vegetal"
+    ]
+  },
+  creatinas: {
+    title: "Creatinas OLIMP",
+    items: [
+      "Creatine Monohydrate",
+      "Creatine Mega Caps",
+      "Creatine Xplode"
+    ]
+  },
+  pre: {
+    title: "Pre entrenos OLIMP",
+    items: [
+      "Redweiler – energía y enfoque",
+      "Blackweiler – alta intensidad",
+      "Knockout – resistencia prolongada"
+    ]
+  },
+  vitaminas: {
+    title: "Vitaminas & Salud OLIMP",
+    items: [
+      "Vita-Min Multiple Sport",
+      "Gold Omega 3",
+      "Chela-Min Sport Formula"
+    ]
+  }
+};
+
+function openProductModal(type){
+  const modal = document.getElementById('productModal');
+  const title = document.getElementById('modal-title');
+  const content = document.getElementById('modal-content');
+
+  title.textContent = productData[type].title;
+  content.innerHTML = "";
+
+  productData[type].items.forEach(item=>{
+    const li = document.createElement("li");
+    li.textContent = item;
+    li.style.marginBottom = "10px";
+    content.appendChild(li);
+  });
+
+  modal.classList.add('active');
+}
+
+function closeProductModal(){
+  document.getElementById('productModal').classList.remove('active');
+}
+
+document.querySelectorAll('.product-plus').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const type = btn.dataset.product;
+    openProductModal(type);
+  });
+});
+
+
+
+</script>
+
+
+
+<div class="modal" id="productModal">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeProductModal()">×</div>
+
+    <h3 id="modal-title">Productos</h3>
+    <ul id="modal-content" style="text-align:left;margin-top:20px"></ul>
+  </div>
+</div>
+
+
+</body>
+</html>
