@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Vitalica | Sitio en construcción</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- FAVICON -->
+<link rel="icon" type="image/png" href="assets/logo-vitalica.png">
+  <style>
+    :root {
+      --primary: #ff8a1f; /* naranja Vitalica */
+      --dark: #0b0d12;
+      --gray: #6b7280;
+      --bg: #f7f7f7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: radial-gradient(circle at top, #ffffff, var(--bg));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--dark);
+    }
+
+    .card {
+      background: white;
+      padding: 55px 45px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 480px;
+      width: 90%;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+      animation: fadeIn 0.9s ease;
+    }
+
+    .logo img {
+      max-width: 240px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin: 15px 0 12px;
+      font-weight: 600;
+    }
+
+    p {
+      color: var(--gray);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 35px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, var(--primary), #ff6f00);
+      color: white;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      box-shadow: 0 10px 22px rgba(255,138,31,0.45);
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+
+    <!-- LOGO REAL -->
+    <div class="logo">
+      <img src="assets/logo-vitalica.png" alt="Vitalica">
+    </div>
+
+    <h2>Sitio web en construcción</h2>
+
+    <p>
+      Estamos trabajando para ofrecerte una nueva experiencia digital,
+      alineada a nuestra visión y compromiso.
+    </p>
+
+    <div class="badge">Muy pronto</div>
+
+    <footer>
+      © 2026 Vitalica. Todos los derechos reservados.
+    </footer>
+  </div>
+</body>
+</html>
