@@ -81,6 +81,12 @@ nav a:hover {
   transition: opacity 0.2s ease;
 }
 
+nav img {
+  height: 22px;
+  width: auto;
+  max-height: 22px;
+}
+
 .nav-logo:hover img {
   opacity: 1;
 }
