@@ -47,19 +47,18 @@ nav {
   background: #ffffff;
   border-bottom: 1px solid #ededed;
   display: flex;
-  flex-direction: column;
   align-items: center;
   z-index: 1000;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 12px 30px rgba(18, 18, 18, 0.08);
 }
 
 .nav-inner {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 18px 24px;
+  padding: 20px 24px;
   display: grid;
-  grid-template-columns: 200px 1fr 200px;
+  grid-template-columns: 220px 1fr 140px;
   align-items: center;
   gap: 24px;
 }
@@ -68,54 +67,58 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 22px;
+  gap: 26px;
+  padding: 10px 24px;
+  background: #f7f7f7;
+  border-radius: 999px;
 }
 
 .nav-spacer {
   justify-self: end;
 }
 
-
-   PROMO BAR
 nav a {
-  font-size: 12px;
+  font-size: 13px;
   text-decoration: none;
   color: var(--black);
   font-weight: 600;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  padding: 6px 0;
+  letter-spacing: 0.08em;
+  padding: 6px 4px;
   border-bottom: 1px solid transparent;
 }
 
 nav a:hover {
   color: var(--accent);
   border-color: rgba(255, 107, 0, 0.4);
+  transform: translateY(-1px);
 }
 
 .nav-logo {
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 64px;
 }
 
 .nav-logo img {
-  height: 34px;
+  height: 42px;
   width: auto;
   opacity: 0.95;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, filter 0.2s ease;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
 }
 
 nav img {
-  height: 34px;
+  height: 42px;
   width: auto;
-  max-height: 34px;
+  max-height: 42px;
 }
 
 .nav-logo:hover img {
   opacity: 1;
-  transform: translateY(-1px);
+  transform: translateY(-1px) scale(1.01);
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.18));
 }
 
 /* =========================
@@ -558,6 +561,7 @@ footer {
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
+    padding: 10px 16px;
   }
 
   .hero {
@@ -584,15 +588,6 @@ footer {
 
   .hero {
     padding-top: 170px;
-  }
-
-  .promo-inner {
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .promo-bar {
-    height: 44px;
   }
 
   .hero-layout {
