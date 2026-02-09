@@ -36,10 +36,6 @@ img {
   max-width: 100%;
 }
 
-section {
-  width: 100%;
-}
-
 /* =========================
    NAV
 ========================= */
@@ -235,199 +231,6 @@ nav img {
 }
 
 /* =========================
-   BRAND STRIP
-========================= */
-.brand-strip {
-  padding: 40px 24px;
-  background: #ffffff;
-}
-
-.brand-strip-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 28px;
-  text-align: center;
-}
-
-.brand-mark {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.brand-mark img {
-  height: 46px;
-  width: auto;
-}
-
-.brand-mark p {
-  font-size: 13px;
-  color: var(--gray);
-}
-
-.brand-divider {
-  width: 1px;
-  height: 60px;
-  background: var(--light-gray);
-}
-
-/* =========================
-   CATALOGO
-========================= */
-.catalogo {
-  padding: 60px 24px 40px;
-  background: #ffffff;
-}
-
-.catalogo-header {
-  max-width: 900px;
-  margin: 0 auto 36px;
-  text-align: center;
-}
-
-.catalogo-header h2 {
-  font-size: clamp(28px, 4vw, 44px);
-  margin-bottom: 12px;
-}
-
-.catalogo-header p {
-  color: var(--gray);
-}
-
-.catalogo-eyebrow {
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.catalogo-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.catalogo-card {
-  position: relative;
-  min-height: 220px;
-  border-radius: 26px;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  padding: 24px;
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-}
-
-.catalogo-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(160deg, rgba(0, 86, 198, 0.8), rgba(0, 0, 0, 0.35));
-  opacity: 0.9;
-  mix-blend-mode: multiply;
-}
-
-.catalogo-content {
-  position: relative;
-  z-index: 1;
-}
-
-.catalogo-content h3 {
-  font-size: 22px;
-  margin-bottom: 6px;
-}
-
-.catalogo-content span {
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.card-proteinas {
-  background-image: url("https://images.unsplash.com/photo-1599058917212-d750089bc07f?auto=format&fit=crop&w=900&q=80");
-}
-
-.card-carbohidratos {
-  background-image: url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80");
-}
-
-.card-creatina {
-  background-image: url("https://images.unsplash.com/photo-1517832207067-4db24a2ae47c?auto=format&fit=crop&w=900&q=80");
-}
-
-.card-preworkouts {
-  background-image: url("https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=900&q=80");
-}
-
-.card-amino {
-  background-image: url("https://images.unsplash.com/photo-1526401485004-2aa7f3f2c98f?auto=format&fit=crop&w=900&q=80");
-}
-
-.card-salud {
-  background-image: url("https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80");
-}
-
-/* =========================
-   SCIENCE
-========================= */
-.science {
-  padding: 60px 24px 80px;
-  background: #f7f8fb;
-}
-
-.science-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 32px;
-  align-items: start;
-}
-
-.science-copy h2 {
-  font-size: clamp(26px, 3.6vw, 40px);
-  margin-bottom: 12px;
-}
-
-.science-copy p {
-  color: var(--gray);
-}
-
-.science-grid {
-  display: grid;
-  gap: 18px;
-}
-
-.science-card {
-  background: #fff;
-  border-radius: 18px;
-  padding: 20px;
-  border: 1px solid #ededed;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
-}
-
-.science-card h4 {
-  margin-bottom: 8px;
-  font-size: 16px;
-}
-
-.science-card p {
-  color: var(--gray);
-  font-size: 14px;
-}
-
-/* =========================
-=======
    BUTTONS
 ========================= */
 .btn {
@@ -774,22 +577,6 @@ footer {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .catalogo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .science-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .brand-strip-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .brand-divider {
-    display: none;
-  }
 }
 
 @media (max-width: 720px) {
@@ -813,14 +600,6 @@ footer {
   .grid {
     grid-template-columns: 1fr;
     padding: 40px 20px 60px;
-  }
-
-  .catalogo-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .catalogo-card {
-    min-height: 200px;
   }
 
   .tile {
