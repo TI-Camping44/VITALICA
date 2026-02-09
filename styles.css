@@ -290,21 +290,17 @@ nav img {
 }
 
 .catalogo-header h2 {
-  font-size: clamp(28px, 4vw, 44px);
-  margin-bottom: 12px;
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 0;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .catalogo-header p {
   color: var(--gray);
-}
-
-.catalogo-eyebrow {
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 10px;
-  font-weight: 600;
 }
 
 .catalogo-grid {
@@ -354,27 +350,45 @@ nav img {
 }
 
 .card-proteinas {
-  background-image: url("https://images.unsplash.com/photo-1599058917212-d750089bc07f?auto=format&fit=crop&w=900&q=80");
+  background-image: url("whey.png");
+  background-color: #111111;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .card-carbohidratos {
-  background-image: url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80");
+  background-image: url("iso.png");
+  background-color: #0f1e17;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .card-creatina {
-  background-image: url("https://images.unsplash.com/photo-1517832207067-4db24a2ae47c?auto=format&fit=crop&w=900&q=80");
+  background-image: url("creatine.png");
+  background-color: #0d0d0d;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .card-preworkouts {
-  background-image: url("https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=900&q=80");
+  background-image: url("red.png");
+  background-color: #0b0b0b;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .card-amino {
-  background-image: url("https://images.unsplash.com/photo-1526401485004-2aa7f3f2c98f?auto=format&fit=crop&w=900&q=80");
+  background-image: url("beta.png");
+  background-color: #0b0b0b;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .card-salud {
-  background-image: url("https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80");
+  background-image: url("vitamin.png");
+  background-color: #151515;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* =========================
