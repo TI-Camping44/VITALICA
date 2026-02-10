@@ -376,45 +376,33 @@ nav img {
 }
 
 .card-proteinas {
-  background-image: url("whey.png");
+  background-image: url("assets/img/1a.jpg");
   background-color: #111111;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .card-carbohidratos {
-  background-image: url("iso.png");
+  background-image: url("assets/img/2a.jpg");
   background-color: #0f1e17;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .card-creatina {
-  background-image: url("creatine.png");
+  background-image: url("assets/img/3a.jpg");
   background-color: #0d0d0d;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .card-preworkouts {
-  background-image: url("red.png");
+  background-image: url("assets/img/4a.jpg");
   background-color: #0b0b0b;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .card-amino {
-  background-image: url("beta.png");
+  background-image: url("assets/img/5a.jpg");
   background-color: #0b0b0b;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .card-salud {
-  background-image: url("vitamin.png");
+  background-image: url("assets/img/6a.jpg");
   background-color: #151515;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 /* =========================
