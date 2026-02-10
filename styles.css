@@ -46,41 +46,10 @@ section {
 }
 
 /* =========================
-   PROMO BAR
+   PROMO BAR (REMOVED)
 ========================= */
 .promo-bar {
-  background: linear-gradient(120deg, #121212, #2b2b2b);
-  color: #fff;
-  font-size: 13px;
-  position: sticky;
-  top: 0;
-  z-index: 1100;
-}
-
-.promo-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  text-align: center;
-}
-
-.promo-cta {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  padding-bottom: 2px;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.promo-cta:hover {
-  color: var(--accent);
-  border-color: rgba(255, 107, 0, 0.7);
+  display: none;
 }
 
 /* =========================
