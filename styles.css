@@ -19,7 +19,7 @@
 
 * {
   margin: 0;
-  padding: 24px;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -86,7 +86,7 @@ nav {
   align-items: center;
   justify-content: flex-end;
   gap: 20px;
-  padding: 24px;
+  padding: 0;
   background: transparent;
   border-radius: 0;
 }
@@ -155,7 +155,7 @@ nav img {
   background-image:
     linear-gradient(180deg, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0.45) 45%, rgba(10, 10, 10, 0.75) 100%),
     url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=80");
-  background-size: contain;
+  background-size: cover;
   background-position: center 30%;
 }
 
@@ -179,7 +179,7 @@ nav img {
   position: absolute;
   inset: 0;
   background-image: url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=80");
-  background-size: contain;
+  background-size: cover;
   background-position: center 30%;
   filter: grayscale(0.15) brightness(1.05);
   transform: scale(1.02);
@@ -333,13 +333,13 @@ nav img {
 
 .catalogo-card {
   position: relative;
-  min-height: 220px;
+  min-height: 460px;
   border-radius: 26px;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-  padding: 24px;
-  background-size: contain;
+  padding: 0;
+  background-size: cover;
   background-position: center;
   color: #fff;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
@@ -352,16 +352,11 @@ nav img {
 }
 
 .catalogo-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(160deg, rgba(0, 86, 198, 0.75), rgba(0, 0, 0, 0.35));
-  opacity: 0.9;
-  mix-blend-mode: multiply;
+  display: none;
 }
 
 .catalogo-content {
-  position: relative;
-  z-index: 1;
+  display: none;
 }
 
 .catalogo-content h3 {
@@ -376,44 +371,44 @@ nav img {
 }
 
 .card-proteinas {
-  background-image: url("whey.png");
+  background-image: url("assets/catalogo-cards/proteinas.svg");
   background-color: #111111;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 .card-carbohidratos {
-  background-image: url("iso.png");
+  background-image: url("assets/catalogo-cards/carbohidratos.svg");
   background-color: #0f1e17;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 .card-creatina {
-  background-image: url("creatine.png");
+  background-image: url("assets/catalogo-cards/creatina.svg");
   background-color: #0d0d0d;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 .card-preworkouts {
-  background-image: url("red.png");
+  background-image: url("assets/catalogo-cards/preworkouts.svg");
   background-color: #0b0b0b;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 .card-amino {
-  background-image: url("beta.png");
+  background-image: url("assets/catalogo-cards/aminoacido.svg");
   background-color: #0b0b0b;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 .card-salud {
-  background-image: url("vitamin.png");
+  background-image: url("assets/catalogo-cards/salud.svg");
   background-color: #151515;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -585,7 +580,7 @@ nav img {
   z-index: 2000;
   justify-content: center;
   align-items: center;
-  padding: 24px;
+  padding: 0;
 }
 
 .modal-content {
@@ -877,6 +872,6 @@ footer {
   }
 
   .tile {
-    padding: 24px;
+    padding: 0;
   }
 }
