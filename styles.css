@@ -60,13 +60,12 @@ nav {
   top: 0;
   width: 100%;
   height: auto;
-  background: rgba(255, 255, 255, 0.92);
-  border-bottom: 1px solid var(--line);
+  background: transparent;
+  border-bottom: none;
   display: flex;
   align-items: center;
   z-index: 1000;
-  box-shadow: 0 12px 30px rgba(18, 18, 18, 0.08);
-  backdrop-filter: blur(10px);
+  box-shadow: none;
 }
 
 .nav-inner {
@@ -74,9 +73,8 @@ nav {
   max-width: 1200px;
   margin: 0 auto;
   padding: 18px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 24px;
 }
@@ -84,7 +82,7 @@ nav {
 .nav-links {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 20px;
   padding: 0;
   background: transparent;
@@ -92,7 +90,7 @@ nav {
 }
 
 .nav-spacer {
-  display: none;
+  display: block;
 }
 
 nav a {
@@ -115,20 +113,21 @@ nav a:hover {
 .nav-logo {
   display: flex;
   align-items: center;
-  height: 64px;
+  height: 84px;
+  justify-self: start;
 }
 
 .nav-logo img {
-  height: 32px;
+  height: 56px;
   width: auto;
   opacity: 1;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 nav img {
-  height: 32px;
+  height: 56px;
   width: auto;
-  max-height: 32px;
+  max-height: 56px;
 }
 
 .nav-logo:hover img {
@@ -820,9 +819,14 @@ footer {
   }
 
   .nav-inner {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 12px 16px;
+  }
+
+  .nav-logo {
+    justify-self: center;
   }
 
   .nav-links {
