@@ -8,7 +8,7 @@
 <!-- INTER -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=9">
+<link rel="stylesheet" href="styles.css?v=11">
 
 </head>
 
@@ -544,6 +544,16 @@ window.addEventListener("load", () => {
     loader.classList.add("hide");
   }, 600); // delay corto estilo Apple
 });
+
+const nav = document.querySelector("nav");
+
+function actualizarNavbar() {
+  if (!nav) return;
+  nav.classList.toggle("nav-scrolled", window.scrollY > 8);
+}
+
+window.addEventListener("scroll", actualizarNavbar, { passive: true });
+window.addEventListener("load", actualizarNavbar);
 
 </script>
 <!-- WHATSAPP FLOAT -->
