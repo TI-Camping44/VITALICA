@@ -214,8 +214,8 @@ nav img {
   font-size: clamp(14px, 2vw, 18px);
   color: #fff;
   margin: 12px 0 32px;
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
+  text-transform: none;
+  letter-spacing: 0.03em;
   font-weight: 600;
   text-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
 }
