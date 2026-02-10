@@ -341,6 +341,7 @@ nav img {
   justify-content: center;
   padding: 24px;
   color: #fff;
+  background-image: none !important;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   isolation: isolate;
@@ -402,27 +403,36 @@ nav img {
 }
 
 .card-proteinas {
-  background: linear-gradient(135deg, #2a74ff 0%, #5a1bd4 100%);
+  background-color: #2f48d4;
 }
 
 .card-carbohidratos {
-  background: linear-gradient(135deg, #00a46c 0%, #0096a8 100%);
+  background-color: #0a8e86;
 }
 
 .card-creatina {
-  background: linear-gradient(135deg, #243b6e 0%, #10192f 100%);
+  background-color: #1e2f5a;
 }
 
 .card-preworkouts {
-  background: linear-gradient(135deg, #e84393 0%, #8a2be2 100%);
+  background-color: #a43ab6;
 }
 
 .card-amino {
-  background: linear-gradient(135deg, #f2994a 0%, #f2c94c 100%);
+  background-color: #cd8b37;
 }
 
 .card-salud {
-  background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+  background-color: #2e9f74;
+}
+
+.card-proteinas,
+.card-carbohidratos,
+.card-creatina,
+.card-preworkouts,
+.card-amino,
+.card-salud {
+  background-image: none !important;
 }
 
 /* =========================
