@@ -60,12 +60,13 @@ nav {
   top: 0;
   width: 100%;
   height: auto;
-  background: transparent;
-  border-bottom: none;
+  background: transparent !important;
+  border-bottom: none !important;
   display: flex;
   align-items: center;
   z-index: 1000;
-  box-shadow: none;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
 }
 
 .nav-inner {
@@ -113,21 +114,21 @@ nav a:hover {
 .nav-logo {
   display: flex;
   align-items: center;
-  height: 84px;
+  height: 96px;
   justify-self: start;
 }
 
 .nav-logo img {
-  height: 56px;
+  height: 72px;
   width: auto;
   opacity: 1;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 nav img {
-  height: 56px;
+  height: 72px;
   width: auto;
-  max-height: 56px;
+  max-height: 72px;
 }
 
 .nav-logo:hover img {
@@ -833,6 +834,16 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px 16px;
+  }
+
+
+  .nav-logo img {
+    height: 56px;
+  }
+
+  nav img {
+    height: 56px;
+    max-height: 56px;
   }
 
   .hero {
