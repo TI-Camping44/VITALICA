@@ -19,7 +19,7 @@
 
 * {
   margin: 0;
-  padding: 0;
+  padding: 24px;
   box-sizing: border-box;
 }
 
@@ -46,41 +46,10 @@ section {
 }
 
 /* =========================
-   PROMO BAR
+   PROMO BAR (REMOVED)
 ========================= */
 .promo-bar {
-  background: linear-gradient(120deg, #121212, #2b2b2b);
-  color: #fff;
-  font-size: 13px;
-  position: sticky;
-  top: 0;
-  z-index: 1100;
-}
-
-.promo-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  text-align: center;
-}
-
-.promo-cta {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  padding-bottom: 2px;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.promo-cta:hover {
-  color: var(--accent);
-  border-color: rgba(255, 107, 0, 0.7);
+  display: none;
 }
 
 /* =========================
@@ -117,7 +86,7 @@ nav {
   align-items: center;
   justify-content: flex-end;
   gap: 20px;
-  padding: 0;
+  padding: 24px;
   background: transparent;
   border-radius: 0;
 }
@@ -407,42 +376,42 @@ nav img {
 }
 
 .card-proteinas {
-  background-image: url("whey.png");
+  background-image: url("assets/catalogo-cards/proteinas.svg");
   background-color: #111111;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .card-carbohidratos {
-  background-image: url("iso.png");
+  background-image: url("assets/catalogo-cards/carbohidratos.svg");
   background-color: #0f1e17;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .card-creatina {
-  background-image: url("creatine.png");
+  background-image: url("assets/catalogo-cards/creatina.svg");
   background-color: #0d0d0d;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .card-preworkouts {
-  background-image: url("red.png");
+  background-image: url("assets/catalogo-cards/preworkouts.svg");
   background-color: #0b0b0b;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .card-amino {
-  background-image: url("beta.png");
+  background-image: url("assets/catalogo-cards/aminoacido.svg");
   background-color: #0b0b0b;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .card-salud {
-  background-image: url("vitamin.png");
+  background-image: url("assets/catalogo-cards/salud.svg");
   background-color: #151515;
   background-size: contain;
   background-repeat: no-repeat;

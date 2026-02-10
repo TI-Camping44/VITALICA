@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 940" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1d1f24"/>
+      <stop offset="100%" stop-color="#50545f"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="940" fill="url(#bg)"/>
+  <ellipse cx="560" cy="220" rx="260" ry="180" fill="#0b0d12" opacity=".45"/>
+  <ellipse cx="180" cy="640" rx="300" ry="220" fill="#0b0d12" opacity=".35"/>
+
+  <polygon points="-40,140 180,20 300,230 40,360" fill="#1c7df5" opacity="0.72"/>
+  <polygon points="220,70 500,-20 650,230 340,340" fill="#2e8eff" opacity="0.72"/>
+  <polygon points="160,380 430,300 560,560 250,680" fill="#1d84ff" opacity="0.72"/>
+
+  <rect y="740" width="720" height="200" fill="url(#fade)"/>
+
+  <text x="360" y="860" text-anchor="middle" fill="#ffffff" font-size="54" font-family="Inter, Arial, sans-serif" font-weight="700" letter-spacing="1.2">CARBOHIDRATOS</text>
+  
+</svg>
