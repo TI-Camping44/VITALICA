@@ -60,13 +60,21 @@ nav {
   top: 0;
   width: 100%;
   height: auto;
-  background: transparent !important;
-  border-bottom: none !important;
+  background: transparent;
+  border-bottom: 1px solid transparent;
   display: flex;
   align-items: center;
   z-index: 1000;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, backdrop-filter 0.25s ease;
+}
+
+nav.nav-scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom-color: rgba(18, 18, 18, 0.08);
+  box-shadow: 0 8px 30px rgba(16, 16, 20, 0.1);
+  backdrop-filter: blur(8px);
 }
 
 .nav-inner {
@@ -109,10 +117,23 @@ nav .nav-links a:active {
   border-bottom: 1px solid transparent;
 }
 
+nav.nav-scrolled .nav-links a,
+nav.nav-scrolled .nav-links a:visited,
+nav.nav-scrolled .nav-links a:active {
+  color: #1a1a1a !important;
+  text-shadow: none;
+}
+
 nav .nav-links a:hover,
 nav .nav-links a:focus-visible {
   color: rgba(255, 255, 255, 0.85) !important;
   border-color: rgba(255, 255, 255, 0.55);
+}
+
+nav.nav-scrolled .nav-links a:hover,
+nav.nav-scrolled .nav-links a:focus-visible {
+  color: #000 !important;
+  border-color: rgba(0, 0, 0, 0.3);
 }
 
 .nav-logo {
