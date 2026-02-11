@@ -1111,16 +1111,4 @@ footer {
     border-radius: 18px;
   }
 
-  .modal-hero {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .modal-packshot-wrap {
-    max-width: 260px;
-  }
-
-  .modal-content h2 {
-    font-size: 24px;
-  }
 }
