@@ -288,10 +288,18 @@
   <div class="modal-content">
     <span class="close" onclick="cerrarModal()">&times;</span>
     <div class="modal-header">
-      <p class="brand">OLIMP Sport Nutrition</p>
-      <h2 id="modalTitulo"></h2>
-      <p id="modalBenefit" class="modal-benefit"></p>
-      <p id="modalShort" class="modal-short"></p>
+      <div class="modal-hero">
+        <div class="modal-packshot-wrap">
+          <p class="brand">OLIMP Sport Nutrition</p>
+          <img id="modalImagen" class="modal-packshot" src="whey.png" alt="Producto OLIMP">
+        </div>
+        <div class="modal-hero-copy">
+          <h2 id="modalTitulo"></h2>
+          <p id="modalBenefit" class="modal-benefit"></p>
+          <p id="modalShort" class="modal-short"></p>
+          <div id="modalStats" class="modal-stats"></div>
+        </div>
+      </div>
       <a id="modalCta" href="catalogo-vitalica-ligera.pdf.pdf" class="btn btn-primary" download>Ver catálogo completo</a>
     </div>
     <div id="modalAccordion" class="modal-accordion"></div>
@@ -487,11 +495,70 @@ const fichas = {
   }
 };
 
+const visualProducto = {
+  whey: {
+    imagen: "whey.png",
+    stats: ["Proteínas 26 g", "Carbohidratos 3,9 g", "Grasas 1,5 g"]
+  },
+  wheyChoco: {
+    imagen: "OLIMP PRODUCTOS/WheyProteinComplex-ZIP-2270g-universal-0014-ol-5-0001-66a2447fa4762.png",
+    stats: ["Proteínas 26 g", "Carbohidratos 3,9 g", "Grasas 1,5 g"]
+  },
+  creatina: {
+    imagen: "creatine.png",
+    stats: ["Creatina 3,4 g", "Sin azúcar", "200 mesh"]
+  },
+  iso: {
+    imagen: "iso.png",
+    stats: ["Energía 60 kcal", "Carbohidratos 18 g", "Sal 0,29 g"]
+  },
+  amino: {
+    imagen: "beta.png",
+    stats: ["Beta alanina 1600 mg", "L-histidina 80 mg", "Vitamina B6 0,98 mg"]
+  },
+  redweiler: {
+    imagen: "red.png",
+    stats: ["Beta alanina 2200 mg", "Creatina 1845 mg", "Cafeína 200 mg"]
+  },
+  knockout: {
+    imagen: "OLIMP PRODUCTOS/Knockout-2-0-citrus-punch-305g-UK-amazon-01-png0000-66c2fbe8a26be.png",
+    stats: ["Beta alanina 2100 mg", "L-arginina 1100 mg", "Cafeína 200 mg"]
+  },
+  vitaminSport: {
+    imagen: "OLIMP PRODUCTOS/Vita-Min-Multiple-Sport-40-kartonik-PL-EN-0006-0001-66a9f462ddf4d.png",
+    stats: ["Vitamina C 290 mg", "Vitamina B6 18,8 mg", "Vitamina B12 23 µg"]
+  },
+  vitaminSport40: {
+    imagen: "OLIMP PRODUCTOS/Vita-Min-Multiple-Sport-40-kartonik-PL-EN-0006-0001-66a9f462ddf4d.png",
+    stats: ["Saw palmetto 100 mg", "Ashwagandha 50 mg", "Vitamina C 290 mg"]
+  },
+  goldOmega: {
+    imagen: "OLIMP PRODUCTOS/Gold-Omega-3-SportEdition-kartonik-120caps-EN-SE-FR-ES-IT-PL-0022-0001-66d6d15b6fb69.png",
+    stats: ["Omega-3 65%", "EPA 330 mg", "DHA 220 mg"]
+  },
+  arthroblock: {
+    imagen: "OLIMP PRODUCTOS/Arthroblock-Forte-OSN-kartonik-EN-PL-0006-ol-4-0001-67d949c0c9f20.png",
+    stats: ["Glucosamina 1000 mg", "Condroitina 200 mg", "Ácido hialurónico 50 mg"]
+  }
+};
+
 function abrirFicha(tipo){
   const data = fichas[tipo];
+  const visualData = visualProducto[tipo] || {};
   document.getElementById('modalTitulo').innerText = data.titulo;
   document.getElementById('modalBenefit').innerText = data.beneficio;
   document.getElementById('modalShort').innerText = data.corto;
+  const modalImagen = document.getElementById('modalImagen');
+  modalImagen.src = visualData.imagen || 'logo-vitalica.png';
+  modalImagen.alt = data.titulo;
+  const modalStats = document.getElementById('modalStats');
+  modalStats.innerHTML = '';
+  (visualData.stats || []).forEach((stat) => {
+    const chip = document.createElement('div');
+    chip.className = 'modal-stat-chip';
+    chip.innerText = stat;
+    modalStats.appendChild(chip);
+  });
   const accordion = document.getElementById('modalAccordion');
   accordion.innerHTML = '';
   Object.entries(data.secciones).forEach(([titulo, contenido], index) => {
