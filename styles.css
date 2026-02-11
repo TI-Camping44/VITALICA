@@ -693,10 +693,12 @@ nav.nav-scrolled .nav-toggle span {
   background: #fff;
   max-width: 720px;
   width: 100%;
+  max-height: 92vh;
   border-radius: 24px;
   padding: 32px;
   position: relative;
   box-shadow: var(--shadow-strong);
+  overflow-y: auto;
 }
 
 .modal-header {
@@ -709,7 +711,7 @@ nav.nav-scrolled .nav-toggle span {
 }
 
 .modal-content h2 {
-  font-size: clamp(40px, 5vw, 74px);
+  font-size: clamp(30px, 4.2vw, 56px);
   font-weight: 900;
   font-style: italic;
   line-height: 0.9;
@@ -730,7 +732,7 @@ nav.nav-scrolled .nav-toggle span {
 }
 
 .modal-benefit {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 800;
   line-height: 1.05;
 }
@@ -742,15 +744,15 @@ nav.nav-scrolled .nav-toggle span {
 
 .modal-catalog-layout {
   display: grid;
-  grid-template-columns: minmax(230px, 280px) minmax(0, 1fr);
-  gap: 24px;
-  margin-bottom: 20px;
+  grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
+  gap: 18px;
+  margin-bottom: 16px;
   align-items: start;
 }
 
 .modal-catalog-left {
   position: relative;
-  min-height: 300px;
+  min-height: 240px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -768,7 +770,7 @@ nav.nav-scrolled .nav-toggle span {
 .modal-packshot {
   position: relative;
   z-index: 1;
-  max-height: 330px;
+  max-height: 250px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.25));
@@ -786,7 +788,7 @@ nav.nav-scrolled .nav-toggle span {
   color: #fff;
   padding: 8px 10px 10px;
   clip-path: polygon(8% 0, 100% 0, 90% 86%, 24% 100%, 0 72%);
-  min-height: 84px;
+  min-height: 72px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -802,7 +804,7 @@ nav.nav-scrolled .nav-toggle span {
 
 .stat-value {
   margin: 2px 0 0;
-  font-size: 38px;
+  font-size: 30px;
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 0.95;
@@ -903,7 +905,7 @@ nav.nav-scrolled .nav-toggle span {
 .note {
   font-size: 12px;
   color: var(--gray);
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .close {
@@ -1031,6 +1033,28 @@ footer {
 
   .brand-divider {
     display: none;
+  }
+
+  .modal {
+    padding: 16px;
+  }
+
+  .modal-content {
+    max-width: 680px;
+    max-height: 94vh;
+    padding: 22px;
+  }
+
+  .modal-content h2 {
+    font-size: clamp(28px, 5vw, 44px);
+  }
+
+  .modal-benefit {
+    font-size: 18px;
+  }
+
+  .stat-value {
+    font-size: 24px;
   }
 }
 
@@ -1171,7 +1195,8 @@ footer {
   }
 
   .modal-content {
-    padding: 24px 20px;
+    max-height: 95vh;
+    padding: 20px 16px;
     border-radius: 18px;
   }
 
@@ -1181,11 +1206,11 @@ footer {
   }
 
   .modal-catalog-left {
-    min-height: 220px;
+    min-height: 180px;
   }
 
   .modal-packshot {
-    max-height: 240px;
+    max-height: 180px;
   }
 
   .modal-stats {
@@ -1193,15 +1218,15 @@ footer {
   }
 
   .stat-value {
-    font-size: 28px;
+    font-size: 20px;
   }
 
   .modal-content h2 {
-    font-size: clamp(32px, 13vw, 52px);
+    font-size: clamp(28px, 11vw, 40px);
   }
 
   .modal-benefit {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .highlight-title {
