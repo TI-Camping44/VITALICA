@@ -292,9 +292,9 @@ nav.nav-scrolled .nav-toggle span {
 }
 
 .hero-title-strong {
-  font-size: clamp(52px, 6.4vw, 86px) !important;
-  font-weight: 900 !important;
-  letter-spacing: -0.03em;
+  font-size: clamp(42px, 5.2vw, 64px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em;
 }
 
 .hero-subtitle {
@@ -1198,7 +1198,7 @@ footer {
   }
 
   .hero-title-strong {
-    font-size: clamp(42px, 12vw, 62px) !important;
+    font-size: clamp(36px, 10.5vw, 52px) !important;
   }
 
   .hero-subtitle {
