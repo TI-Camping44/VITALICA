@@ -24,8 +24,14 @@
     <a href="/" class="nav-logo">
       <img src="logo-vitalica.png" alt="Vitalica">
     </a>
-    <div class="nav-links">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
       <a href="#">OLIMP</a>
+      <a href="#productos">Productos</a>
       <a href="#">Proteínas</a>
       <a href="#">Creatina</a>
       <a href="#">Pre Workouts</a>
@@ -546,6 +552,36 @@ window.addEventListener("load", () => {
 });
 
 const nav = document.querySelector("nav");
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.getElementById("navLinks");
+
+function setMobileMenu(open) {
+  if (!navToggle || !navLinks) return;
+  navToggle.setAttribute("aria-expanded", String(open));
+  navLinks.classList.toggle("open", open);
+  document.body.classList.toggle("menu-open", open);
+}
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+    setMobileMenu(!isOpen);
+  });
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 860) {
+        setMobileMenu(false);
+      }
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 860) {
+      setMobileMenu(false);
+    }
+  });
+}
 
 function actualizarNavbar() {
   if (!nav) return;
