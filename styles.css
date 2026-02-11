@@ -762,19 +762,36 @@ nav.nav-scrolled .nav-toggle span {
   max-width: 520px;
 }
 
-.modal-stats {
+.modal-highlights {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
-.modal-stat-chip {
-  font-size: 12px;
-  font-weight: 600;
-  border: 1px solid rgba(18, 18, 18, 0.1);
-  border-radius: 999px;
-  padding: 6px 12px;
-  background: rgba(255, 255, 255, 0.9);
+.highlight-card {
+  border: 1px solid #d8d8d8;
+  background: #f3f3f3;
+}
+
+.highlight-title {
+  margin: 0;
+  display: inline-block;
+  background: #0f0f10;
+  color: #fff;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.highlight-text {
+  margin: 0;
+  padding: 10px 14px 12px;
+  color: #242424;
+  font-size: 14px;
+  line-height: 1.35;
 }
 
 .modal-accordion {
@@ -1109,6 +1126,14 @@ footer {
   .modal-content {
     padding: 24px 20px;
     border-radius: 18px;
+  }
+
+  .highlight-title {
+    font-size: 12px;
+  }
+
+  .highlight-text {
+    font-size: 13px;
   }
 
 }
