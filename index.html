@@ -302,7 +302,16 @@
       </div>
       <a id="modalCta" href="catalogo-vitalica-ligera.pdf.pdf" class="btn btn-primary" download>Ver catálogo completo</a>
     </div>
-    <div id="modalHighlights" class="modal-highlights"></div>
+    <section class="modal-catalog-layout">
+      <div class="modal-catalog-left">
+        <div class="modal-pack-bg"></div>
+        <img id="modalImagen" class="modal-packshot" src="whey.png" alt="Producto OLIMP">
+      </div>
+      <div class="modal-catalog-right">
+        <div id="modalStats" class="modal-stats"></div>
+        <div id="modalHighlights" class="modal-highlights"></div>
+      </div>
+    </section>
     <div id="modalAccordion" class="modal-accordion"></div>
     <p class="note">Información resumida. Consulte la ficha técnica oficial para valores completos.</p>
   </div>
@@ -533,6 +542,128 @@ const fichas = {
 };
 
 
+const visualProducto = {
+  whey: {
+    imagen: "whey.png",
+    stats: [
+      { label: "Proteínas", valor: "26 g" },
+      { label: "Carbohidratos", valor: "3,9 g" },
+      { label: "Grasas", valor: "1,5 g" }
+    ]
+  },
+  wheyChoco: {
+    imagen: "OLIMP PRODUCTOS/WheyProteinComplex-ZIP-2270g-universal-0014-ol-5-0001-66a2447fa4762.png",
+    stats: [
+      { label: "Proteínas", valor: "26 g" },
+      { label: "Carbohidratos", valor: "3,9 g" },
+      { label: "Grasas", valor: "1,5 g" }
+    ]
+  },
+  iso: {
+    imagen: "iso.png",
+    stats: [
+      { label: "Energía", valor: "60 kcal" },
+      { label: "Carbohidratos", valor: "18 g" },
+      { label: "Sal", valor: "0,29 g" }
+    ]
+  },
+  redweiler: {
+    imagen: "red.png",
+    stats: [
+      { label: "Beta alanina", valor: "2200 mg" },
+      { label: "Creatina", valor: "1845 mg" },
+      { label: "Cafeína", valor: "200 mg" }
+    ]
+  },
+  knockout: {
+    imagen: "OLIMP PRODUCTOS/Knockout-2-0-citrus-punch-305g-UK-amazon-01-png0000-66c2fbe8a26be.png",
+    stats: [
+      { label: "Beta alanina", valor: "2100 mg" },
+      { label: "L-arginina", valor: "1100 mg" },
+      { label: "Cafeína", valor: "200 mg" }
+    ]
+  },
+  creatina: {
+    imagen: "creatine.png",
+    stats: [
+      { label: "Creatina", valor: "3,4 g" },
+      { label: "Malla", valor: "200 mesh" },
+      { label: "Calorías", valor: "0 kcal" }
+    ]
+  },
+  amino: {
+    imagen: "beta.png",
+    stats: [
+      { label: "Beta alanina", valor: "1600 mg" },
+      { label: "L-histidina", valor: "80 mg" },
+      { label: "Vitamina B6", valor: "0,98 mg" }
+    ]
+  },
+  vitaminSport: {
+    imagen: "OLIMP PRODUCTOS/Vita-Min-Multiple-Sport-40-kartonik-PL-EN-0006-0001-66a9f462ddf4d.png",
+    stats: [
+      { label: "Vitamina C", valor: "290 mg" },
+      { label: "Vitamina B6", valor: "18,8 mg" },
+      { label: "Vitamina B12", valor: "23 µg" }
+    ]
+  },
+  vitaminSport40: {
+    imagen: "OLIMP PRODUCTOS/Vita-Min-Multiple-Sport-40-kartonik-PL-EN-0006-0001-66a9f462ddf4d.png",
+    stats: [
+      { label: "Saw palmetto", valor: "100 mg" },
+      { label: "Ashwagandha", valor: "50 mg" },
+      { label: "Vitamina C", valor: "290 mg" }
+    ]
+  },
+  goldOmega: {
+    imagen: "OLIMP PRODUCTOS/Gold-Omega-3-SportEdition-kartonik-120caps-EN-SE-FR-ES-IT-PL-0022-0001-66d6d15b6fb69.png",
+    stats: [
+      { label: "EPA", valor: "330 mg" },
+      { label: "DHA", valor: "220 mg" },
+      { label: "Vitamina E", valor: "12 mg" }
+    ]
+  },
+  arthroblock: {
+    imagen: "OLIMP PRODUCTOS/Arthroblock-Forte-OSN-kartonik-EN-PL-0006-ol-4-0001-67d949c0c9f20.png",
+    stats: [
+      { label: "Glucosamina", valor: "1000 mg" },
+      { label: "Condroitina", valor: "200 mg" },
+      { label: "Ácido hialurónico", valor: "50 mg" }
+    ]
+  }
+};
+
+function renderVisualCatalogo(tipo, data) {
+  const visual = visualProducto[tipo] || {};
+  const imagen = document.getElementById('modalImagen');
+  if (imagen) {
+    imagen.src = visual.imagen || 'logo-vitalica.png';
+    imagen.alt = data.titulo;
+  }
+
+  const statsWrap = document.getElementById('modalStats');
+  if (!statsWrap) return;
+  const stats = Array.isArray(visual.stats) ? visual.stats : [];
+  statsWrap.innerHTML = '';
+  stats.forEach((item) => {
+    const badge = document.createElement('article');
+    badge.className = 'stat-badge';
+
+    const label = document.createElement('p');
+    label.className = 'stat-label';
+    label.innerText = String(item.label || '').toUpperCase();
+
+    const value = document.createElement('p');
+    value.className = 'stat-value';
+    value.innerText = item.valor || '';
+
+    badge.appendChild(label);
+    badge.appendChild(value);
+    statsWrap.appendChild(badge);
+  });
+}
+
+
 function normalizarTituloDetalle(texto, indice) {
   const limpio = String(texto || '').replace(/[.]+$/g, '').trim();
   const base = limpio.split(',')[0].split(' y ')[0].trim();
@@ -577,6 +708,7 @@ function abrirFicha(tipo){
   document.getElementById('modalTitulo').innerText = data.titulo;
   document.getElementById('modalBenefit').innerText = data.beneficio;
   document.getElementById('modalShort').innerText = data.corto;
+  renderVisualCatalogo(tipo, data);
   renderDetallesCatalogo(data);
   const accordion = document.getElementById('modalAccordion');
   accordion.innerHTML = '';
