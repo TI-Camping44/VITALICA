@@ -693,10 +693,12 @@ nav.nav-scrolled .nav-toggle span {
   background: #fff;
   max-width: 720px;
   width: 100%;
+  max-height: 92vh;
   border-radius: 24px;
   padding: 32px;
   position: relative;
   box-shadow: var(--shadow-strong);
+  overflow-y: auto;
 }
 
 .modal-header {
@@ -704,28 +706,141 @@ nav.nav-scrolled .nav-toggle span {
   flex-direction: column;
   gap: 10px;
   margin-bottom: 24px;
+  border-top: 4px solid #111;
+  padding-top: 10px;
 }
 
 .modal-content h2 {
-  font-size: 28px;
-  font-weight: 600;
+  font-size: clamp(30px, 4.2vw, 56px);
+  font-weight: 900;
+  font-style: italic;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #1d7ff2;
 }
 
 .brand {
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  font-size: 13px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--gray);
+  color: #fff;
+  background: #0f0f10;
+  display: inline-block;
+  padding: 4px 10px;
+  font-weight: 700;
 }
 
 .modal-benefit {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.05;
 }
 
 .modal-short {
   color: var(--gray);
   max-width: 520px;
+}
+
+.modal-catalog-layout {
+  display: grid;
+  grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
+  gap: 18px;
+  margin-bottom: 16px;
+  align-items: start;
+}
+
+.modal-catalog-left {
+  position: relative;
+  min-height: 240px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.modal-pack-bg {
+  position: absolute;
+  width: 90%;
+  height: 85%;
+  background: #2a8cff;
+  clip-path: polygon(10% 18%, 62% 6%, 97% 37%, 89% 84%, 30% 98%, 2% 62%);
+  opacity: 0.45;
+}
+
+.modal-packshot {
+  position: relative;
+  z-index: 1;
+  max-height: 250px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.25));
+}
+
+.modal-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.stat-badge {
+  background: #1d7ff2;
+  color: #fff;
+  padding: 8px 10px 10px;
+  clip-path: polygon(8% 0, 100% 0, 90% 86%, 24% 100%, 0 72%);
+  min-height: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-label {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  margin: 2px 0 0;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.modal-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.highlight-card {
+  border: 1px solid #dadada;
+  background: #f3f3f3;
+}
+
+.highlight-title {
+  margin: 0;
+  display: inline-block;
+  background: #0f0f10;
+  color: #fff;
+  padding: 8px 18px 8px 14px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+}
+
+.highlight-text {
+  margin: 0;
+  padding: 10px 14px 12px;
+  color: #242424;
+  font-size: 14px;
+  line-height: 1.35;
 }
 
 .modal-accordion {
@@ -790,7 +905,7 @@ nav.nav-scrolled .nav-toggle span {
 .note {
   font-size: 12px;
   color: var(--gray);
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .close {
@@ -918,6 +1033,28 @@ footer {
 
   .brand-divider {
     display: none;
+  }
+
+  .modal {
+    padding: 16px;
+  }
+
+  .modal-content {
+    max-width: 680px;
+    max-height: 94vh;
+    padding: 22px;
+  }
+
+  .modal-content h2 {
+    font-size: clamp(28px, 5vw, 44px);
+  }
+
+  .modal-benefit {
+    font-size: 18px;
+  }
+
+  .stat-value {
+    font-size: 24px;
   }
 }
 
@@ -1058,7 +1195,46 @@ footer {
   }
 
   .modal-content {
-    padding: 24px 20px;
+    max-height: 95vh;
+    padding: 20px 16px;
     border-radius: 18px;
   }
+
+  .modal-catalog-layout {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .modal-catalog-left {
+    min-height: 180px;
+  }
+
+  .modal-packshot {
+    max-height: 180px;
+  }
+
+  .modal-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: clamp(28px, 11vw, 40px);
+  }
+
+  .modal-benefit {
+    font-size: 16px;
+  }
+
+  .highlight-title {
+    font-size: 12px;
+  }
+
+  .highlight-text {
+    font-size: 13px;
+  }
+
 }
