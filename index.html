@@ -288,10 +288,18 @@
   <div class="modal-content">
     <span class="close" onclick="cerrarModal()">&times;</span>
     <div class="modal-header">
-      <p class="brand">OLIMP Sport Nutrition</p>
-      <h2 id="modalTitulo"></h2>
-      <p id="modalBenefit" class="modal-benefit"></p>
-      <p id="modalShort" class="modal-short"></p>
+      <div class="modal-hero">
+        <div class="modal-packshot-wrap">
+          <p class="brand">OLIMP Sport Nutrition</p>
+          <img id="modalImagen" class="modal-packshot" src="whey.png" alt="Producto OLIMP">
+        </div>
+        <div class="modal-hero-copy">
+          <h2 id="modalTitulo"></h2>
+          <p id="modalBenefit" class="modal-benefit"></p>
+          <p id="modalShort" class="modal-short"></p>
+          <div id="modalStats" class="modal-stats"></div>
+        </div>
+      </div>
       <a id="modalCta" href="catalogo-vitalica-ligera.pdf.pdf" class="btn btn-primary" download>Ver catálogo completo</a>
     </div>
     <div id="modalHighlights" class="modal-highlights"></div>
@@ -565,6 +573,7 @@ function renderDetallesCatalogo(data) {
 
 function abrirFicha(tipo){
   const data = fichas[tipo];
+  const visualData = visualProducto[tipo] || {};
   document.getElementById('modalTitulo').innerText = data.titulo;
   document.getElementById('modalBenefit').innerText = data.beneficio;
   document.getElementById('modalShort').innerText = data.corto;
