@@ -331,6 +331,7 @@ const fichas = {
     titulo: "Whey Protein Complex 100%",
     beneficio: "Tecnología CFM y fórmula doble WPC + WPI para recuperación.",
     corto: "Proteína premium con textura gourmet y estándar farmacéutico.",
+    imagen: "whey.png",
     detallesCatalogo: [
       {
         titulo: "Tecnología CFM superior (no química)",
@@ -365,6 +366,7 @@ const fichas = {
     titulo: "Whey Protein Complex 100% Doble Choco",
     beneficio: "Proteína doble WPC + WPI con perfil chocolate premium.",
     corto: "Versión Double Chocolate con textura cremosa y estándar farmacéutico.",
+    imagen: "OLIMP%20PRODUCTOS/WheyProteinComplex-ZIP-2270g-universal-0014-ol-5-0001-66a2447fa4762.png",
     detallesCatalogo: [
       {
         titulo: "Tecnología CFM superior (no química)",
@@ -399,6 +401,7 @@ const fichas = {
     titulo: "Creatine Monohydrate",
     beneficio: "Pureza farmacéutica con micronización 200 mesh.",
     corto: "Creatina monohidrato para fuerza y rendimiento máximo.",
+    imagen: "creatine.png",
     secciones: {
       "Descripción": "Creatina tratada bajo controles GMP y GLP con malla 200 para mejor disolución y absorción.",
       "Beneficios": [
@@ -415,6 +418,7 @@ const fichas = {
     titulo: "Iso Plus Powder",
     beneficio: "Isotónico con electrolitos, L-carnitina y L-glutamina.",
     corto: "Reposición completa y energía limpia durante la sesión.",
+    imagen: "iso.png",
     secciones: {
       "Descripción": "Fórmula isotónica que repone electrolitos, aporta vitaminas y ayuda a mantener la energía sin pesadez.",
       "Beneficios": [
@@ -431,6 +435,7 @@ const fichas = {
     titulo: "Beta Alanina Xplode",
     beneficio: "Sistema Beta-Rush con soporte intra y extracelular.",
     corto: "Beta alanina + L-histidina con buffers especiales.",
+    imagen: "beta.png",
     secciones: {
       "Descripción": "Fórmula de doble acción que protege el músculo por dentro y ayuda a limpiar el ácido en la sangre.",
       "Beneficios": [
@@ -447,6 +452,7 @@ const fichas = {
     titulo: "Redweiler",
     beneficio: "Pre-workout con matrices Armageddon Pump y Berserker.",
     corto: "Beta alanina + creatina para fuerza y pump extremo.",
+    imagen: "red.png",
     secciones: {
       "Descripción": "Mezcla avanzada con citrulina, AAKG y matriz termogénica Red Fury para potencia inmediata.",
       "Beneficios": [
@@ -463,6 +469,7 @@ const fichas = {
     titulo: "Knockout 2.0",
     beneficio: "Energía seca con 200 mg de cafeína.",
     corto: "Fórmula sin creatina para enfoque y resistencia.",
+    imagen: "OLIMP%20PRODUCTOS/Knockout-2-0-citrus-punch-305g-UK-amazon-01-png0000-66c2fbe8a26be.png",
     secciones: {
       "Descripción": "Pre-workout con activación térmica y aminoácidos para mantener energía y concentración.",
       "Beneficios": [
@@ -479,6 +486,7 @@ const fichas = {
     titulo: "Vita-min Multiple Sport",
     beneficio: "Multivitamínico con Vita-Plex y minerales quelados.",
     corto: "Dosis farmacéuticas con tecnología Chela-Min.",
+    imagen: "OLIMP%20PRODUCTOS/Vita-Min-Multiple-Sport-40-kartonik-PL-EN-0006-0001-66a9f462ddf4d.png",
     secciones: {
       "Descripción": "Sistema bifásico con vitaminas y minerales separados para máxima potencia y absorción.",
       "Beneficios": [
@@ -495,6 +503,7 @@ const fichas = {
     titulo: "Vita-min Multiple Sport 40+",
     beneficio: "Fórmula 40+ con ashwagandha y saw palmetto.",
     corto: "Soporte hormonal, energía y minerales quelados.",
+    imagen: "OLIMP%20PRODUCTOS/Vita-Min-Multiple-Sport-40-kartonik-PL-EN-0006-0001-66a9f462ddf4d.png",
     secciones: {
       "Descripción": "Diseñado para atletas mayores de 40 con vitaminas reforzadas y adaptógenos premium.",
       "Beneficios": [
@@ -511,6 +520,7 @@ const fichas = {
     titulo: "Gold Omega 3 Sport Edition",
     beneficio: "Omega 3 concentrado con EPA y DHA.",
     corto: "Aceite de pescado con protección blíster.",
+    imagen: "OLIMP%20PRODUCTOS/Gold-Omega-3-SportEdition-kartonik-120caps-EN-SE-FR-ES-IT-PL-0022-0001-66d6d15b6fb69.png",
     secciones: {
       "Descripción": "Concentración real del 65% de ácidos grasos omega-3 para recuperación y enfoque.",
       "Beneficios": [
@@ -527,6 +537,7 @@ const fichas = {
     titulo: "Arthroblock Forte",
     beneficio: "Regeneración articular y lubricación.",
     corto: "Glucosamina, condroitina y ácido hialurónico.",
+    imagen: "OLIMP%20PRODUCTOS/Arthroblock-Forte-OSN-kartonik-EN-PL-0006-ol-4-0001-67d949c0c9f20.png",
     secciones: {
       "Descripción": "Fórmula articular con glucosamina/condroitina sulfato y extractos antiinflamatorios.",
       "Beneficios": [
@@ -633,11 +644,11 @@ const visualProducto = {
   }
 };
 
-function renderVisualCatalogo(tipo, data, imagenSrc) {
+function renderVisualCatalogo(tipo, data) {
   const visual = visualProducto[tipo] || {};
   const imagen = document.getElementById('modalImagen');
   if (imagen) {
-    imagen.src = imagenSrc || visual.imagen || 'logo-vitalica.png';
+    imagen.src = data.imagen || visual.imagen || 'logo-vitalica.png';
     imagen.alt = data.titulo;
   }
 
@@ -702,14 +713,14 @@ function renderDetallesCatalogo(data) {
   });
 }
 
-function abrirFicha(tipo, imagenSrc){
+function abrirFicha(tipo){
   const data = fichas[tipo];
   if (!data) return;
   document.querySelectorAll('#modal .modal-header img, #modal .modal-top-image').forEach((el) => el.remove());
   document.getElementById('modalTitulo').innerText = data.titulo;
   document.getElementById('modalBenefit').innerText = data.beneficio;
   document.getElementById('modalShort').innerText = data.corto;
-  renderVisualCatalogo(tipo, data, imagenSrc);
+  renderVisualCatalogo(tipo, data);
   renderDetallesCatalogo(data);
   const accordion = document.getElementById('modalAccordion');
   accordion.innerHTML = '';
@@ -821,8 +832,7 @@ document.addEventListener('click', (event) => {
   if (!trigger) return;
   event.preventDefault();
   const tipo = trigger.getAttribute('data-ficha');
-  const imagenSrc = trigger.closest('.tile')?.querySelector('img')?.getAttribute('src');
-  if (tipo) abrirFicha(tipo, imagenSrc);
+  if (tipo) abrirFicha(tipo);
 });
 
 function actualizarNavbar() {
