@@ -705,6 +705,7 @@ function renderDetallesCatalogo(data) {
 function abrirFicha(tipo, imagenSrc){
   const data = fichas[tipo];
   if (!data) return;
+  document.querySelectorAll('#modal .modal-header img, #modal .modal-top-image').forEach((el) => el.remove());
   document.getElementById('modalTitulo').innerText = data.titulo;
   document.getElementById('modalBenefit').innerText = data.beneficio;
   document.getElementById('modalShort').innerText = data.corto;
@@ -712,8 +713,8 @@ function abrirFicha(tipo, imagenSrc){
   renderDetallesCatalogo(data);
   const accordion = document.getElementById('modalAccordion');
   accordion.innerHTML = '';
-  const ocultarSecciones = new Set(['Descripción', 'Beneficios', 'Ingredientes']);
-  const seccionesVisibles = Object.entries(data.secciones).filter(([titulo]) => !ocultarSecciones.has(titulo));
+  const seccionesPermitidas = new Set(['Modo de uso', 'Ficha técnica']);
+  const seccionesVisibles = Object.entries(data.secciones).filter(([titulo]) => seccionesPermitidas.has(titulo));
 
   seccionesVisibles.forEach(([titulo, contenido], index) => {
     const item = document.createElement('div');
