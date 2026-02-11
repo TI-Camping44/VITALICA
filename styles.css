@@ -704,7 +704,7 @@ nav.nav-scrolled .nav-toggle span {
 .modal-header {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
   margin-bottom: 24px;
   border-top: 4px solid #111;
   padding-top: 10px;
