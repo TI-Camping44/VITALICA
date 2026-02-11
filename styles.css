@@ -173,6 +173,49 @@ nav.nav-scrolled img {
   transform: translateY(-1px);
 }
 
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(0, 0, 0, 0.2);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+nav.nav-scrolled .nav-toggle {
+  border-color: rgba(18, 18, 18, 0.22);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.nav-toggle span {
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: #fff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+nav.nav-scrolled .nav-toggle span {
+  background: #111;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 /* =========================
    HERO
 ========================= */
@@ -853,48 +896,8 @@ footer {
    RESPONSIVE
 ========================= */
 @media (max-width: 1024px) {
-  nav {
-    flex-wrap: wrap;
-    height: auto;
-  }
-
-  .nav-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 12px 16px;
-  }
-
-  .nav-logo {
-    justify-self: center;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px 16px;
-  }
-
-
-  .nav-logo img {
-    height: 56px;
-  }
-
-  nav img {
-    height: 56px;
-    max-height: 56px;
-  }
-
   .hero {
-    padding-top: 160px;
-  }
-
-  .hero-layout {
-    text-align: center;
-  }
-
-  .hero-actions {
-    justify-content: center;
+    padding-top: 170px;
   }
 
   .grid {
@@ -918,22 +921,113 @@ footer {
   }
 }
 
-@media (max-width: 720px) {
-  nav {
-    gap: 12px;
+@media (max-width: 860px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .nav-inner {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+  }
+
+  nav.nav-scrolled .nav-inner {
+    padding: 10px 16px;
+  }
+
+  .nav-logo {
+    height: 64px;
+  }
+
+  .nav-logo img,
+  nav img,
+  nav.nav-scrolled .nav-logo img,
+  nav.nav-scrolled img {
+    height: 48px;
+    max-height: 48px;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 16px;
+    right: 16px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 14px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.99);
+    box-shadow: 0 18px 36px rgba(8, 8, 12, 0.16);
+    border: 1px solid rgba(18, 18, 18, 0.08);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  nav .nav-links a,
+  nav .nav-links a:visited,
+  nav .nav-links a:active {
+    color: #121212 !important;
+    text-shadow: none;
+    width: 100%;
+    padding: 10px 8px;
+    border: 1px solid rgba(18, 18, 18, 0.08);
+    border-radius: 10px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    background: #fff;
+  }
+
+  nav .nav-links a:last-child {
+    border-bottom: 1px solid rgba(18, 18, 18, 0.08);
+  }
+
+  .nav-spacer {
+    display: none;
   }
 
   .hero {
-    padding-top: 170px;
+    padding-top: 150px;
+    min-height: 90vh;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding: 140px 20px 56px;
   }
 
-  .hero-layout {
-    gap: 28px;
+  .hero-content h1 {
+    font-size: clamp(28px, 9vw, 42px);
   }
 
-  .hero-copy {
-    padding: 22px 20px;
-    border-radius: 20px;
+  .hero-subtitle {
+    margin-bottom: 24px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .catalogo {
+    padding: 56px 20px 36px;
   }
 
   .grid {
@@ -943,13 +1037,28 @@ footer {
 
   .catalogo-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .catalogo-card {
-    min-height: 200px;
+    min-height: 170px;
+    border-radius: 20px;
+  }
+
+  .catalogo-content h3 {
+    font-size: clamp(24px, 8vw, 32px);
   }
 
   .tile {
-    padding: 24px;
+    padding: 22px;
+  }
+
+  .modal {
+    padding: 14px;
+  }
+
+  .modal-content {
+    padding: 24px 20px;
+    border-radius: 18px;
   }
 }
