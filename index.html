@@ -633,11 +633,11 @@ const visualProducto = {
   }
 };
 
-function renderVisualCatalogo(tipo, data) {
+function renderVisualCatalogo(tipo, data, imagenSrc) {
   const visual = visualProducto[tipo] || {};
   const imagen = document.getElementById('modalImagen');
   if (imagen) {
-    imagen.src = visual.imagen || 'logo-vitalica.png';
+    imagen.src = imagenSrc || visual.imagen || 'logo-vitalica.png';
     imagen.alt = data.titulo;
   }
 
@@ -702,17 +702,20 @@ function renderDetallesCatalogo(data) {
   });
 }
 
-function abrirFicha(tipo){
+function abrirFicha(tipo, imagenSrc){
   const data = fichas[tipo];
   if (!data) return;
   document.getElementById('modalTitulo').innerText = data.titulo;
   document.getElementById('modalBenefit').innerText = data.beneficio;
   document.getElementById('modalShort').innerText = data.corto;
-  renderVisualCatalogo(tipo, data);
+  renderVisualCatalogo(tipo, data, imagenSrc);
   renderDetallesCatalogo(data);
   const accordion = document.getElementById('modalAccordion');
   accordion.innerHTML = '';
-  Object.entries(data.secciones).forEach(([titulo, contenido], index) => {
+  const ocultarSecciones = new Set(['Descripción', 'Beneficios', 'Ingredientes']);
+  const seccionesVisibles = Object.entries(data.secciones).filter(([titulo]) => !ocultarSecciones.has(titulo));
+
+  seccionesVisibles.forEach(([titulo, contenido], index) => {
     const item = document.createElement('div');
     item.className = 'accordion-item';
     const trigger = document.createElement('button');
@@ -817,7 +820,8 @@ document.addEventListener('click', (event) => {
   if (!trigger) return;
   event.preventDefault();
   const tipo = trigger.getAttribute('data-ficha');
-  if (tipo) abrirFicha(tipo);
+  const imagenSrc = trigger.closest('.tile')?.querySelector('img')?.getAttribute('src');
+  if (tipo) abrirFicha(tipo, imagenSrc);
 });
 
 function actualizarNavbar() {
