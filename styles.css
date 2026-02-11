@@ -960,12 +960,12 @@ footer {
     right: 16px;
     display: none;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    padding: 12px;
+    align-items: stretch;
+    gap: 6px;
+    padding: 14px;
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 14px 32px rgba(8, 8, 12, 0.14);
+    background: rgba(255, 255, 255, 0.99);
+    box-shadow: 0 18px 36px rgba(8, 8, 12, 0.16);
     border: 1px solid rgba(18, 18, 18, 0.08);
   }
 
@@ -979,12 +979,16 @@ footer {
     color: #121212 !important;
     text-shadow: none;
     width: 100%;
-    padding: 8px 6px;
-    border-bottom: 1px solid rgba(18, 18, 18, 0.08);
+    padding: 10px 8px;
+    border: 1px solid rgba(18, 18, 18, 0.08);
+    border-radius: 10px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    background: #fff;
   }
 
   nav .nav-links a:last-child {
-    border-bottom: none;
+    border-bottom: 1px solid rgba(18, 18, 18, 0.08);
   }
 
   .nav-spacer {

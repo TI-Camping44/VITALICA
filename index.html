@@ -8,7 +8,7 @@
 <!-- INTER -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=11">
+<link rel="stylesheet" href="styles.css?v=12">
 
 </head>
 
@@ -581,11 +581,20 @@ if (navToggle && navLinks) {
       setMobileMenu(false);
     }
   });
+
+  document.addEventListener("click", (event) => {
+    if (window.innerWidth > 860) return;
+    const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+    if (!isOpen) return;
+    if (!nav.contains(event.target)) {
+      setMobileMenu(false);
+    }
+  });
 }
 
 function actualizarNavbar() {
   if (!nav) return;
-  nav.classList.toggle("nav-scrolled", window.scrollY > 8);
+  nav.classList.toggle("nav-scrolled", window.scrollY > 60);
 }
 
 window.addEventListener("scroll", actualizarNavbar, { passive: true });
