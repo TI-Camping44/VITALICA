@@ -1265,6 +1265,15 @@ footer {
     padding: 10px 16px;
   }
 
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
   .nav-logo {
     height: 64px;
   }
