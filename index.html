@@ -291,13 +291,13 @@
       <div class="modal-hero">
         <div class="modal-packshot-wrap">
           <p class="brand">OLIMP Sport Nutrition</p>
-          <img id="modalImagen" class="modal-packshot" src="whey.png" alt="Producto OLIMP">
+          <img id="modalImagenMain" class="modal-packshot" src="whey.png" alt="Producto OLIMP">
         </div>
         <div class="modal-hero-copy">
           <h2 id="modalTitulo"></h2>
           <p id="modalBenefit" class="modal-benefit"></p>
           <p id="modalShort" class="modal-short"></p>
-          <div id="modalStats" class="modal-stats"></div>
+          <div id="modalStatsMain" class="modal-stats"></div>
         </div>
       </div>
       <a id="modalCta" href="catalogo-vitalica-ligera.pdf.pdf" class="btn btn-primary" download>Ver catálogo completo</a>
@@ -305,10 +305,10 @@
     <section class="modal-catalog-layout">
       <div class="modal-catalog-left">
         <div class="modal-pack-bg"></div>
-        <img id="modalImagen" class="modal-packshot" src="whey.png" alt="Producto OLIMP">
+        <img id="modalImagenSide" class="modal-packshot" src="whey.png" alt="Producto OLIMP">
       </div>
       <div class="modal-catalog-right">
-        <div id="modalStats" class="modal-stats"></div>
+        <div id="modalStatsSide" class="modal-stats"></div>
         <div id="modalHighlights" class="modal-highlights"></div>
       </div>
     </section>
@@ -662,31 +662,40 @@ const visualProducto = {
 
 function renderVisualCatalogo(tipo, data) {
   const visual = visualProducto[tipo] || {};
-  const imagen = document.getElementById('modalImagen');
-  if (imagen) {
+  const imagenes = [
+    document.getElementById('modalImagenMain'),
+    document.getElementById('modalImagenSide')
+  ].filter(Boolean);
+
+  imagenes.forEach((imagen) => {
     imagen.src = data.imagen || visual.imagen || 'logo-vitalica.png';
     imagen.alt = data.titulo;
-  }
+  });
 
-  const statsWrap = document.getElementById('modalStats');
-  if (!statsWrap) return;
   const stats = Array.isArray(visual.stats) ? visual.stats : [];
-  statsWrap.innerHTML = '';
-  stats.forEach((item) => {
-    const badge = document.createElement('article');
-    badge.className = 'stat-badge';
+  const statsContainers = [
+    document.getElementById('modalStatsMain'),
+    document.getElementById('modalStatsSide')
+  ].filter(Boolean);
 
-    const label = document.createElement('p');
-    label.className = 'stat-label';
-    label.innerText = String(item.label || '').toUpperCase();
+  statsContainers.forEach((statsWrap) => {
+    statsWrap.innerHTML = '';
+    stats.forEach((item) => {
+      const badge = document.createElement('article');
+      badge.className = 'stat-badge';
 
-    const value = document.createElement('p');
-    value.className = 'stat-value';
-    value.innerText = item.valor || '';
+      const label = document.createElement('p');
+      label.className = 'stat-label';
+      label.innerText = String(item.label || '').toUpperCase();
 
-    badge.appendChild(label);
-    badge.appendChild(value);
-    statsWrap.appendChild(badge);
+      const value = document.createElement('p');
+      value.className = 'stat-value';
+      value.innerText = item.valor || '';
+
+      badge.appendChild(label);
+      badge.appendChild(value);
+      statsWrap.appendChild(badge);
+    });
   });
 }
 
