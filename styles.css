@@ -728,10 +728,11 @@ nav.nav-scrolled .nav-toggle span {
 .modal-content h2 {
   font-size: clamp(24px, 2.8vw, 34px);
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.08;
   letter-spacing: -0.02em;
   text-transform: none;
   color: #111;
+  margin: 2px 0 6px;
 }
 
 .brand {
@@ -743,18 +744,21 @@ nav.nav-scrolled .nav-toggle span {
   display: inline-block;
   padding: 0;
   font-weight: 600;
+  margin-bottom: 4px;
 }
 
 .modal-benefit {
   font-size: 14px;
   font-weight: 700;
   line-height: 1.2;
+  margin: 0 0 4px;
 }
 
 .modal-short {
   color: var(--gray);
   max-width: 460px;
   font-size: 13px;
+  margin: 0 0 10px;
 }
 
 .modal-catalog-layout {
