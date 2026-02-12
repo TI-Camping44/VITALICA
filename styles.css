@@ -992,6 +992,45 @@ footer {
   padding-top: 20px;
 }
 
+.footer-social-inline {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.footer-social-inline a {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #7a7a7a;
+  font-size: 0;
+  position: relative;
+}
+
+.footer-social-inline a::before {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.footer-social-inline a[aria-label*="Facebook"]::before {
+  content: "f";
+  font-weight: 700;
+}
+
+.footer-social-inline a[aria-label*="Instagram"]::before {
+  content: "◎";
+}
+
+.footer-social-inline a:hover {
+  border-color: #8f8f8f;
+  color: #4d4d4d;
+}
+
 /* =========================
    LOADER
 ========================= */
