@@ -848,7 +848,7 @@ nav.nav-scrolled .nav-toggle span {
 .highlight-title {
   margin: 0;
   display: block;
-  background: #8d8d92;
+  background: #9ea0a6 !important;
   color: #fff;
   padding: 6px 10px;
   font-size: 10px;
