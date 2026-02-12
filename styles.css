@@ -725,13 +725,22 @@ nav.nav-scrolled .nav-toggle span {
   display: none !important;
 }
 
+
+.modal-hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+}
+
 .modal-content h2 {
   font-size: clamp(24px, 2.8vw, 34px);
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.12;
   letter-spacing: -0.02em;
   text-transform: none;
   color: #111;
+  margin: 0;
 }
 
 .brand {
@@ -743,18 +752,21 @@ nav.nav-scrolled .nav-toggle span {
   display: inline-block;
   padding: 0;
   font-weight: 600;
+  margin-bottom: 0;
 }
 
 .modal-benefit {
   font-size: 14px;
   font-weight: 700;
   line-height: 1.2;
+  margin: 0;
 }
 
 .modal-short {
   color: var(--gray);
   max-width: 460px;
   font-size: 13px;
+  margin: 0;
 }
 
 .modal-catalog-layout {
@@ -835,7 +847,7 @@ nav.nav-scrolled .nav-toggle span {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 4px;
+  margin-bottom: 0;
 }
 
 .highlight-card {
@@ -1068,7 +1080,7 @@ footer {
     padding: 16px;
   }
 
-  .modal-content h2 {
+.modal-content h2 {
     font-size: clamp(22px, 4.2vw, 30px);
   }
 
@@ -1275,12 +1287,24 @@ footer {
     font-size: 15px;
   }
 
-  .modal-content h2 {
+  
+.modal-hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.modal-content h2 {
     font-size: clamp(22px, 9vw, 28px);
   }
 
   .modal-benefit {
     font-size: 12px;
+  }
+
+  .modal-hero-copy {
+    gap: 10px;
   }
 
   .highlight-title {
