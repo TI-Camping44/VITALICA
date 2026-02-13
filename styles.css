@@ -142,6 +142,16 @@ nav.nav-scrolled .nav-links a:focus-visible {
   border-color: rgba(0, 0, 0, 0.3);
 }
 
+nav .nav-links a.is-active,
+nav .nav-links a[aria-current="true"] {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+nav.nav-scrolled .nav-links a.is-active,
+nav.nav-scrolled .nav-links a[aria-current="true"] {
+  border-color: rgba(0, 0, 0, 0.45);
+}
+
 .nav-logo {
   display: flex;
   align-items: center;

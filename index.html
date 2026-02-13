@@ -61,10 +61,10 @@
     <div class="nav-links" id="navLinks">
       <a href="#olimp">OLIMP</a>
       <a href="#productos">Productos</a>
-      <a href="#">Proteínas</a>
-      <a href="#">Creatina</a>
-      <a href="#">Pre Workouts</a>
-      <a href="#">Salud</a>
+      <a href="#productos" data-filter="proteinas">Proteínas</a>
+      <a href="#productos" data-filter="creatina">Creatina</a>
+      <a href="#productos" data-filter="preworkouts">Pre Workouts</a>
+      <a href="#productos" data-filter="salud">Salud</a>
     </div>
     <div class="nav-spacer" aria-hidden="true"></div>
   </div>
@@ -892,7 +892,8 @@ document.addEventListener('click', (event) => {
   if (tipo) abrirFicha(tipo);
 });
 
-const botonesCategoria = Array.from(document.querySelectorAll('[data-filter]'));
+const botonesCategoria = Array.from(document.querySelectorAll('.catalogo-card[data-filter]'));
+const enlacesFiltro = Array.from(document.querySelectorAll('.nav-links [data-filter]'));
 const productos = Array.from(document.querySelectorAll('#productos .tile[data-category]'));
 let categoriaActiva = null;
 
@@ -908,6 +909,12 @@ function filtrarProductos(categoria) {
     boton.classList.toggle('is-active', activo);
     boton.setAttribute('aria-pressed', String(activo));
   });
+
+  enlacesFiltro.forEach((enlace) => {
+    const activo = categoria === enlace.getAttribute('data-filter');
+    enlace.classList.toggle('is-active', activo);
+    enlace.setAttribute('aria-current', activo ? 'true' : 'false');
+  });
 }
 
 botonesCategoria.forEach((boton) => {
@@ -916,6 +923,20 @@ botonesCategoria.forEach((boton) => {
     categoriaActiva = categoriaActiva === filtro ? null : filtro;
     filtrarProductos(categoriaActiva);
     document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+enlacesFiltro.forEach((enlace) => {
+  enlace.addEventListener('click', (event) => {
+    const filtro = enlace.getAttribute('data-filter');
+    if (!filtro) return;
+    event.preventDefault();
+    categoriaActiva = filtro;
+    filtrarProductos(categoriaActiva);
+    document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (window.innerWidth <= 860) {
+      setMobileMenu(false);
+    }
   });
 });
 
