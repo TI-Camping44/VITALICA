@@ -984,148 +984,111 @@ nav.nav-scrolled .nav-toggle span {
    FOOTER
 ========================= */
 footer {
-  background: #f3f3f1;
-  padding: 40px 24px;
-  color: #16181c;
+  background: #0f0f10;
+  padding: 36px 24px 30px;
+  color: #ffffff;
+}
+
+footer img {
+  max-width: none;
 }
 
 .footer-inner {
-  max-width: 1120px;
+  max-width: 1220px;
   margin: 0 auto;
-  display: grid;
-  gap: 26px;
 }
 
-.footer-contact-block,
-.footer-social-block {
-  border-bottom: 1px solid #d8d8d5;
-  padding-bottom: 24px;
+.footer-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
 }
 
-.footer-contact-block h3 {
-  font-size: clamp(34px, 5vw, 54px);
-  line-height: 1.05;
-  margin-bottom: 20px;
-  letter-spacing: -0.03em;
+.footer-brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.footer-link {
-  display: block;
-  width: fit-content;
-  color: #16181c;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  font-size: clamp(26px, 4vw, 48px);
-  margin-bottom: 16px;
+.footer-brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.footer-link:hover {
-  opacity: 0.78;
+.footer-logo-vitalica {
+  width: 88px;
+  height: auto;
 }
 
-.footer-social-block h4 {
-  font-size: clamp(40px, 5vw, 64px);
-  line-height: 1;
-  margin-bottom: 20px;
-  letter-spacing: -0.02em;
+.footer-logo-olimp {
+  width: 190px;
+  height: auto;
+}
+
+.footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.footer-mail,
+.footer-phone {
+  color: #f4f4f4;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.footer-mail:hover,
+.footer-phone:hover {
+  color: #ffffff;
 }
 
 .footer-social-inline {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  gap: 8px;
+  align-items: center;
 }
 
-
-.footer-follow {
-  font-size: 11px;
-  color: #7a7a7a;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-right: 2px;
-}
 .footer-social-inline a {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  background: #dededb;
-  color: #17181d;
-  font-size: 20px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  font-size: 14px;
   font-weight: 700;
-  text-transform: uppercase;
+  line-height: 1;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .footer-social-inline a:hover {
   transform: translateY(-2px);
-  background: #d1d1ce;
-}
-
-.footer-legal-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: clamp(22px, 2.4vw, 34px);
-  line-height: 1.2;
-}
-
-.footer-legal-links a {
-  color: #22242a;
-  text-decoration: none;
-}
-
-.footer-legal-links a:hover {
-  text-decoration: underline;
-}
-
-.footer-legal-links span {
-  color: #8f8f8d;
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .footer-note {
-  margin-top: 4px;
-  color: #626262;
-  font-size: 13px;
+  color: #d8d8d8;
+  font-size: 14px;
+  margin: 0;
 }
 
 .footer-copy {
-  color: #4d4d4d;
-  font-size: 13px;
+  color: #ffffff;
+  font-size: 14px;
+  margin: 0;
 }
-
-
-/* Compatibilidad: footer legacy (markup anterior grande) */
-.footer-contact-block,
-.footer-social-block,
-.footer-legal-links,
-.footer-note,
-.footer-copy {
-  max-width: 1020px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.footer-contact-block h3 {
-  font-size: 20px;
-  margin: 0 0 8px;
-}
-
-/* Blindaje: ocultar cualquier bloque legacy de footer que pueda inyectarse */
-.footer-contact-block,
-.footer-social-block,
-.footer-legal-links,
-.footer-note,
-.footer-copy,
-.footer-follow {
-  display: none !important;
-}
-
 
 /* =========================
    LOADER
@@ -1513,19 +1476,28 @@ footer {
     font-size: 12px;
   }
 
-  .footer-inner {
-    gap: 22px;
+  .footer-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
 
-  .footer-social-inline a {
-    width: 62px;
-    height: 62px;
-    font-size: 17px;
+  .footer-meta {
+    justify-content: flex-start;
+    gap: 10px;
   }
 
-  .footer-legal-links {
-    font-size: clamp(20px, 7vw, 28px);
-    gap: 8px;
+  .footer-mail,
+  .footer-phone {
+    font-size: 14px;
+  }
+
+  .footer-logo-vitalica {
+    width: 74px;
+  }
+
+  .footer-logo-olimp {
+    width: 160px;
   }
 
   .whatsapp-float {
