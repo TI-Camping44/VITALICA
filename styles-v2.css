@@ -410,7 +410,7 @@ nav.nav-scrolled .nav-toggle span {
 }
 
 .catalogo-header p {
-  color: var(--gray);
+  color: #ffffff;
 }
 
 .catalogo-grid {
@@ -546,7 +546,7 @@ nav.nav-scrolled .nav-toggle span {
 }
 
 .science-copy p {
-  color: var(--gray);
+  color: #ffffff;
 }
 
 .science-grid {
@@ -574,7 +574,7 @@ nav.nav-scrolled .nav-toggle span {
 }
 
 .science-card p {
-  color: var(--gray);
+  color: #ffffff;
   font-size: 14px;
 }
 
@@ -654,7 +654,7 @@ nav.nav-scrolled .nav-toggle span {
 
 .tile p {
   font-size: 15px;
-  color: var(--gray);
+  color: #ffffff;
   max-width: 260px;
   margin: 0 auto;
 }
@@ -761,7 +761,7 @@ nav.nav-scrolled .nav-toggle span {
   font-size: 11px;
   letter-spacing: 0.11em;
   text-transform: uppercase;
-  color: var(--gray);
+  color: #ffffff;
   background: transparent;
   display: inline-block;
   padding: 0;
@@ -777,7 +777,7 @@ nav.nav-scrolled .nav-toggle span {
 }
 
 .modal-short {
-  color: var(--gray);
+  color: #ffffff;
   max-width: 460px;
   font-size: 13px;
   margin: 0;
@@ -846,7 +846,7 @@ nav.nav-scrolled .nav-toggle span {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--gray);
+  color: #ffffff;
 }
 
 .stat-value {
@@ -921,7 +921,7 @@ nav.nav-scrolled .nav-toggle span {
 
 .accordion-trigger::after {
   content: "+";
-  color: var(--gray);
+  color: #ffffff;
   font-weight: 400;
 }
 
@@ -943,7 +943,7 @@ nav.nav-scrolled .nav-toggle span {
 .accordion-panel p,
 .accordion-panel li {
   font-size: 13px;
-  color: var(--gray);
+  color: #ffffff;
   margin: 8px 0;
 }
 
@@ -953,7 +953,7 @@ nav.nav-scrolled .nav-toggle span {
 
 .note {
   font-size: 11px;
-  color: var(--gray);
+  color: #ffffff;
   margin-top: 8px;
 }
 
@@ -963,7 +963,7 @@ nav.nav-scrolled .nav-toggle span {
   top: 18px;
   font-size: 22px;
   cursor: pointer;
-  color: var(--gray);
+  color: #ffffff;
 }
 
 .close:hover {
@@ -974,16 +974,16 @@ nav.nav-scrolled .nav-toggle span {
    FOOTER
 ========================= */
 footer {
-  background: #fafafa;
+  background: #0f0f10;
   padding: 34px 24px;
   font-size: 12px;
-  color: var(--gray);
+  color: #ffffff;
 }
 
 .footer-inner {
   max-width: 1020px;
   margin: 0 auto;
-  border-top: 1px solid var(--light-gray);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding-top: 16px;
 }
 
@@ -1021,7 +1021,7 @@ footer {
 
 .footer-mail,
 .footer-phone {
-  color: #666;
+  color: #f4f4f4;
   text-decoration: none;
   font-size: 12px;
   overflow-wrap: anywhere;
@@ -1029,7 +1029,7 @@ footer {
 
 .footer-mail:hover,
 .footer-phone:hover {
-  color: #1f1f1f;
+  color: #ffffff;
 }
 
 .footer-social-inline {
@@ -1040,13 +1040,13 @@ footer {
 .footer-social-inline a {
   width: 22px;
   height: 22px;
-  border: 1px solid #c2c2c2;
+  border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 5px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #7a7a7a;
+  color: #ffffff;
   font-size: 0;
   position: relative;
   transition: all 0.2s ease;
@@ -1067,8 +1067,8 @@ footer {
 }
 
 .footer-social-inline a:hover {
-  border-color: #979797;
-  color: #4d4d4d;
+  border-color: rgba(255, 255, 255, 0.7);
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
