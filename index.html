@@ -8,7 +8,7 @@
 <!-- INTER -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=24">
+<link rel="stylesheet" href="styles.css?v=26">
 
 </head>
 
@@ -320,33 +320,25 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-contact-block">
-      <h3>Vitalica Paraguay</h3>
-      <a class="footer-link footer-phone" href="tel:+595976383922">+595 976 383 922</a>
-      <a class="footer-link footer-mail" href="mailto:atencionalcliente@vitalica.com.py">atencionalcliente@vitalica.com.py</a>
-    </div>
+    <div class="footer-bar">
+      <div class="footer-brand-block">
+        <div class="footer-brand-logos">
+          <img src="logo-vitalica.png" alt="Vitalica" class="footer-logo-vitalica">
+          <img src="olimp-blanco.png" alt="OLIMP Sport Nutrition" class="footer-logo-olimp">
+        </div>
+        <p class="footer-note">Los suplementos no sustituyen una alimentación equilibrada.</p>
+        <p class="footer-copy">© 2026 Vitalica</p>
+      </div>
 
       <div class="footer-meta">
         <a class="footer-mail" href="mailto:atencionalcliente@vitalica.com.py">atencionalcliente@vitalica.com.py</a>
         <a class="footer-phone" href="tel:+595976383922">+595 976 383 922</a>
         <div class="footer-social-inline" aria-label="Redes sociales">
-          <span class="footer-follow">Síganos</span>
-          <a href="https://www.facebook.com/olimp" target="_blank" rel="noopener noreferrer" aria-label="Facebook Olimp">Facebook</a>
-          <a href="https://www.instagram.com/vitalica.py/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Vitalica">Instagram</a>
+          <a href="https://www.facebook.com/olimp" target="_blank" rel="noopener noreferrer" aria-label="Facebook Olimp">f</a>
+          <a href="https://www.instagram.com/vitalica.py/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Vitalica">◦</a>
         </div>
       </div>
     </div>
-
-    <div class="footer-legal-links">
-      <a href="#">Contacto</a>
-      <span>|</span>
-      <a href="#">Bases y Condiciones</a>
-      <span>|</span>
-      <a href="#">Políticas de Privacidad</a>
-    </div>
-
-    <p class="footer-note">Los suplementos no sustituyen una alimentación equilibrada.</p>
-    <p class="footer-copy">© 2026 Vitalica</p>
   </div>
 </footer>
 
@@ -878,38 +870,6 @@ function actualizarNavbar() {
 
 window.addEventListener("scroll", actualizarNavbar, { passive: true });
 window.addEventListener("load", actualizarNavbar);
-
-// Fallback mínimo: si llega footer legacy sin .footer-bar, restaura el footer clásico
-(function restaurarFooterSiLegacy() {
-  const footerInner = document.querySelector('footer .footer-inner');
-  if (!footerInner) return;
-
-  const hasClassic = !!footerInner.querySelector('.footer-bar');
-  const hasLegacy = !!footerInner.querySelector('.footer-contact-block, .footer-social-block, .footer-legal-links');
-
-  if (hasClassic || !hasLegacy) return;
-
-  footerInner.innerHTML = `
-    <div class="footer-bar">
-      <div class="footer-brand">
-        <img src="logo-vitalica.png" alt="Vitalica" class="footer-logo-vitalica">
-        <img src="olimp-negro.png" alt="OLIMP Sport Nutrition" class="footer-logo-olimp">
-      </div>
-
-      <div class="footer-meta">
-        <a class="footer-mail" href="mailto:atencionalcliente@vitalica.com.py">atencionalcliente@vitalica.com.py</a>
-        <a class="footer-phone" href="tel:+595976383922">+595 976 383 922</a>
-        <div class="footer-social-inline" aria-label="Redes sociales">
-          <a href="https://www.facebook.com/olimp" target="_blank" rel="noopener noreferrer" aria-label="Facebook Olimp">Facebook</a>
-          <a href="https://www.instagram.com/vitalica.py/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Vitalica">Instagram</a>
-        </div>
-      </div>
-    </div>
-
-    <p>Los suplementos no sustituyen una alimentación equilibrada.</p>
-    <p style="margin-top:8px;">© 2026 Vitalica</p>
-  `;
-})();
 
 </script>
 <!-- WHATSAPP FLOAT -->
