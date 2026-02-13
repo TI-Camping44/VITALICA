@@ -8,7 +8,36 @@
 <!-- INTER -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=26">
+<link rel="stylesheet" href="styles.css?v=27">
+
+
+<style>
+  /* Override final footer (producción/caché/hojas alternas) */
+  footer {
+    background: #0f0f10 !important;
+    color: #ffffff !important;
+  }
+  footer .footer-inner,
+  footer .footer-bar {
+    border-color: rgba(255, 255, 255, 0.25) !important;
+  }
+  footer .footer-mail,
+  footer .footer-phone,
+  footer .footer-note,
+  footer .footer-copy,
+  footer .footer-social-inline a,
+  footer .footer-social-inline a::before {
+    color: #ffffff !important;
+  }
+  footer .footer-social-inline a {
+    border-color: rgba(255, 255, 255, 0.45) !important;
+    background: transparent !important;
+  }
+  footer .footer-social-inline a:hover {
+    background: rgba(255, 255, 255, 0.14) !important;
+    color: #ffffff !important;
+  }
+</style>
 
 </head>
 
