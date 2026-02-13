@@ -61,10 +61,11 @@
     <div class="nav-links" id="navLinks">
       <a href="#olimp">OLIMP</a>
       <a href="#productos">Productos</a>
-      <a href="#">Proteínas</a>
-      <a href="#">Creatina</a>
-      <a href="#">Pre Workouts</a>
-      <a href="#">Salud</a>
+      <a href="javascript:void(0)" data-filter="proteinas">Proteínas</a>
+      <a href="javascript:void(0)" data-filter="carbohidratos">Carbohidratos</a>
+      <a href="javascript:void(0)" data-filter="creatina">Creatina</a>
+      <a href="javascript:void(0)" data-filter="preworkouts">Pre Workouts</a>
+      <a href="javascript:void(0)" data-filter="salud">Salud</a>
     </div>
     <div class="nav-spacer" aria-hidden="true"></div>
   </div>
@@ -145,49 +146,42 @@
   <div class="catalogo-header">
     <h2>Suplementación científica con look premium.</h2>
   </div>
-  <div class="catalogo-grid">
-    <article class="catalogo-card card-proteinas">
+  <div class="catalogo-grid" role="group" aria-label="Filtros de categoría">
+    <button type="button" class="catalogo-card card-proteinas" data-filter="proteinas" aria-pressed="false">
       <div class="catalogo-overlay"></div>
       <div class="catalogo-content">
         <h3>Proteínas</h3>
         <span>Recuperación y masa magra</span>
       </div>
-    </article>
-    <article class="catalogo-card card-carbohidratos">
+    </button>
+    <button type="button" class="catalogo-card card-carbohidratos" data-filter="carbohidratos" aria-pressed="false">
       <div class="catalogo-overlay"></div>
       <div class="catalogo-content">
         <h3>Carbohidratos</h3>
         <span>Energía sostenida</span>
       </div>
-    </article>
-    <article class="catalogo-card card-creatina">
+    </button>
+    <button type="button" class="catalogo-card card-creatina" data-filter="creatina" aria-pressed="false">
       <div class="catalogo-overlay"></div>
       <div class="catalogo-content">
         <h3>Creatina</h3>
         <span>Potencia y rendimiento</span>
       </div>
-    </article>
-    <article class="catalogo-card card-preworkouts">
+    </button>
+    <button type="button" class="catalogo-card card-preworkouts" data-filter="preworkouts" aria-pressed="false">
       <div class="catalogo-overlay"></div>
       <div class="catalogo-content">
         <h3>Pre Workouts</h3>
         <span>Enfoque y energía</span>
       </div>
-    </article>
-    <article class="catalogo-card card-amino">
-      <div class="catalogo-overlay"></div>
-      <div class="catalogo-content">
-        <h3>Aminoácidos</h3>
-        <span>Resistencia muscular</span>
-      </div>
-    </article>
-    <article class="catalogo-card card-salud">
+    </button>
+    <button type="button" class="catalogo-card card-salud" data-filter="salud" aria-pressed="false">
       <div class="catalogo-overlay"></div>
       <div class="catalogo-content">
         <h3>Salud</h3>
         <span>Bienestar integral</span>
       </div>
-    </article>
+    </button>
   </div>
 </section>
 
@@ -195,7 +189,7 @@
 <!-- GRID PRODUCTOS -->
 <section id="productos" class="grid">
 
-  <div class="tile">
+  <div class="tile" data-category="proteinas">
     <h3>Whey Protein Complex 100%</h3>
     <p>Proteína WPC + WPI con tecnología CFM.</p>
     <div class="cta">
@@ -206,7 +200,7 @@
     <img src="whey.png">
   </div>
 
-  <div class="tile">
+  <div class="tile" data-category="proteinas">
     <h3>Whey Protein Complex 100% Doble Choco</h3>
     <p>WPC + WPI con sabor doble chocolate.</p>
     <div class="cta">
@@ -217,7 +211,7 @@
     <img src="OLIMP%20PRODUCTOS/WheyProteinComplex-ZIP-2270g-universal-0014-ol-5-0001-66a2447fa4762.png">
   </div>
 
-  <div class="tile">
+  <div class="tile" data-category="carbohidratos">
     <h3>Iso Plus Powder</h3>
     <p>Isotónico con electrolitos y vitaminas.</p>
     <div class="cta">
@@ -228,7 +222,7 @@
     <img src="iso.png">
   </div>
 
-  <div class="tile">
+  <div class="tile" data-category="preworkouts">
     <h3>Redweiler</h3>
     <p>Pre-workout con beta alanina, creatina y citrulina.</p>
     <div class="cta">
@@ -238,7 +232,7 @@
     <img src="red.png">
   </div>
 
-  <div class="tile">
+  <div class="tile" data-category="preworkouts">
     <h3>Knockout 2.0</h3>
     <p>Pre-workout con cafeína y enfoque sostenido.</p>
     <div class="cta">
@@ -249,7 +243,7 @@
     <img src="OLIMP%20PRODUCTOS/Knockout-2-0-citrus-punch-305g-UK-amazon-01-png0000-66c2fbe8a26be.png">
   </div>
 
-  <div class="tile">
+  <div class="tile" data-category="creatina">
     <h3>Creatine Monohydrate</h3>  
     <p>Creatina micronizada 200 mesh.</p>
     <div class="cta">
@@ -260,7 +254,7 @@
     <img src="creatine.png">
   </div>
 
-  <div class="tile">
+  <div class="tile" data-category="preworkouts">
     <h3>Beta Alanina Xplode</h3>  
     <p>Fórmula Beta-Rush con vitamina B6.</p>
     <div class="cta">
@@ -271,7 +265,7 @@
     <img src="beta.png">
   </div>
 
-  <div class="tile">
+  <div class="tile" data-category="salud">
     <h3>Vita-min Multiple Sport</h3>
     <p>Multivitamínico con Vita-Plex y Chela-Min.</p>
     <div class="cta">
@@ -281,7 +275,7 @@
     <img src="OLIMP%20PRODUCTOS/Vita-Min-Multiple-Sport-40-kartonik-PL-EN-0006-0001-66a9f462ddf4d.png">
   </div>
 
-  <div class="tile">
+  <div class="tile" data-category="salud">
     <h3>Vita-min Multiple Sport 40+</h3>
     <p>Fórmula específica para mayores de 40.</p>
     <div class="cta">
@@ -291,7 +285,7 @@
     <img src="OLIMP%20PRODUCTOS/Vita-Min-Multiple-Sport-40-kartonik-PL-EN-0006-0001-66a9f462ddf4d.png">
   </div>
 
-  <div class="tile">
+  <div class="tile" data-category="salud">
     <h3>Gold Omega 3 Sport</h3>
     <p>Aceite de pescado con EPA y DHA.</p>
     <div class="cta">
@@ -301,7 +295,7 @@
     <img src="OLIMP%20PRODUCTOS/Gold-Omega-3-SportEdition-kartonik-120caps-EN-SE-FR-ES-IT-PL-0022-0001-66d6d15b6fb69.png">
   </div>
 
-  <div class="tile">
+  <div class="tile" data-category="salud">
     <h3>Arthroblock Forte</h3>
     <p>Soporte articular con glucosamina y condroitina.</p>
     <div class="cta">
@@ -890,6 +884,52 @@ document.addEventListener('click', (event) => {
   event.preventDefault();
   const tipo = trigger.getAttribute('data-ficha');
   if (tipo) abrirFicha(tipo);
+});
+
+const botonesCategoria = Array.from(document.querySelectorAll('.catalogo-card[data-filter]'));
+const enlacesFiltro = Array.from(document.querySelectorAll('.nav-links [data-filter]'));
+const productos = Array.from(document.querySelectorAll('#productos .tile[data-category]'));
+let categoriaActiva = null;
+
+function filtrarProductos(categoria) {
+  const aplicarFiltro = Boolean(categoria);
+  productos.forEach((producto) => {
+    const coincide = producto.getAttribute('data-category') === categoria;
+    producto.classList.toggle('is-hidden', aplicarFiltro && !coincide);
+  });
+
+  botonesCategoria.forEach((boton) => {
+    const activo = categoria === boton.getAttribute('data-filter');
+    boton.classList.toggle('is-active', activo);
+    boton.setAttribute('aria-pressed', String(activo));
+  });
+
+  enlacesFiltro.forEach((enlace) => {
+    const activo = categoria === enlace.getAttribute('data-filter');
+    enlace.classList.toggle('is-active', activo);
+    enlace.setAttribute('aria-current', activo ? 'true' : 'false');
+  });
+}
+
+botonesCategoria.forEach((boton) => {
+  boton.addEventListener('click', () => {
+    const filtro = boton.getAttribute('data-filter');
+    categoriaActiva = categoriaActiva === filtro ? null : filtro;
+    filtrarProductos(categoriaActiva);
+  });
+});
+
+enlacesFiltro.forEach((enlace) => {
+  enlace.addEventListener('click', (event) => {
+    const filtro = enlace.getAttribute('data-filter');
+    if (!filtro) return;
+    event.preventDefault();
+    categoriaActiva = filtro;
+    filtrarProductos(categoriaActiva);
+    if (window.innerWidth <= 860) {
+      setMobileMenu(false);
+    }
+  });
 });
 
 function actualizarNavbar() {
