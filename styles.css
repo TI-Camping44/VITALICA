@@ -989,6 +989,10 @@ footer {
   color: #16181c;
 }
 
+footer img {
+  max-width: none;
+}
+
 .footer-inner {
   max-width: 1220px;
   margin: 0 auto;
@@ -1000,43 +1004,37 @@ footer {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 24px;
+  gap: 28px;
 }
 
 .footer-brand-block {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .footer-brand-logos {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
 }
 
 .footer-logo-vitalica {
-  width: 112px;
+  width: 88px;
   height: auto;
 }
 
 .footer-logo-olimp {
-  width: 170px;
+  width: 190px;
   height: auto;
 }
 
 .footer-meta {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
   justify-content: flex-end;
-}
-
-.footer-social-inline {
-  display: flex;
-  gap: 8px;
-  align-items: center;
 }
 
 .footer-mail,
@@ -1052,10 +1050,16 @@ footer {
   color: #16181c;
 }
 
+.footer-social-inline {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
 .footer-social-inline a {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
+  border-radius: 6px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1063,8 +1067,8 @@ footer {
   background: transparent;
   border: 1px solid #cfd4da;
   color: #8a95a4;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   line-height: 1;
   transition: transform 0.2s ease, background 0.2s ease;
 }
@@ -1085,32 +1089,6 @@ footer {
   font-size: 14px;
   margin: 0;
 }
-
-
-/* Compatibilidad: footer legacy (markup anterior grande) */
-.footer-contact-block,
-.footer-social-block,
-.footer-legal-links,
-.footer-note,
-.footer-copy {
-  max-width: 1020px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.footer-contact-block h3 {
-  font-size: 20px;
-  margin: 0 0 8px;
-}
-
-/* Blindaje: ocultar cualquier bloque legacy de footer que pueda inyectarse */
-.footer-contact-block,
-.footer-social-block,
-.footer-legal-links,
-.footer-follow {
-  display: none !important;
-}
-
 
 /* =========================
    LOADER
@@ -1501,16 +1479,25 @@ footer {
   .footer-bar {
     flex-direction: column;
     align-items: flex-start;
+    gap: 14px;
   }
 
   .footer-meta {
     justify-content: flex-start;
-    gap: 12px;
+    gap: 10px;
   }
 
   .footer-mail,
   .footer-phone {
-    font-size: 15px;
+    font-size: 14px;
+  }
+
+  .footer-logo-vitalica {
+    width: 74px;
+  }
+
+  .footer-logo-olimp {
+    width: 160px;
   }
 
   .whatsapp-float {
