@@ -557,11 +557,27 @@ nav.nav-scrolled .nav-toggle span {
    SCIENCE
 ========================= */
 .science {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding: 60px 24px 80px;
   background: #f7f8fb;
+  background-image: url("https://www.em3-studio.pl/wp-content/uploads/2019/01/DSC9265-1290x766.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.science::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 248, 251, 0.86);
+  z-index: 0;
 }
 
 .science-inner {
+  position: relative;
+  z-index: 1;
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
