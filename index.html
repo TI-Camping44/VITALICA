@@ -924,8 +924,6 @@ botonesCategoria.forEach((boton) => {
     const filtro = boton.getAttribute('data-filter');
     categoriaActiva = categoriaActiva === filtro ? null : filtro;
     filtrarProductos(categoriaActiva);
-    var productosSeccion = document.getElementById('productos');
-    if (productosSeccion) productosSeccion.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
@@ -936,8 +934,6 @@ enlacesFiltro.forEach((enlace) => {
     event.preventDefault();
     categoriaActiva = filtro;
     filtrarProductos(categoriaActiva);
-    var productosSeccion = document.getElementById('productos');
-    if (productosSeccion) productosSeccion.scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (window.innerWidth <= 860) {
       setMobileMenu(false);
     }
