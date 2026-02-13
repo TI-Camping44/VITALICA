@@ -1113,6 +1113,16 @@ footer {
   margin-right: 10px;
 }
 
+/* Blindaje: ocultar cualquier bloque legacy de footer que pueda inyectarse */
+.footer-contact-block,
+.footer-social-block,
+.footer-legal-links,
+.footer-note,
+.footer-copy,
+.footer-follow {
+  display: none !important;
+}
+
 
 /* =========================
    LOADER
