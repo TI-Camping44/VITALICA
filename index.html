@@ -880,19 +880,41 @@ window.addEventListener("scroll", actualizarNavbar, { passive: true });
 window.addEventListener("load", actualizarNavbar);
 
 
-// Limpieza defensiva: elimina bloques legacy de footer si coexistieran con el footer actual
-(function limpiarFooterLegacy() {
+// Normaliza footer: si llega markup legacy, lo reemplaza por el footer actual
+(function normalizarFooter() {
   const footerInner = document.querySelector('footer .footer-inner');
   if (!footerInner) return;
 
+  const footerMarkupActual = `
+    <div class="footer-bar">
+      <div class="footer-brand">
+        <img src="logo-vitalica.png" alt="Vitalica" class="footer-logo-vitalica">
+        <img src="olimp-negro.png" alt="OLIMP Sport Nutrition" class="footer-logo-olimp">
+      </div>
+      <div class="footer-meta">
+        <a class="footer-mail" href="mailto:atencionalcliente@vitalica.com.py">atencionalcliente@vitalica.com.py</a>
+        <a class="footer-phone" href="tel:+595976383922">+595 976 383 922</a>
+        <div class="footer-social-inline" aria-label="Redes sociales">
+          <a href="https://www.facebook.com/olimp" target="_blank" rel="noopener noreferrer" aria-label="Facebook Olimp">Facebook</a>
+          <a href="https://www.instagram.com/vitalica.py/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Vitalica">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <p>Los suplementos no sustituyen una alimentación equilibrada.</p>
+    <p style="margin-top:8px;">© 2026 Vitalica</p>
+  `;
+
   const hasCurrentFooter = !!footerInner.querySelector('.footer-bar');
-  if (!hasCurrentFooter) return;
+  const hasLegacyFooter = !!footerInner.querySelector('.footer-contact-block, .footer-social-block, .footer-legal-links, .footer-note, .footer-copy, .footer-follow');
 
-  footerInner.querySelectorAll('.footer-contact-block, .footer-social-block, .footer-legal-links, .footer-note, .footer-copy, .footer-follow').forEach((n) => n.remove());
+  if (!hasCurrentFooter && hasLegacyFooter) {
+    footerInner.innerHTML = footerMarkupActual;
+    return;
+  }
 
-  footerInner.querySelectorAll('.footer-meta .footer-mail, .footer-meta .footer-phone').forEach((link) => {
-    link.style.display = '';
-  });
+  if (hasCurrentFooter && hasLegacyFooter) {
+    footerInner.querySelectorAll('.footer-contact-block, .footer-social-block, .footer-legal-links, .footer-note, .footer-copy, .footer-follow').forEach((n) => n.remove());
+  }
 })();
 
 </script>
