@@ -1089,6 +1089,61 @@ footer {
   font-size: 13px;
 }
 
+
+/* Compatibilidad: footer legacy (markup anterior grande) */
+.footer-contact-block,
+.footer-social-block,
+.footer-legal-links,
+.footer-note,
+.footer-copy {
+  max-width: 1020px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-contact-block h3 {
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.footer-link {
+  color: #666;
+  text-decoration: none;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.footer-social-block h4 {
+  font-size: 13px;
+  margin: 10px 0 6px;
+}
+
+.footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  color: #666;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.footer-legal-links a {
+  color: #666;
+  text-decoration: none;
+}
+
+.footer-legal-links span {
+  color: #a0a0a0;
+}
+
+.footer-note,
+.footer-copy {
+  color: var(--gray);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
 /* =========================
    LOADER
 ========================= */
