@@ -431,7 +431,9 @@ nav.nav-scrolled .nav-toggle span {
   justify-content: center;
   padding: 24px;
   color: #fff;
-  background-image: none !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   isolation: isolate;
@@ -497,32 +499,23 @@ nav.nav-scrolled .nav-toggle span {
 }
 
 .card-carbohidratos {
-  background-color: #6a6a6a;
+  background-image: url("https://images.unsplash.com/photo-1612152323645-9f7a11f8560f?auto=format&fit=crop&w=1200&q=80");
 }
 
 .card-creatina {
-  background-color: #3f3f3f;
+  background-image: url("https://images.unsplash.com/photo-1622484212850-eb596d769edc?auto=format&fit=crop&w=1200&q=80");
 }
 
 .card-preworkouts {
-  background-color: #7a7a7a;
+  background-image: url("https://images.unsplash.com/photo-1593079831268-3381b0db4a77?auto=format&fit=crop&w=1200&q=80");
 }
 
 .card-amino {
-  background-color: #8c8c8c;
+  background-image: url("https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80");
 }
 
 .card-salud {
-  background-color: #5d5d5d;
-}
-
-.card-proteinas,
-.card-carbohidratos,
-.card-creatina,
-.card-preworkouts,
-.card-amino,
-.card-salud {
-  background-image: none !important;
+  background-image: url("https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80");
 }
 
 /* =========================
@@ -1079,6 +1072,61 @@ footer {
   transform: translateY(-1px);
 }
 
+
+/* Compatibilidad: footer legacy (markup anterior grande) */
+.footer-contact-block,
+.footer-social-block,
+.footer-legal-links,
+.footer-note,
+.footer-copy {
+  max-width: 1020px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-contact-block h3 {
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.footer-link {
+  color: #666;
+  text-decoration: none;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.footer-social-block h4 {
+  font-size: 13px;
+  margin: 10px 0 6px;
+}
+
+.footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  color: #666;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.footer-legal-links a {
+  color: #666;
+  text-decoration: none;
+}
+
+.footer-legal-links span {
+  color: #a0a0a0;
+}
+
+.footer-note,
+.footer-copy {
+  color: var(--gray);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
 /* =========================
    LOADER
 ========================= */
@@ -1598,4 +1646,3 @@ footer {
     font-size: 20px;
   }
 }
-
