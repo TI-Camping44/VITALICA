@@ -984,9 +984,13 @@ nav.nav-scrolled .nav-toggle span {
    FOOTER
 ========================= */
 footer {
-  background: #f3f3f1;
+  background: #0f0f10;
   padding: 36px 24px 30px;
-  color: #16181c;
+  color: #ffffff;
+}
+
+footer img {
+  max-width: none;
 }
 
 footer img {
@@ -999,7 +1003,7 @@ footer img {
 }
 
 .footer-bar {
-  border-top: 1px solid #d8d8d5;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding-top: 18px;
   display: flex;
   align-items: flex-start;
@@ -1039,7 +1043,7 @@ footer img {
 
 .footer-mail,
 .footer-phone {
-  color: #5a6472;
+  color: #f4f4f4;
   text-decoration: none;
   font-size: 20px;
   font-weight: 400;
@@ -1047,7 +1051,7 @@ footer img {
 
 .footer-mail:hover,
 .footer-phone:hover {
-  color: #16181c;
+  color: #ffffff;
 }
 
 .footer-social-inline {
@@ -1065,8 +1069,8 @@ footer img {
   justify-content: center;
   text-decoration: none;
   background: transparent;
-  border: 1px solid #cfd4da;
-  color: #8a95a4;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #ffffff;
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
@@ -1075,17 +1079,17 @@ footer img {
 
 .footer-social-inline a:hover {
   transform: translateY(-2px);
-  background: #eef1f4;
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .footer-note {
-  color: #626262;
+  color: #d8d8d8;
   font-size: 14px;
   margin: 0;
 }
 
 .footer-copy {
-  color: #4d4d4d;
+  color: #ffffff;
   font-size: 14px;
   margin: 0;
 }
