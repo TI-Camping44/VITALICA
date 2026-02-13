@@ -62,8 +62,10 @@
       <a href="#olimp">OLIMP</a>
       <a href="#productos">Productos</a>
       <a href="#productos" data-filter="proteinas">Proteínas</a>
+      <a href="#productos" data-filter="carbohidratos">Carbohidratos</a>
       <a href="#productos" data-filter="creatina">Creatina</a>
       <a href="#productos" data-filter="preworkouts">Pre Workouts</a>
+      <a href="#productos" data-filter="aminoacidos">Aminoácidos</a>
       <a href="#productos" data-filter="salud">Salud</a>
     </div>
     <div class="nav-spacer" aria-hidden="true"></div>
@@ -922,7 +924,8 @@ botonesCategoria.forEach((boton) => {
     const filtro = boton.getAttribute('data-filter');
     categoriaActiva = categoriaActiva === filtro ? null : filtro;
     filtrarProductos(categoriaActiva);
-    document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    var productosSeccion = document.getElementById('productos');
+    if (productosSeccion) productosSeccion.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
@@ -933,7 +936,8 @@ enlacesFiltro.forEach((enlace) => {
     event.preventDefault();
     categoriaActiva = filtro;
     filtrarProductos(categoriaActiva);
-    document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    var productosSeccion = document.getElementById('productos');
+    if (productosSeccion) productosSeccion.scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (window.innerWidth <= 860) {
       setMobileMenu(false);
     }
