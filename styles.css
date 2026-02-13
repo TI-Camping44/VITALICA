@@ -1106,13 +1106,6 @@ footer {
   margin: 0 0 8px;
 }
 
-.footer-link {
-  color: #666;
-  text-decoration: none;
-  font-size: 12px;
-  margin-right: 10px;
-}
-
 /* Blindaje: ocultar cualquier bloque legacy de footer que pueda inyectarse */
 .footer-contact-block,
 .footer-social-block,

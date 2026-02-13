@@ -8,7 +8,21 @@
 <!-- INTER -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=22">
+<link rel="stylesheet" href="styles.css?v=23">
+
+
+<style>
+/* Footer hard reset para asegurar el layout clásico */
+footer .footer-inner > :not(.footer-bar):not(p) { display: none !important; }
+footer .footer-bar { display:flex !important; align-items:center !important; justify-content:space-between !important; gap:20px !important; margin-bottom:14px !important; }
+footer .footer-brand { display:flex !important; align-items:center !important; gap:14px !important; }
+footer .footer-logo-vitalica { width:98px !important; height:auto !important; }
+footer .footer-logo-olimp { width:122px !important; height:auto !important; }
+footer .footer-meta { display:flex !important; align-items:center !important; gap:12px !important; flex-wrap:wrap !important; justify-content:flex-end !important; }
+@media (max-width: 640px) {
+  footer .footer-bar, footer .footer-brand, footer .footer-meta { flex-direction:column !important; align-items:center !important; justify-content:center !important; }
+}
+</style>
 
 </head>
 
