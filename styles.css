@@ -115,9 +115,9 @@ nav .nav-links a:visited,
 nav .nav-links a:active {
   font-size: 12px;
   text-decoration: none;
-  color: #fff !important;
+  color: #111 !important;
   font-weight: 600;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  text-shadow: none;
   transition: color 0.2s ease, border-color 0.2s ease;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -138,8 +138,8 @@ nav.nav-scrolled .nav-links a:active {
 
 nav .nav-links a:hover,
 nav .nav-links a:focus-visible {
-  color: rgba(255, 255, 255, 0.85) !important;
-  border-color: rgba(255, 255, 255, 0.55);
+  color: #000 !important;
+  border-color: rgba(0, 0, 0, 0.3);
 }
 
 nav.nav-scrolled .nav-links a:hover,
@@ -150,7 +150,7 @@ nav.nav-scrolled .nav-links a:focus-visible {
 
 nav .nav-links a.is-active,
 nav .nav-links a[aria-current="true"] {
-  border-color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.45);
 }
 
 nav.nav-scrolled .nav-links a.is-active,
@@ -238,125 +238,100 @@ nav.nav-scrolled .nav-toggle span {
 ========================= */
 .hero {
   min-height: 100vh;
-  padding: 190px 24px 80px;
+  padding: 160px 24px 70px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
+  text-align: left;
+  background: #f0f0f0;
 }
 
 .hero-full {
-  background: #fff;
-  background-image:
-    linear-gradient(180deg, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0.45) 45%, rgba(10, 10, 10, 0.75) 100%),
-    url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=80");
-  background-size: cover;
-  background-position: center 30%;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.hero-bg video {
-  display: none;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(0.1) brightness(1.02) saturate(0.9);
-}
-
-.hero-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=80");
-  background-size: cover;
-  background-position: center 30%;
-  filter: grayscale(0.15) brightness(1.05);
-  transform: scale(1.02);
-}
-
-.hero-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(8, 8, 8, 0.72) 0%, rgba(8, 8, 8, 0.4) 45%, rgba(8, 8, 8, 0.78) 100%),
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.18), rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.7) 75%);
+  background: #f0f0f0;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 1100px;
+  max-width: 1220px;
   width: 100%;
-}
-
-.hero-content h1 {
-  font-size: clamp(38px, 5.3vw, 68px);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin-top: 16px;
-  color: #fff;
-  text-shadow: 0 12px 26px rgba(0, 0, 0, 0.45);
-}
-
-.hero-title-strong {
-  font-size: clamp(32px, 4.1vw, 50px) !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.015em;
-}
-
-.hero-subtitle {
-  font-size: clamp(14px, 2vw, 18px);
-  max-width: 680px;
-  color: #fff;
-  margin: 12px auto 32px;
-  text-transform: none;
-  letter-spacing: 0.03em;
-  font-weight: 600;
-  text-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
 }
 
 .hero-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 32px;
-  align-items: center;
-  text-align: center;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.hero-media {
+  min-height: 520px;
+  border-radius: 10px;
+  background-image: linear-gradient(180deg, rgba(8, 8, 8, 0.22), rgba(8, 8, 8, 0.3)), url("assets/img/KNOCKOUT_2_0_MediaRoom_1920x1080_PL.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-strong);
 }
 
 .hero-copy {
-  max-width: 640px;
-  margin: 0 auto;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 12px 0;
-  backdrop-filter: none;
-  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  max-width: 520px;
+  margin: 0;
+  padding: 8px 0;
+}
+
+.hero-kicker {
+  font-size: 42px;
+  font-weight: 500;
+  color: #111;
+}
+
+.hero-title-strong {
+  font-size: clamp(42px, 5.2vw, 66px) !important;
+  line-height: 1;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em;
+  color: #000;
+}
+
+.hero-title-secondary {
+  font-size: clamp(36px, 4.5vw, 54px);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #000;
+}
+
+.hero-subtitle {
+  font-size: clamp(18px, 2.1vw, 22px);
+  max-width: 500px;
+  color: #0f0f10;
+  margin: 0;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+  text-shadow: none;
 }
 
 .hero-actions {
   display: flex;
   gap: 14px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.hero-actions .btn {
+  min-width: 240px;
 }
 
 .olimp-logo {
-  width: min(220px, 60vw);
-  margin: 0 auto;
-  filter: brightness(0) invert(1)
-    drop-shadow(0 0 4px rgba(0, 0, 0, 0.65))
-    drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+  display: none;
 }
 
 /* =========================
@@ -1218,6 +1193,19 @@ footer img {
     padding-top: 170px;
   }
 
+  .hero-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    gap: 20px;
+  }
+
+  .hero-media {
+    min-height: 460px;
+  }
+
+  .hero-kicker {
+    font-size: 34px;
+  }
+
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1376,35 +1364,53 @@ footer img {
     padding-top: 150px;
     min-height: 90vh;
   }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media {
+    min-height: 360px;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 720px) {
   .hero {
-    padding: 140px 20px 56px;
+    padding: 132px 20px 52px;
   }
 
-  .hero-content h1 {
-    font-size: clamp(28px, 9vw, 42px);
+  .hero-media {
+    min-height: 280px;
+  }
+
+  .hero-kicker {
+    font-size: 28px;
   }
 
   .hero-title-strong {
-    font-size: clamp(30px, 9vw, 42px) !important;
+    font-size: clamp(36px, 11vw, 50px) !important;
+  }
+
+  .hero-title-secondary {
+    font-size: clamp(30px, 9vw, 40px);
   }
 
   .hero-subtitle {
-    margin-bottom: 24px;
+    font-size: 18px;
   }
 
   .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    margin: 0;
   }
 
   .hero-actions .btn {
     width: 100%;
+    min-width: 0;
   }
 
   .catalogo {
@@ -1585,7 +1591,11 @@ footer img {
 
   .hero {
     min-height: 85vh;
-    padding-top: 128px;
+    padding-top: 118px;
+  }
+
+  .hero-media {
+    min-height: 220px;
   }
 
   .brand-mark p {
@@ -1626,13 +1636,20 @@ footer img {
 
 
 @media (max-width: 380px) {
+  .hero-kicker {
+    font-size: 24px;
+  }
+
   .hero-title-strong {
-    font-size: clamp(24px, 8.8vw, 30px) !important;
+    font-size: clamp(30px, 9.2vw, 36px) !important;
+  }
+
+  .hero-title-secondary {
+    font-size: clamp(24px, 8.6vw, 30px);
   }
 
   .hero-subtitle {
-    font-size: 12px;
-    letter-spacing: 0.02em;
+    font-size: 16px;
   }
 
   .catalogo-content h3 {
