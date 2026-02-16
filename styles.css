@@ -115,7 +115,7 @@ nav .nav-links a:visited,
 nav .nav-links a:active {
   font-size: 12px;
   text-decoration: none;
-  color: #111 !important;
+  color: #ffffff !important;
   font-weight: 600;
   text-shadow: none;
   transition: color 0.2s ease, border-color 0.2s ease;
@@ -129,6 +129,13 @@ nav .nav-links a:active {
   border-bottom: 1px solid transparent;
 }
 
+
+nav:not(.nav-scrolled) .nav-links a,
+nav:not(.nav-scrolled) .nav-links a:visited,
+nav:not(.nav-scrolled) .nav-links a:active {
+  color: #ffffff !important;
+}
+
 nav.nav-scrolled .nav-links a,
 nav.nav-scrolled .nav-links a:visited,
 nav.nav-scrolled .nav-links a:active {
@@ -138,8 +145,8 @@ nav.nav-scrolled .nav-links a:active {
 
 nav .nav-links a:hover,
 nav .nav-links a:focus-visible {
-  color: #000 !important;
-  border-color: rgba(0, 0, 0, 0.3);
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.65);
 }
 
 nav.nav-scrolled .nav-links a:hover,
@@ -150,7 +157,7 @@ nav.nav-scrolled .nav-links a:focus-visible {
 
 nav .nav-links a.is-active,
 nav .nav-links a[aria-current="true"] {
-  border-color: rgba(0, 0, 0, 0.45);
+  border-color: rgba(255, 255, 255, 0.65);
 }
 
 nav.nav-scrolled .nav-links a.is-active,
@@ -266,6 +273,15 @@ nav.nav-scrolled .nav-toggle span {
   align-items: stretch;
 }
 
+.hero.hero-full .hero-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.hero.hero-full .hero-copy {
+  max-width: 620px;
+  margin-right: auto;
+}
+
 .hero-media {
   min-height: 520px;
   border-radius: 10px;
@@ -292,7 +308,7 @@ nav.nav-scrolled .nav-toggle span {
 }
 
 .hero-title-strong {
-  font-size: clamp(42px, 5.2vw, 66px) !important;
+  font-size: clamp(50px, 6.2vw, 82px) !important;
   line-height: 1;
   font-weight: 800 !important;
   letter-spacing: -0.03em;
@@ -300,7 +316,7 @@ nav.nav-scrolled .nav-toggle span {
 }
 
 .hero-title-secondary {
-  font-size: clamp(36px, 4.5vw, 54px);
+  font-size: clamp(42px, 5.1vw, 64px);
   line-height: 1.04;
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -586,7 +602,7 @@ nav.nav-scrolled .nav-toggle span {
 
 .philosophy-title span {
   display: block;
-  font-size: clamp(58px, 11vw, 136px);
+  font-size: clamp(50px, 9vw, 112px);
 }
 
 .philosophy-title .is-muted {
@@ -607,11 +623,11 @@ nav.nav-scrolled .nav-toggle span {
 }
 
 .philosophy-right p {
-  font-size: clamp(28px, 3vw, 37px);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-size: clamp(16px, 2.2vw, 24px);
+  line-height: 1.28;
+  letter-spacing: -0.01em;
   text-wrap: balance;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 
 .philosophy-note {
@@ -1477,12 +1493,12 @@ footer img {
   }
 
   .philosophy-title span {
-    font-size: clamp(56px, 17vw, 96px);
+    font-size: clamp(44px, 14vw, 78px);
   }
 
   .philosophy-right p {
-    font-size: clamp(28px, 8.6vw, 44px);
-    margin-bottom: 18px;
+    font-size: clamp(14px, 5.8vw, 18px);
+    margin-bottom: 16px;
   }
 
   .philosophy-note {
