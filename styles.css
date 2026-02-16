@@ -424,8 +424,20 @@ nav.nav-scrolled .nav-toggle span {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 26px;
+}
+
+.catalogo-grid .catalogo-card {
+  grid-column: span 2;
+}
+
+.catalogo-grid .catalogo-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.catalogo-grid .catalogo-card:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 
 .catalogo-card {
@@ -1397,6 +1409,10 @@ footer img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .catalogo-grid .catalogo-card {
+    grid-column: auto;
+  }
+
   .science-inner {
     grid-template-columns: 1fr;
   }
@@ -1710,6 +1726,10 @@ footer img {
   .catalogo-grid {
     grid-template-columns: 1fr;
     gap: 18px;
+  }
+
+  .catalogo-grid .catalogo-card {
+    grid-column: auto;
   }
 
   .catalogo-card {
