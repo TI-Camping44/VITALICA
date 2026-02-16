@@ -108,6 +108,29 @@ nav.nav-scrolled .nav-inner {
   display: block;
 }
 
+
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 20px;
+  border: 2px solid rgba(255, 255, 255, 0.88);
+  border-radius: 12px;
+  background: rgba(10, 20, 32, 0.28);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+nav.nav-scrolled .nav-pill {
+  border-color: #11334d;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.nav-pill-order {
+  min-width: 224px;
+}
+
 nav .nav-links a,
 nav .nav-links a:visited,
 nav .nav-links a:active {
@@ -1348,12 +1371,14 @@ footer img {
     color: #121212 !important;
     text-shadow: none;
     width: 100%;
-    padding: 10px 8px;
-    border: 1px solid rgba(18, 18, 18, 0.08);
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid rgba(18, 18, 18, 0.1);
     border-radius: 10px;
     text-align: center;
     letter-spacing: 0.04em;
     background: #fff;
+    box-shadow: none;
   }
 
   nav .nav-links a:last-child {
