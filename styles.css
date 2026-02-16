@@ -718,15 +718,16 @@ nav.nav-scrolled .nav-toggle span {
     url("FRASCO GRIS.png");
 }
 
-.science-card:nth-child(2)::before {
-  background-image:
-    url("MADE IN EUROPE GRIS.png");
+.science-card:nth-child(2)::before{
+  background-image: url("MADE IN EUROPE GRIS.png");
+  background-size: 80%;
 }
 
-.science-card:nth-child(3)::before {
-  background-image:
-    url("SHIME GRIS.png");   
+.science-card:nth-child(3)::before{
+  background-image: url("SHIME GRIS.png");
+  background-size: 80%;
 }
+
 
 .science-card::before {
   content: "";
