@@ -269,7 +269,7 @@ nav.nav-scrolled .nav-toggle span {
 .hero-media {
   min-height: 520px;
   border-radius: 10px;
-  background-image: linear-gradient(180deg, rgba(8, 8, 8, 0.22), rgba(8, 8, 8, 0.3)), url("assets/img/KNOCKOUT_2_0_MediaRoom_1920x1080_PL.jpg");
+  background-image: url("portadablanconegro.png");
   background-size: cover;
   background-position: center;
   box-shadow: var(--shadow-strong);
