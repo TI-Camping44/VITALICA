@@ -623,11 +623,11 @@ nav.nav-scrolled .nav-toggle span {
 }
 
 .philosophy-right p {
-  font-size: clamp(28px, 3vw, 37px);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-size: clamp(16px, 2.2vw, 24px);
+  line-height: 1.28;
+  letter-spacing: -0.01em;
   text-wrap: balance;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 
 .philosophy-note {
@@ -1497,8 +1497,8 @@ footer img {
   }
 
   .philosophy-right p {
-    font-size: clamp(28px, 8.6vw, 44px);
-    margin-bottom: 18px;
+    font-size: clamp(14px, 5.8vw, 18px);
+    margin-bottom: 16px;
   }
 
   .philosophy-note {
