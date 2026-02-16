@@ -535,6 +535,94 @@ nav.nav-scrolled .nav-toggle span {
 }
 
 /* =========================
+   PHILOSOPHY
+========================= */
+.philosophy {
+  scroll-margin-top: 110px;
+  position: relative;
+  overflow: hidden;
+  padding: 88px 24px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 18%, transparent 18% 42%, rgba(255, 255, 255, 0.03) 42% 66%, transparent 66% 82%, rgba(255, 255, 255, 0.04) 82% 100%),
+    radial-gradient(circle at 30% 45%, rgba(255, 255, 255, 0.08), transparent 58%),
+    #06080c;
+  color: #fff;
+}
+
+.philosophy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.6));
+  pointer-events: none;
+}
+
+.philosophy-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, 460px);
+  align-items: center;
+  gap: clamp(36px, 8vw, 120px);
+}
+
+.philosophy-eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 26px;
+}
+
+.philosophy-title {
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
+}
+
+.philosophy-title span {
+  display: block;
+  font-size: clamp(58px, 11vw, 136px);
+}
+
+.philosophy-title .is-muted {
+  color: rgba(123, 129, 142, 0.44);
+}
+
+.philosophy-right {
+  max-width: 460px;
+}
+
+.philosophy-dash {
+  width: 56px;
+  height: 8px;
+  display: block;
+  border-radius: 999px;
+  background: #f4f4f5;
+  margin-bottom: 24px;
+}
+
+.philosophy-right p {
+  font-size: clamp(28px, 3vw, 37px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin-bottom: 28px;
+}
+
+.philosophy-note {
+  margin-bottom: 0;
+  font-size: 12px !important;
+  letter-spacing: 0.24em !important;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+/* =========================
    SCIENCE
 ========================= */
 .science {
@@ -1379,6 +1467,29 @@ footer img {
 }
 
 @media (max-width: 720px) {
+  .philosophy {
+    padding: 64px 20px;
+  }
+
+  .philosophy-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .philosophy-title span {
+    font-size: clamp(56px, 17vw, 96px);
+  }
+
+  .philosophy-right p {
+    font-size: clamp(28px, 8.6vw, 44px);
+    margin-bottom: 18px;
+  }
+
+  .philosophy-note {
+    letter-spacing: 0.2em !important;
+  }
+
+
   .hero {
     padding: 132px 20px 52px;
   }
