@@ -731,6 +731,34 @@ nav.nav-scrolled .nav-toggle span {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%237a7f87' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='32' cy='32' r='5'/%3E%3Ccircle cx='32' cy='32' r='12'/%3E%3Cpath d='M32 12a20 20 0 0 1 0 40M32 12a20 20 0 0 0 0 40'/%3E%3Ccircle cx='14' cy='32' r='2.3'/%3E%3Ccircle cx='50' cy='32' r='2.3'/%3E%3Cpath d='M14 32h6M44 32h6'/%3E%3C/svg%3E");
 }
 
+.science-card::before {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.9;
+}
+
+.science-card:nth-child(1)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%237a7f87' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M24 10h16'/%3E%3Cpath d='M28 10v12L14 47a9 9 0 0 0 8 13h20a9 9 0 0 0 8-13L36 22V10'/%3E%3Cpath d='M22 43c2-2 4-2 6 0s4 2 6 0 4-2 6 0'/%3E%3Ccircle cx='24' cy='35' r='1.6'/%3E%3Ccircle cx='38' cy='33' r='1.6'/%3E%3C/svg%3E");
+}
+
+.science-card:nth-child(2)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%237a7f87' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='12' y='8' width='40' height='34' rx='3'/%3E%3Cpath d='M20 16h24M20 24h24M20 32h14'/%3E%3Ccircle cx='44' cy='42' r='8'/%3E%3Cpath d='m41 42 2 2 4-4M44 50l4 6'/%3E%3C/svg%3E");
+}
+
+.science-card:nth-child(3)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%237a7f87' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='32' cy='32' r='5'/%3E%3Ccircle cx='32' cy='32' r='12'/%3E%3Cpath d='M32 12a20 20 0 0 1 0 40M32 12a20 20 0 0 0 0 40'/%3E%3Ccircle cx='14' cy='32' r='2.3'/%3E%3Ccircle cx='50' cy='32' r='2.3'/%3E%3Cpath d='M14 32h6M44 32h6'/%3E%3C/svg%3E");
+}
+
+.science-card:nth-child(1)::before { content: "⚗"; }
+.science-card:nth-child(2)::before { content: "◍"; }
+.science-card:nth-child(3)::before { content: "◎"; }
+
 .science-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 34px rgba(0, 0, 0, 0.14);
@@ -1594,7 +1622,20 @@ footer img {
   }
 
   .science {
-    padding: 44px 20px 56px;
+    padding: 48px 20px 56px;
+  }
+
+  .science-copy {
+    margin-bottom: 28px;
+    text-align: left;
+  }
+
+  .science-copy {
+    margin-bottom: 24px;
+  }
+
+  .science-copy {
+    margin-bottom: 24px;
   }
 
   .science-copy {
