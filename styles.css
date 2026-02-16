@@ -109,27 +109,6 @@ nav.nav-scrolled .nav-inner {
 }
 
 
-.nav-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 42px;
-  padding: 0 20px;
-  border: 2px solid rgba(255, 255, 255, 0.88);
-  border-radius: 12px;
-  background: rgba(10, 20, 32, 0.28);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-}
-
-nav.nav-scrolled .nav-pill {
-  border-color: #11334d;
-  background: #ffffff;
-  box-shadow: none;
-}
-
-.nav-pill-order {
-  min-width: 224px;
-}
 
 nav .nav-links a,
 nav .nav-links a:visited,
