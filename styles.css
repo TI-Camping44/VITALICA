@@ -1350,12 +1350,14 @@ footer img {
     color: #121212 !important;
     text-shadow: none;
     width: 100%;
-    padding: 10px 8px;
-    border: 1px solid rgba(18, 18, 18, 0.08);
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid rgba(18, 18, 18, 0.1);
     border-radius: 10px;
     text-align: center;
     letter-spacing: 0.04em;
     background: #fff;
+    box-shadow: none;
   }
 
   nav .nav-links a:last-child {
