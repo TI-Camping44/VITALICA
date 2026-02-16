@@ -350,7 +350,7 @@ nav.nav-scrolled .nav-links a {
           <div id="modalStatsMain" class="modal-stats"></div>
         </div>
       </div>
-      <a id="modalCta" href="catalogo-vitalica-ligera.pdf.pdf" class="btn btn-primary" download>Ver catálogo completo</a>
+      <a id="modalCta" href="catalogo-vitalica-ligera.pdf.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ver catálogo completo</a>
     </div>
     <section class="modal-catalog-layout">
       <div class="modal-catalog-left">
@@ -977,6 +977,21 @@ function actualizarNavbar() {
 
 window.addEventListener("scroll", actualizarNavbar, { passive: true });
 window.addEventListener("load", actualizarNavbar);
+
+function normalizarEnlacesCatalogo() {
+  const enlaces = Array.from(document.querySelectorAll("a[href]"));
+  enlaces.forEach((enlace) => {
+    const href = enlace.getAttribute("href") || "";
+    const esCatalogoOPdf = /catalogo|cat[aá]logo|\.pdf(\?|#|$)/i.test(href);
+    if (!esCatalogoOPdf) return;
+
+    enlace.removeAttribute("download");
+    enlace.setAttribute("target", "_blank");
+    enlace.setAttribute("rel", "noopener noreferrer");
+  });
+}
+
+normalizarEnlacesCatalogo();
 
 </script>
 <!-- WHATSAPP FLOAT -->
