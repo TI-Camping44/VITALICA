@@ -1571,7 +1571,12 @@ footer img {
   }
 
   .science {
-    padding: 44px 20px 56px;
+    padding: 48px 20px 56px;
+  }
+
+  .science-copy {
+    margin-bottom: 28px;
+    text-align: left;
   }
 
   .science-copy {
