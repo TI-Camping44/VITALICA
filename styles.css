@@ -139,7 +139,7 @@ nav:not(.nav-scrolled) .nav-links a:active {
 nav.nav-scrolled .nav-links a,
 nav.nav-scrolled .nav-links a:visited,
 nav.nav-scrolled .nav-links a:active {
-  color: #101010 !important;
+  color: #ffffff !important;
   text-shadow: none;
 }
 
@@ -151,8 +151,8 @@ nav .nav-links a:focus-visible {
 
 nav.nav-scrolled .nav-links a:hover,
 nav.nav-scrolled .nav-links a:focus-visible {
-  color: #000 !important;
-  border-color: rgba(0, 0, 0, 0.3);
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.65);
 }
 
 nav .nav-links a.is-active,
@@ -162,7 +162,7 @@ nav .nav-links a[aria-current="true"] {
 
 nav.nav-scrolled .nav-links a.is-active,
 nav.nav-scrolled .nav-links a[aria-current="true"] {
-  border-color: rgba(0, 0, 0, 0.45);
+  border-color: rgba(255, 255, 255, 0.65);
 }
 
 .nav-logo {
@@ -214,8 +214,8 @@ nav.nav-scrolled img {
 }
 
 nav.nav-scrolled .nav-toggle {
-  border-color: rgba(18, 18, 18, 0.22);
-  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .nav-toggle span {
@@ -227,7 +227,7 @@ nav.nav-scrolled .nav-toggle {
 }
 
 nav.nav-scrolled .nav-toggle span {
-  background: #111;
+  background: #fff;
 }
 
 .nav-toggle[aria-expanded="true"] span:nth-child(1) {
@@ -426,20 +426,12 @@ nav.nav-scrolled .nav-toggle span {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 26px;
 }
 
 .catalogo-grid .catalogo-card {
-  grid-column: span 2;
-}
-
-.catalogo-grid .catalogo-card:nth-child(4) {
-  grid-column: 2 / span 2;
-}
-
-.catalogo-grid .catalogo-card:nth-child(5) {
-  grid-column: 4 / span 2;
+  grid-column: auto;
 }
 
 .catalogo-card {
