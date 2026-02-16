@@ -720,14 +720,13 @@ nav.nav-scrolled .nav-toggle span {
 
 .science-card:nth-child(2)::before{
   background-image: url("MADE IN EUROPE GRIS.png");
-  background-size: 90%;
+  transform: scale(1.35);
 }
 
 .science-card:nth-child(3)::before{
   background-image: url("SHIME GRIS.png");
-  background-size: 90%;
+  transform: scale(1.35);
 }
-
 
 .science-card::before {
   content: "";
