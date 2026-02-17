@@ -356,6 +356,7 @@ nav.nav-scrolled .nav-links a:active {
         <p id="modalShort" class="modal-short"></p>
       </div>
     </div>
+    <a id="modalCta" href="catalogo-vitalica-ligera.pdf.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ver catálogo completo</a>
     <section class="modal-catalog-layout">
       <div class="modal-catalog-left">
         <div class="modal-pack-bg"></div>
@@ -767,6 +768,20 @@ const visualProducto = {
   }
 };
 
+const catalogoPaginaPorProducto = {
+  whey: 5,
+  wheyChoco: 6,
+  iso: 8,
+  redweiler: 10,
+  knockout: 11,
+  creatina: 13,
+  amino: 15,
+  vitaminSport: 17,
+  vitaminSport40: 18,
+  goldOmega: 19,
+  arthroblock: 20
+};
+
 function renderVisualCatalogo(tipo, data) {
   const visual = visualProducto[tipo] || {};
   const imagenes = [
@@ -886,6 +901,13 @@ function abrirFicha(tipo){
   document.getElementById('modalTitulo').innerText = data.titulo;
   document.getElementById('modalBenefit').innerText = data.beneficio;
   document.getElementById('modalShort').innerText = data.corto;
+  const ctaCatalogo = document.getElementById('modalCta');
+  if (ctaCatalogo) {
+    const pagina = catalogoPaginaPorProducto[tipo];
+    ctaCatalogo.href = pagina
+      ? `catalogo-vitalica-ligera.pdf.pdf#page=${pagina}`
+      : 'catalogo-vitalica-ligera.pdf.pdf';
+  }
   renderVisualCatalogo(tipo, data);
   renderDetallesCatalogo(data);
   renderSabores(data);
