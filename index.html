@@ -349,19 +349,12 @@ nav.nav-scrolled .nav-links a:active {
   <div class="modal-content">
     <span class="close" onclick="cerrarModal()">&times;</span>
     <div class="modal-header">
-      <div class="modal-hero">
-        <div class="modal-packshot-wrap">
-          <p class="brand">OLIMP Sport Nutrition</p>
-          <img id="modalImagenMain" class="modal-packshot" src="whey.png" alt="Producto OLIMP">
-        </div>
-        <div class="modal-hero-copy">
-          <h2 id="modalTitulo"></h2>
-          <p id="modalBenefit" class="modal-benefit"></p>
-          <p id="modalShort" class="modal-short"></p>
-          <div id="modalStatsMain" class="modal-stats"></div>
-        </div>
+      <div class="modal-hero-copy">
+        <p class="brand">OLIMP Sport Nutrition</p>
+        <h2 id="modalTitulo"></h2>
+        <p id="modalBenefit" class="modal-benefit"></p>
+        <p id="modalShort" class="modal-short"></p>
       </div>
-      <a id="modalCta" href="catalogo-vitalica-ligera.pdf.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ver catálogo completo</a>
     </div>
     <section class="modal-catalog-layout">
       <div class="modal-catalog-left">
@@ -438,8 +431,8 @@ const fichas = {
         texto: "Fabricado bajo controles rigurosos de Olimp Labs para asegurar pureza, seguridad y consistencia lote a lote."
       },
       {
-        titulo: "Textura doble choco gourmet",
-        texto: "Formulación para una mezcla cremosa y satisfactoria, con perfil de sabor intenso y agradable al consumo diario."
+        titulo: "Textura gourmet",
+        texto: "Formulación para una mezcla cremosa y satisfactoria, con perfil de sabor agradable al consumo diario."
       },
       {
         titulo: "Fórmula doble (WPC + WPI)",
@@ -889,7 +882,7 @@ function renderSabores(data) {
 function abrirFicha(tipo){
   const data = fichas[tipo];
   if (!data) return;
-  document.querySelectorAll('#modal .modal-header img, #modal .modal-top-image').forEach((el) => el.remove());
+  document.querySelectorAll('#modal .modal-top-image').forEach((el) => el.remove());
   document.getElementById('modalTitulo').innerText = data.titulo;
   document.getElementById('modalBenefit').innerText = data.beneficio;
   document.getElementById('modalShort').innerText = data.corto;
