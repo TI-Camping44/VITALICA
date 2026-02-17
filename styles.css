@@ -1284,13 +1284,13 @@ footer img {
 }
 
 .footer-logo-vitalica {
-  width: 88px;
+  width: 116px;
   height: auto;
   filter: grayscale(1) brightness(1.8);
 }
 
 .footer-logo-olimp {
-  width: 132px;
+  width: 104px;
   height: auto;
 }
 
@@ -1918,11 +1918,11 @@ footer img {
   }
 
   .footer-logo-vitalica {
-    width: 74px;
+    width: 92px;
   }
 
   .footer-logo-olimp {
-    width: 112px;
+    width: 82px;
   }
 
   .whatsapp-float {
