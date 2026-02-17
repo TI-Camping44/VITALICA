@@ -1094,6 +1094,41 @@ nav.nav-scrolled .nav-toggle span {
   gap: 12px;
 }
 
+.modal-flavors {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.modal-flavors-title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.modal-flavors-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.flavor-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  color: #202020;
+  font-size: 13px;
+  font-weight: 600;
+}
+
 .accordion-item {
   border: 1px solid var(--light-gray);
   border-radius: 16px;

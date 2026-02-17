@@ -373,6 +373,7 @@ nav.nav-scrolled .nav-links a:active {
         <div id="modalHighlights" class="modal-highlights"></div>
       </div>
     </section>
+    <div id="modalFlavors" class="modal-flavors"></div>
     <div id="modalAccordion" class="modal-accordion"></div>
     <p class="note">Información resumida. Consulte la ficha técnica oficial para valores completos.</p>
   </div>
@@ -421,6 +422,12 @@ const fichas = {
     beneficio: "Tecnología CFM y fórmula doble WPC + WPI para recuperación.",
     corto: "Proteína premium con textura gourmet y estándar farmacéutico.",
     imagen: "OLIMP%20PRODUCTOS/WheyProteinComplex-ZIP-2270g-universal-0014-ol-5-0001-66a2447fa4762.png",
+    sabores: [
+      { icono: "🍓", nombre: "Frutilla" },
+      { icono: "🍦", nombre: "Vainilla" },
+      { icono: "🍪", nombre: "Cookies" },
+      { icono: "🍨", nombre: "Vainilla IceCream" }
+    ],
     detallesCatalogo: [
       {
         titulo: "Tecnología CFM superior (no química)",
@@ -456,6 +463,9 @@ const fichas = {
     beneficio: "Proteína doble WPC + WPI con perfil chocolate premium.",
     corto: "Versión Double Chocolate con textura cremosa y estándar farmacéutico.",
     imagen: "whey.png",
+    sabores: [
+      { icono: "🍫", nombre: "Doble Choco" }
+    ],
     detallesCatalogo: [
       {
         titulo: "Tecnología CFM superior (no química)",
@@ -813,6 +823,38 @@ function renderDetallesCatalogo(data) {
   });
 }
 
+function renderSabores(data) {
+  const contenedor = document.getElementById('modalFlavors');
+  if (!contenedor) return;
+
+  const sabores = Array.isArray(data.sabores) ? data.sabores : [];
+  contenedor.innerHTML = '';
+
+  if (!sabores.length) {
+    contenedor.style.display = 'none';
+    return;
+  }
+
+  contenedor.style.display = 'flex';
+
+  const titulo = document.createElement('p');
+  titulo.className = 'modal-flavors-title';
+  titulo.innerText = 'Sabores disponibles';
+  contenedor.appendChild(titulo);
+
+  const lista = document.createElement('div');
+  lista.className = 'modal-flavors-list';
+
+  sabores.forEach((sabor) => {
+    const chip = document.createElement('span');
+    chip.className = 'flavor-chip';
+    chip.innerText = `${sabor.icono || '🍉'} ${sabor.nombre || ''}`.trim();
+    lista.appendChild(chip);
+  });
+
+  contenedor.appendChild(lista);
+}
+
 function abrirFicha(tipo){
   const data = fichas[tipo];
   if (!data) return;
@@ -822,6 +864,7 @@ function abrirFicha(tipo){
   document.getElementById('modalShort').innerText = data.corto;
   renderVisualCatalogo(tipo, data);
   renderDetallesCatalogo(data);
+  renderSabores(data);
   const accordion = document.getElementById('modalAccordion');
   accordion.innerHTML = '';
   const seccionesPermitidas = new Set(['Modo de uso', 'Ficha técnica']);
