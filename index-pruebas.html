@@ -94,6 +94,9 @@ nav.nav-scrolled .nav-links a:active {
       <a href="#olimp">OLIMP</a>
       <a href="#filosofia">FILOSOFÍA</a>
       <a href="#productos">PRODUCTOS</a>
+      <a href="#objetivo">RECOMENDADOR</a>
+      <a href="#testimonios">TESTIMONIOS</a>
+      <a href="#faq">FAQ</a>
       <a href="#aliados">ALIADOS</a>
       <a href="https://wa.me/message/ICWKDYJR3BFPF1" target="_blank" rel="noopener">HACÉ TU PEDIDO</a>
     </div>
@@ -333,6 +336,83 @@ nav.nav-scrolled .nav-links a:active {
       <a href="javascript:void(0)" onclick="abrirFicha('arthroblock')" data-ficha="arthroblock" class="btn btn-primary">Ficha técnica</a>
     </div>
     <img src="OLIMP%20PRODUCTOS/Arthroblock-Forte-OSN-kartonik-EN-PL-0006-ol-4-0001-67d949c0c9f20.png">
+  </div>
+</section>
+
+<!-- BÚSQUEDA EN CATÁLOGO -->
+<section class="catalog-search" aria-labelledby="catalog-search-title">
+  <div class="catalog-search-inner">
+    <h2 id="catalog-search-title">Encontrá tu producto ideal más rápido</h2>
+    <p>Buscá por nombre, beneficio u objetivo y combiná con los filtros de categoría.</p>
+    <label for="productSearch" class="sr-only">Buscar productos</label>
+    <input id="productSearch" type="search" placeholder="Ej: creatina, fuerza, recuperación" autocomplete="off">
+  </div>
+</section>
+
+<!-- RECOMENDADOR RÁPIDO -->
+<section id="objetivo" class="objective" aria-labelledby="objective-title">
+  <div class="objective-inner">
+    <div class="objective-copy">
+      <p class="objective-eyebrow">RECOMENDADOR VITALICA</p>
+      <h2 id="objective-title">¿Cuál es tu objetivo principal?</h2>
+      <p>Elegí una opción y te mostramos una recomendación base para empezar hoy mismo.</p>
+    </div>
+    <div class="objective-actions" role="group" aria-label="Objetivos de entrenamiento">
+      <button class="objective-btn" type="button" data-objective="masa">Ganar masa muscular</button>
+      <button class="objective-btn" type="button" data-objective="fuerza">Subir fuerza y potencia</button>
+      <button class="objective-btn" type="button" data-objective="energia">Mejorar energía pre-entreno</button>
+      <button class="objective-btn" type="button" data-objective="salud">Cubrir salud general</button>
+    </div>
+    <div class="objective-result" id="objectiveResult" aria-live="polite">
+      Seleccioná un objetivo para ver la recomendación.
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios" class="testimonials" aria-labelledby="testimonials-title">
+  <div class="testimonials-inner">
+    <h2 id="testimonials-title">Resultados que se sienten en el proceso</h2>
+    <div class="testimonials-grid">
+      <article class="testimonial-card">
+        <p>“Nos gustó la constancia de calidad. En el box, Whey y Creatine son los más pedidos por rendimiento y digestión.”</p>
+        <h3>Fitway Training Club</h3>
+        <span>Centro aliado</span>
+      </article>
+      <article class="testimonial-card">
+        <p>“Desde que usamos Vita-Min + Gold Omega, mejoró mi recuperación entre sesiones y sostengo mejor mi rutina semanal.”</p>
+        <h3>Lucía R.</h3>
+        <span>Cliente Vitalica</span>
+      </article>
+      <article class="testimonial-card">
+        <p>“Redweiler nos funciona excelente en etapas de intensidad alta. Energía limpia y foco, sin improvisar.”</p>
+        <h3>Team GTC</h3>
+        <span>Entrenamiento funcional</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq" aria-labelledby="faq-title">
+  <div class="faq-inner">
+    <h2 id="faq-title">Preguntas frecuentes</h2>
+    <details>
+      <summary>¿Cómo sé qué suplemento elegir?</summary>
+      <p>Podés usar el recomendador rápido de objetivos y luego escribirnos por WhatsApp para ajustar dosis y timing según tu rutina.</p>
+    </details>
+    <details>
+      <summary>¿Hacen envíos a todo Paraguay?</summary>
+      <p>Sí, coordinamos entregas según zona y disponibilidad con nuestros aliados y canales de atención.</p>
+    </details>
+    <details>
+      <summary>¿Los productos son originales?</summary>
+      <p>Sí. Vitalica opera como representante exclusivo de OLIMP Sport Nutrition en Paraguay.</p>
+    </details>
+    <details>
+      <summary>¿Puedo comprar para mi gimnasio o tienda?</summary>
+      <p>Sí, contactanos para atención mayorista y propuesta comercial para punto de venta.</p>
+    </details>
   </div>
 </section>
 
@@ -1029,13 +1109,34 @@ document.addEventListener('click', (event) => {
 const botonesCategoria = Array.from(document.querySelectorAll('.catalogo-card[data-filter]'));
 const enlacesFiltro = Array.from(document.querySelectorAll('.nav-links [data-filter]'));
 const productos = Array.from(document.querySelectorAll('#productos .tile[data-category]'));
+const buscadorProductos = document.getElementById('productSearch');
+const botonesObjetivo = Array.from(document.querySelectorAll('.objective-btn[data-objective]'));
+const resultadoObjetivo = document.getElementById('objectiveResult');
 let categoriaActiva = null;
+let terminoBusqueda = '';
+
+const recomendacionesObjetivo = {
+  masa: 'Base sugerida: Whey Protein Complex + Creatine Monohydrate. Ideal para recuperación y progreso en masa magra.',
+  fuerza: 'Base sugerida: Creatine Monohydrate + Beta Alanina Xplode. Enfoque en potencia, fuerza y tolerancia al esfuerzo.',
+  energia: 'Base sugerida: Redweiler o Knockout 2.0 antes de entrenar. Mejor activación y enfoque en sesiones intensas.',
+  salud: 'Base sugerida: Vita-min Multiple Sport + Gold Omega 3. Soporte integral para rendimiento y bienestar diario.'
+};
+
+function trackEvent(name, params = {}) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', name, params);
+}
 
 function filtrarProductos(categoria) {
   const aplicarFiltro = Boolean(categoria);
+  const termino = terminoBusqueda.trim().toLowerCase();
+
   productos.forEach((producto) => {
     const coincide = producto.getAttribute('data-category') === categoria;
-    producto.classList.toggle('is-hidden', aplicarFiltro && !coincide);
+    const texto = producto.innerText.toLowerCase();
+    const coincideBusqueda = !termino || texto.includes(termino);
+    const ocultarPorCategoria = aplicarFiltro && !coincide;
+    producto.classList.toggle('is-hidden', ocultarPorCategoria || !coincideBusqueda);
   });
 
   botonesCategoria.forEach((boton) => {
@@ -1056,6 +1157,39 @@ botonesCategoria.forEach((boton) => {
     const filtro = boton.getAttribute('data-filter');
     categoriaActiva = categoriaActiva === filtro ? null : filtro;
     filtrarProductos(categoriaActiva);
+    trackEvent('catalog_filter_click', { categoria: categoriaActiva || 'todas' });
+  });
+});
+
+if (buscadorProductos) {
+  buscadorProductos.addEventListener('input', (event) => {
+    terminoBusqueda = event.target.value || '';
+    filtrarProductos(categoriaActiva);
+  });
+}
+
+botonesObjetivo.forEach((boton) => {
+  boton.addEventListener('click', () => {
+    const objetivo = boton.getAttribute('data-objective');
+    const recomendacion = recomendacionesObjetivo[objetivo] || 'Consultanos y te ayudamos a elegir.';
+    botonesObjetivo.forEach((item) => item.classList.toggle('is-active', item === boton));
+    if (resultadoObjetivo) {
+      resultadoObjetivo.innerHTML = `${recomendacion} <a href="https://wa.me/message/ICWKDYJR3BFPF1" target="_blank" rel="noopener">Hablar con asesor</a>`;
+    }
+    trackEvent('objective_select', { objetivo });
+  });
+});
+
+document.querySelectorAll('a[href*="wa.me"]').forEach((enlace) => {
+  enlace.addEventListener('click', () => {
+    trackEvent('whatsapp_click', { origen: enlace.className || 'link' });
+  });
+});
+
+document.querySelectorAll('[data-ficha]').forEach((trigger) => {
+  trigger.addEventListener('click', () => {
+    const producto = trigger.getAttribute('data-ficha') || 'sin_nombre';
+    trackEvent('open_product_modal', { producto });
   });
 });
 
