@@ -1286,10 +1286,11 @@ footer img {
 .footer-logo-vitalica {
   width: 88px;
   height: auto;
+  filter: grayscale(1) brightness(1.8);
 }
 
 .footer-logo-olimp {
-  width: 190px;
+  width: 170px;
   height: auto;
 }
 
@@ -1321,8 +1322,8 @@ footer img {
 }
 
 .footer-social-inline a {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   border-radius: 6px;
   display: inline-flex;
   align-items: center;
@@ -1331,7 +1332,7 @@ footer img {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.45);
   color: #ffffff;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 700;
   line-height: 1;
   transition: transform 0.2s ease, background 0.2s ease;
@@ -1921,7 +1922,7 @@ footer img {
   }
 
   .footer-logo-olimp {
-    width: 160px;
+    width: 145px;
   }
 
   .whatsapp-float {
