@@ -97,6 +97,8 @@ nav.nav-scrolled .nav-links a:active {
       <a href="#objetivo">RECOMENDADOR</a>
       <a href="#testimonios">TESTIMONIOS</a>
       <a href="#faq">FAQ</a>
+      <a href="#comparador">COMPARADOR</a>
+      <a href="#protocolos">PROTOCOLOS</a>
       <a href="#aliados">ALIADOS</a>
       <a href="https://wa.me/message/ICWKDYJR3BFPF1" target="_blank" rel="noopener">HACÉ TU PEDIDO</a>
     </div>
@@ -413,6 +415,86 @@ nav.nav-scrolled .nav-links a:active {
       <summary>¿Puedo comprar para mi gimnasio o tienda?</summary>
       <p>Sí, contactanos para atención mayorista y propuesta comercial para punto de venta.</p>
     </details>
+  </div>
+</section>
+
+
+<!-- COMPARADOR RÁPIDO -->
+<section id="comparador" class="compare" aria-labelledby="compare-title">
+  <div class="compare-inner">
+    <h2 id="compare-title">Comparador rápido por objetivo</h2>
+    <p class="compare-subtitle">Una guía simple para decidir según tu prioridad de entrenamiento.</p>
+    <div class="compare-grid">
+      <article class="compare-card">
+        <h3>Whey vs Creatina</h3>
+        <ul>
+          <li><strong>Whey:</strong> recuperación y aporte proteico diario.</li>
+          <li><strong>Creatina:</strong> fuerza, potencia y rendimiento repetido.</li>
+          <li><strong>Combinación recomendada:</strong> progreso integral de masa magra.</li>
+        </ul>
+      </article>
+      <article class="compare-card">
+        <h3>Redweiler vs Knockout 2.0</h3>
+        <ul>
+          <li><strong>Redweiler:</strong> pre-workout más cargado para sesiones duras.</li>
+          <li><strong>Knockout 2.0:</strong> enfoque y energía pre-entreno más limpia.</li>
+          <li><strong>Clave:</strong> elegir según tolerancia a estimulantes.</li>
+        </ul>
+      </article>
+      <article class="compare-card">
+        <h3>Vita-Min vs Gold Omega 3</h3>
+        <ul>
+          <li><strong>Vita-Min:</strong> soporte diario de micronutrientes.</li>
+          <li><strong>Gold Omega 3:</strong> salud cardiovascular y recuperación.</li>
+          <li><strong>Combinación:</strong> base de bienestar para sostener proceso.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROTOCOLOS SUGERIDOS -->
+<section id="protocolos" class="protocols" aria-labelledby="protocols-title">
+  <div class="protocols-inner">
+    <h2 id="protocols-title">Protocolos sugeridos (referencia rápida)</h2>
+    <p>Basado en objetivos reales de clientes: fuerza, masa, energía y recuperación.</p>
+    <div class="protocol-tabs" role="tablist" aria-label="Protocolos por objetivo">
+      <button type="button" class="protocol-tab is-active" role="tab" aria-selected="true" data-protocol="fuerza">Fuerza</button>
+      <button type="button" class="protocol-tab" role="tab" aria-selected="false" data-protocol="masa">Masa</button>
+      <button type="button" class="protocol-tab" role="tab" aria-selected="false" data-protocol="energia">Energía</button>
+      <button type="button" class="protocol-tab" role="tab" aria-selected="false" data-protocol="salud">Salud</button>
+    </div>
+    <div id="protocolPanel" class="protocol-panel" aria-live="polite">
+      <h3>Protocolo Fuerza</h3>
+      <p><strong>Antes:</strong> Redweiler/Knockout 20-30 min antes de entrenar.</p>
+      <p><strong>Diario:</strong> Creatine Monohydrate + hidratación consistente.</p>
+      <p><strong>Apoyo:</strong> proteína post-entreno para recuperación muscular.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIALES -->
+<section id="diferenciales" class="differentials" aria-labelledby="differentials-title">
+  <div class="differentials-inner">
+    <h2 id="differentials-title">Por qué Vitalica + OLIMP</h2>
+    <div class="differentials-grid">
+      <article>
+        <h3>Estándar farmacéutico europeo</h3>
+        <p>Controles de pureza, trazabilidad por lote y consistencia de fórmula.</p>
+      </article>
+      <article>
+        <h3>Desarrollo científico real</h3>
+        <p>Referencias a laboratorios propios e innovación respaldada por investigación.</p>
+      </article>
+      <article>
+        <h3>Portafolio por objetivo</h3>
+        <p>Desde rendimiento deportivo hasta salud general y recuperación.</p>
+      </article>
+      <article>
+        <h3>Atención consultiva</h3>
+        <p>No solo venta: guía por objetivo, timing y combinación de productos.</p>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -1213,6 +1295,65 @@ function actualizarNavbar() {
 
 window.addEventListener("scroll", actualizarNavbar, { passive: true });
 window.addEventListener("load", actualizarNavbar);
+
+
+const protocolos = {
+  fuerza: {
+    titulo: 'Protocolo Fuerza',
+    pasos: [
+      'Antes: Redweiler/Knockout 20-30 min antes de entrenar.',
+      'Diario: Creatine Monohydrate + hidratación consistente.',
+      'Apoyo: proteína post-entreno para recuperación muscular.'
+    ]
+  },
+  masa: {
+    titulo: 'Protocolo Masa',
+    pasos: [
+      'Diario: Whey Protein Complex para cubrir objetivo proteico.',
+      'Diario: Creatine Monohydrate para rendimiento y volumen de entrenamiento.',
+      'Constancia: seguimiento de comidas y descanso.'
+    ]
+  },
+  energia: {
+    titulo: 'Protocolo Energía',
+    pasos: [
+      'Antes: Knockout 2.0 o Redweiler según tolerancia.',
+      'Durante: Iso Plus para hidratación y soporte de sesión.',
+      'Post: nutrición y recuperación para sostener intensidad.'
+    ]
+  },
+  salud: {
+    titulo: 'Protocolo Salud',
+    pasos: [
+      'Base diaria: Vita-min Multiple Sport.',
+      'Complemento: Gold Omega 3 para soporte cardiovascular.',
+      'Rutina: adherencia diaria + chequeo de hábitos.'
+    ]
+  }
+};
+
+const protocolTabs = Array.from(document.querySelectorAll('.protocol-tab[data-protocol]'));
+const protocolPanel = document.getElementById('protocolPanel');
+
+function renderProtocol(tipo) {
+  const data = protocolos[tipo];
+  if (!data || !protocolPanel) return;
+  const bloques = data.pasos.map((paso) => `<p>${paso}</p>`).join('');
+  protocolPanel.innerHTML = `<h3>${data.titulo}</h3>${bloques}`;
+}
+
+protocolTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const tipo = tab.getAttribute('data-protocol');
+    protocolTabs.forEach((item) => {
+      const active = item === tab;
+      item.classList.toggle('is-active', active);
+      item.setAttribute('aria-selected', String(active));
+    });
+    renderProtocol(tipo);
+    trackEvent('protocol_select', { protocolo: tipo || 'na' });
+  });
+});
 
 function normalizarEnlacesCatalogo() {
   const enlaces = Array.from(document.querySelectorAll("a[href]"));

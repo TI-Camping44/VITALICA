@@ -2199,3 +2199,139 @@ footer img {
     grid-template-columns: 1fr;
   }
 }
+
+.compare,
+.protocols,
+.differentials {
+  padding: 68px 8%;
+}
+
+.compare {
+  background: #ffffff;
+}
+
+.compare-inner,
+.protocols-inner,
+.differentials-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.compare h2,
+.protocols h2,
+.differentials h2 {
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  margin-bottom: 10px;
+}
+
+.compare-subtitle,
+.protocols p {
+  color: #4d4d4d;
+}
+
+.compare-grid {
+  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.compare-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.compare-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.02rem;
+}
+
+.compare-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #383838;
+}
+
+.compare-card li {
+  margin-bottom: 8px;
+}
+
+.protocols {
+  background: #f8f8f8;
+}
+
+.protocol-tabs {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.protocol-tab {
+  border: 1px solid #d5d5d5;
+  background: #fff;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.protocol-tab.is-active {
+  background: #121212;
+  color: #fff;
+  border-color: #121212;
+}
+
+.protocol-panel {
+  margin-top: 14px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.protocol-panel h3 {
+  margin-bottom: 8px;
+}
+
+.protocol-panel p {
+  margin: 6px 0;
+}
+
+.differentials {
+  background: #ffffff;
+}
+
+.differentials-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.differentials-grid article {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  padding: 16px;
+  background: #fff;
+}
+
+.differentials-grid h3 {
+  margin-bottom: 8px;
+}
+
+.differentials-grid p {
+  color: #404040;
+}
+
+@media (max-width: 980px) {
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .differentials-grid {
+    grid-template-columns: 1fr;
+  }
+}
