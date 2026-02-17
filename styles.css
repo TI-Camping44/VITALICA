@@ -425,13 +425,15 @@ nav.nav-scrolled .nav-toggle span {
 .catalogo-grid {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 26px;
 }
 
 .catalogo-grid .catalogo-card {
-  grid-column: auto;
+  flex: 0 1 calc((100% - 52px) / 3);
+  max-width: calc((100% - 52px) / 3);
 }
 
 .catalogo-card {
@@ -1400,11 +1402,13 @@ footer img {
   }
 
   .catalogo-grid {
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .catalogo-grid .catalogo-card {
     grid-column: auto;
+    max-width: none;
   }
 
   .science-inner {
@@ -1725,6 +1729,7 @@ footer img {
   }
 
   .catalogo-grid {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 18px;
   }
