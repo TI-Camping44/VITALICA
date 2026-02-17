@@ -979,39 +979,6 @@ nav.nav-scrolled .nav-toggle span {
   margin: 0;
 }
 
-.modal-flavors {
-  margin: 4px 0 10px;
-}
-
-.flavor-label {
-  margin: 0 0 6px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #777;
-}
-
-.flavor-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.flavor-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  border: 1px solid rgba(18, 18, 18, 0.12);
-  border-radius: 999px;
-  padding: 4px 10px;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1;
-  background: #fff;
-  color: #222;
-}
-
 .modal-catalog-layout {
   display: grid;
   grid-template-columns: minmax(160px, 210px) minmax(0, 1fr);
