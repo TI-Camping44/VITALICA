@@ -349,19 +349,12 @@ nav.nav-scrolled .nav-links a:active {
   <div class="modal-content">
     <span class="close" onclick="cerrarModal()">&times;</span>
     <div class="modal-header">
-      <div class="modal-hero">
-        <div class="modal-packshot-wrap">
-          <p class="brand">OLIMP Sport Nutrition</p>
-          <img id="modalImagenMain" class="modal-packshot" src="whey.png" alt="Producto OLIMP">
-        </div>
-        <div class="modal-hero-copy">
-          <h2 id="modalTitulo"></h2>
-          <p id="modalBenefit" class="modal-benefit"></p>
-          <p id="modalShort" class="modal-short"></p>
-          <div id="modalStatsMain" class="modal-stats"></div>
-        </div>
+      <div class="modal-hero-copy">
+        <p class="brand">OLIMP Sport Nutrition</p>
+        <h2 id="modalTitulo"></h2>
+        <p id="modalBenefit" class="modal-benefit"></p>
+        <p id="modalShort" class="modal-short"></p>
       </div>
-      <a id="modalCta" href="catalogo-vitalica-ligera.pdf.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ver catálogo completo</a>
     </div>
     <section class="modal-catalog-layout">
       <div class="modal-catalog-left">
@@ -373,6 +366,7 @@ nav.nav-scrolled .nav-links a:active {
         <div id="modalHighlights" class="modal-highlights"></div>
       </div>
     </section>
+    <div id="modalFlavors" class="modal-flavors"></div>
     <div id="modalAccordion" class="modal-accordion"></div>
     <p class="note">Información resumida. Consulte la ficha técnica oficial para valores completos.</p>
   </div>
@@ -421,6 +415,12 @@ const fichas = {
     beneficio: "Tecnología CFM y fórmula doble WPC + WPI para recuperación.",
     corto: "Proteína premium con textura gourmet y estándar farmacéutico.",
     imagen: "OLIMP%20PRODUCTOS/WheyProteinComplex-ZIP-2270g-universal-0014-ol-5-0001-66a2447fa4762.png",
+    sabores: [
+      { icono: "🍓", nombre: "Frutilla" },
+      { icono: "🍦", nombre: "Vainilla" },
+      { icono: "🍪", nombre: "Cookies" },
+      { icono: "🍨", nombre: "Vainilla IceCream" }
+    ],
     detallesCatalogo: [
       {
         titulo: "Tecnología CFM superior (no química)",
@@ -431,8 +431,8 @@ const fichas = {
         texto: "Fabricado bajo controles rigurosos de Olimp Labs para asegurar pureza, seguridad y consistencia lote a lote."
       },
       {
-        titulo: "Textura doble choco gourmet",
-        texto: "Formulación para una mezcla cremosa y satisfactoria, con perfil de sabor intenso y agradable al consumo diario."
+        titulo: "Textura gourmet",
+        texto: "Formulación para una mezcla cremosa y satisfactoria, con perfil de sabor agradable al consumo diario."
       },
       {
         titulo: "Fórmula doble (WPC + WPI)",
@@ -456,6 +456,9 @@ const fichas = {
     beneficio: "Proteína doble WPC + WPI con perfil chocolate premium.",
     corto: "Versión Double Chocolate con textura cremosa y estándar farmacéutico.",
     imagen: "whey.png",
+    sabores: [
+      { icono: "🍫", nombre: "Doble Choco" }
+    ],
     detallesCatalogo: [
       {
         titulo: "Tecnología CFM superior (no química)",
@@ -488,11 +491,14 @@ const fichas = {
   },
   creatina: {
     titulo: "Creatine Monohydrate",
-    beneficio: "Pureza farmacéutica con micronización 200 mesh.",
-    corto: "Creatina monohidrato para fuerza y rendimiento máximo.",
+    beneficio: "Monohidrato de creatina con micronización 200 mesh.",
+    corto: "Estándar farmacéutico europeo para fuerza y potencia.",
     imagen: "creatine.png",
+    sabores: [
+      { icono: "⚪", nombre: "Sin sabor" }
+    ],
     secciones: {
-      "Descripción": "Creatina tratada bajo controles GMP y GLP con malla 200 para mejor disolución y absorción.",
+      "Descripción": "Creatina monohidrato en polvo con fórmula 200 mesh de micronización para disolución eficiente.",
       "Beneficios": [
         "Micronización 200 mesh para máxima absorción.",
         "Apoya fuerza explosiva y potencia.",
@@ -505,11 +511,16 @@ const fichas = {
   },
   iso: {
     titulo: "Iso Plus Powder",
-    beneficio: "Isotónico con electrolitos, L-carnitina y L-glutamina.",
-    corto: "Reposición completa y energía limpia durante la sesión.",
+    beneficio: "Powder isotonic sport drink con L-carnitina y L-glutamina.",
+    corto: "Apoyo de hidratación y rendimiento durante el entrenamiento.",
     imagen: "iso.png",
+    sabores: [
+      { icono: "🍋", nombre: "Limón" },
+      { icono: "🍊", nombre: "Naranja" },
+      { icono: "🫐", nombre: "Tropic Blue" }
+    ],
     secciones: {
-      "Descripción": "Fórmula isotónica que repone electrolitos, aporta vitaminas y ayuda a mantener la energía sin pesadez.",
+      "Descripción": "Bebida isotónica en polvo diseñada para hidratación y vitalidad con perfil completo de soporte deportivo.",
       "Beneficios": [
         "Reposición de electrolitos y prevención de calambres.",
         "Energía limpia y vitalidad constante.",
@@ -522,11 +533,14 @@ const fichas = {
   },
   amino: {
     titulo: "Beta Alanina Xplode",
-    beneficio: "Sistema Beta-Rush con soporte intra y extracelular.",
-    corto: "Beta alanina + L-histidina con buffers especiales.",
+    beneficio: "Sistema de transporte ácido intra y extracelular.",
+    corto: "Beta alanina con vitamina B6, bicarbonato y L-histidina.",
     imagen: "beta.png",
+    sabores: [
+      { icono: "🍊", nombre: "Naranja" }
+    ],
     secciones: {
-      "Descripción": "Fórmula de doble acción que protege el músculo por dentro y ayuda a limpiar el ácido en la sangre.",
+      "Descripción": "Beta alanina Xplode Powder con enfoque en resistencia y apoyo anti-fatiga durante el esfuerzo.",
       "Beneficios": [
         "Beta-alanina y L-histidina para crear carnosina.",
         "Buffers extracelulares con bicarbonato para reducir fatiga.",
@@ -539,11 +553,16 @@ const fichas = {
   },
   redweiler: {
     titulo: "Redweiler",
-    beneficio: "Pre-workout con matrices Armageddon Pump y Berserker.",
-    corto: "Beta alanina + creatina para fuerza y pump extremo.",
+    beneficio: "Pre workout con Armageddon Pump Formula y Berserker blend.",
+    corto: "Matriz Red Fury para energía y activación intensa.",
     imagen: "red.png",
+    sabores: [
+      { icono: "🫐", nombre: "Blueberry" },
+      { icono: "🍊", nombre: "Naranja" },
+      { icono: "🍒", nombre: "Red Punch" }
+    ],
     secciones: {
-      "Descripción": "Mezcla avanzada con citrulina, AAKG y matriz termogénica Red Fury para potencia inmediata.",
+      "Descripción": "Pre-workout orientado a potencia, enfoque y condición de alta precisión en sesiones exigentes.",
       "Beneficios": [
         "Beta-alanina 2200 mg y creatina 1845 mg por porción.",
         "Citrulina + AAKG para vasodilatación intensa.",
@@ -556,11 +575,14 @@ const fichas = {
   },
   knockout: {
     titulo: "Knockout 2.0",
-    beneficio: "Energía seca con 200 mg de cafeína.",
-    corto: "Fórmula sin creatina para enfoque y resistencia.",
+    beneficio: "Mind blowing pre-workout con energía real.",
+    corto: "Fórmula sin creatina para enfoque y activación térmica.",
     imagen: "OLIMP%20PRODUCTOS/Knockout-2-0-citrus-punch-305g-UK-amazon-01-png0000-66c2fbe8a26be.png",
+    sabores: [
+      { icono: "🍋", nombre: "Fresh Citrus" }
+    ],
     secciones: {
-      "Descripción": "Pre-workout con activación térmica y aminoácidos para mantener energía y concentración.",
+      "Descripción": "Pre-workout para energía limpia, resistencia y enfoque mental con activación térmica.",
       "Beneficios": [
         "Cafeína 200 mg para energía real.",
         "Beta-alanina y taurina para resistencia sostenida.",
@@ -573,11 +595,14 @@ const fichas = {
   },
   vitaminSport: {
     titulo: "Vita-min Multiple Sport",
-    beneficio: "Multivitamínico con Vita-Plex y minerales quelados.",
-    corto: "Dosis farmacéuticas con tecnología Chela-Min.",
+    beneficio: "Vitaminas y minerales en blísteres farmacéuticos.",
+    corto: "Tecnología Vita-Plex y Chela-Min para absorción eficiente.",
     imagen: "OLIMP%20PRODUCTOS/Vita-Min-Multiple-Sport-40-kartonik-PL-EN-0006-0001-66a9f462ddf4d.png",
+    sabores: [
+      { icono: "💊", nombre: "No aplica (cápsulas)" }
+    ],
     secciones: {
-      "Descripción": "Sistema bifásico con vitaminas y minerales separados para máxima potencia y absorción.",
+      "Descripción": "Sistema químicamente estable de vitaminas y minerales para soporte diario del rendimiento.",
       "Beneficios": [
         "Vita-Plex con complejo B completo.",
         "Minerales Albion quelados de alta absorción.",
@@ -590,11 +615,14 @@ const fichas = {
   },
   vitaminSport40: {
     titulo: "Vita-min Multiple Sport 40+",
-    beneficio: "Fórmula 40+ con ashwagandha y saw palmetto.",
-    corto: "Soporte hormonal, energía y minerales quelados.",
+    beneficio: "Fórmula específica Master 40+ para entrenamiento adulto.",
+    corto: "Con KSM-66, saw palmetto y minerales quelados Albion®.",
     imagen: "OLIMP%20PRODUCTOS/Vita-Min-Multiple-Sport-40-kartonik-PL-EN-0006-0001-66a9f462ddf4d.png",
+    sabores: [
+      { icono: "💊", nombre: "No aplica (cápsulas)" }
+    ],
     secciones: {
-      "Descripción": "Diseñado para atletas mayores de 40 con vitaminas reforzadas y adaptógenos premium.",
+      "Descripción": "Multivitamínico 40+ orientado a vitalidad, energía y recuperación para entrenamiento sostenido.",
       "Beneficios": [
         "Ashwagandha KSM-66 y saw palmetto para soporte hormonal.",
         "Minerales Albion quelados para absorción premium.",
@@ -607,11 +635,14 @@ const fichas = {
   },
   goldOmega: {
     titulo: "Gold Omega 3 Sport Edition",
-    beneficio: "Omega 3 concentrado con EPA y DHA.",
-    corto: "Aceite de pescado con protección blíster.",
+    beneficio: "Omega-3 altamente concentrado Sport Edition.",
+    corto: "Aceite de pescado 1000 mg con EPA y DHA.",
     imagen: "OLIMP%20PRODUCTOS/Gold-Omega-3-SportEdition-kartonik-120caps-EN-SE-FR-ES-IT-PL-0022-0001-66d6d15b6fb69.png",
+    sabores: [
+      { icono: "💊", nombre: "No aplica (cápsulas)" }
+    ],
     secciones: {
-      "Descripción": "Concentración real del 65% de ácidos grasos omega-3 para recuperación y enfoque.",
+      "Descripción": "Fórmula de omega-3 concentrada para soporte cardiovascular, cerebral y deportivo.",
       "Beneficios": [
         "EPA 330 mg y DHA 220 mg por cápsula.",
         "Protección blíster para frescura total.",
@@ -624,11 +655,14 @@ const fichas = {
   },
   arthroblock: {
     titulo: "Arthroblock Forte",
-    beneficio: "Regeneración articular y lubricación.",
-    corto: "Glucosamina, condroitina y ácido hialurónico.",
+    beneficio: "Funcionamiento adecuado de las articulaciones.",
+    corto: "Con glucosamina, condroitina, ácido hialurónico y extractos.",
     imagen: "OLIMP%20PRODUCTOS/Arthroblock-Forte-OSN-kartonik-EN-PL-0006-ol-4-0001-67d949c0c9f20.png",
+    sabores: [
+      { icono: "💊", nombre: "No aplica (cápsulas)" }
+    ],
     secciones: {
-      "Descripción": "Fórmula articular con glucosamina/condroitina sulfato y extractos antiinflamatorios.",
+      "Descripción": "Suplemento articular con componentes estructurales y soporte de confort para movilidad diaria.",
       "Beneficios": [
         "Glucosamina sulfato 1000 mg y condroitina 200 mg.",
         "Ácido hialurónico 50 mg para lubricación.",
@@ -813,15 +847,48 @@ function renderDetallesCatalogo(data) {
   });
 }
 
+function renderSabores(data) {
+  const contenedor = document.getElementById('modalFlavors');
+  if (!contenedor) return;
+
+  const sabores = Array.isArray(data.sabores) ? data.sabores : [];
+  contenedor.innerHTML = '';
+
+  if (!sabores.length) {
+    contenedor.style.display = 'none';
+    return;
+  }
+
+  contenedor.style.display = 'flex';
+
+  const titulo = document.createElement('p');
+  titulo.className = 'modal-flavors-title';
+  titulo.innerText = 'Sabores disponibles';
+  contenedor.appendChild(titulo);
+
+  const lista = document.createElement('div');
+  lista.className = 'modal-flavors-list';
+
+  sabores.forEach((sabor) => {
+    const chip = document.createElement('span');
+    chip.className = 'flavor-chip';
+    chip.innerText = `${sabor.icono || '🍉'} ${sabor.nombre || ''}`.trim();
+    lista.appendChild(chip);
+  });
+
+  contenedor.appendChild(lista);
+}
+
 function abrirFicha(tipo){
   const data = fichas[tipo];
   if (!data) return;
-  document.querySelectorAll('#modal .modal-header img, #modal .modal-top-image').forEach((el) => el.remove());
+  document.querySelectorAll('#modal .modal-top-image').forEach((el) => el.remove());
   document.getElementById('modalTitulo').innerText = data.titulo;
   document.getElementById('modalBenefit').innerText = data.beneficio;
   document.getElementById('modalShort').innerText = data.corto;
   renderVisualCatalogo(tipo, data);
   renderDetallesCatalogo(data);
+  renderSabores(data);
   const accordion = document.getElementById('modalAccordion');
   accordion.innerHTML = '';
   const seccionesPermitidas = new Set(['Modo de uso', 'Ficha técnica']);
