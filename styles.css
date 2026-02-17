@@ -139,7 +139,7 @@ nav:not(.nav-scrolled) .nav-links a:active {
 nav.nav-scrolled .nav-links a,
 nav.nav-scrolled .nav-links a:visited,
 nav.nav-scrolled .nav-links a:active {
-  color: #ffffff !important;
+  color: #111111 !important;
   text-shadow: none;
 }
 
@@ -151,8 +151,8 @@ nav .nav-links a:focus-visible {
 
 nav.nav-scrolled .nav-links a:hover,
 nav.nav-scrolled .nav-links a:focus-visible {
-  color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.65);
+  color: #111111 !important;
+  border-color: rgba(17, 17, 17, 0.45);
 }
 
 nav .nav-links a.is-active,
@@ -162,7 +162,7 @@ nav .nav-links a[aria-current="true"] {
 
 nav.nav-scrolled .nav-links a.is-active,
 nav.nav-scrolled .nav-links a[aria-current="true"] {
-  border-color: rgba(255, 255, 255, 0.65);
+  border-color: rgba(17, 17, 17, 0.45);
 }
 
 .nav-logo {
@@ -214,8 +214,8 @@ nav.nav-scrolled img {
 }
 
 nav.nav-scrolled .nav-toggle {
-  border-color: rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .nav-toggle span {
@@ -227,7 +227,7 @@ nav.nav-scrolled .nav-toggle {
 }
 
 nav.nav-scrolled .nav-toggle span {
-  background: #fff;
+  background: #111;
 }
 
 .nav-toggle[aria-expanded="true"] span:nth-child(1) {
