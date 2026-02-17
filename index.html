@@ -955,10 +955,12 @@ function abrirFicha(tipo){
     }
   });
   document.getElementById('modal').style.display = 'flex';
+  document.body.classList.add('modal-open');
 }
 
 function cerrarModal(){
   document.getElementById('modal').style.display = 'none';
+  document.body.classList.remove('modal-open');
 }
 
 window.onclick = e => {
